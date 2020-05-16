@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9d1bd95-06b8-4d54-80e0-e1fbdf56e74a/deploy-status)](https://app.netlify.com/sites/fikasfest/deploys)
+
 # fikas
 
 > fikas festival
