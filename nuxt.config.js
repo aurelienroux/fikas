@@ -14,7 +14,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Karla&family=Rubik:wght@400;700&display=swap'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -23,11 +30,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['normalize.css/normalize.css'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~/plugins/global.js' }],
   /*
    ** Nuxt.js dev-modules
    */
