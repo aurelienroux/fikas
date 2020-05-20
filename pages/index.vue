@@ -1,8 +1,14 @@
 <template>
   <div class="container">
     <div>
-      <AppButton>test btn</AppButton>
-      <AppButton btn-style="button--full">S'inscrire a l infolettre</AppButton>
+      <AppBtn>test btn</AppBtn>
+      <AppBtn btn-style="button--full">S'inscrire a l infolettre</AppBtn>
+      <AppBtnYoutube />
+      <AppBtnYoutube btn-style="link--footer" />
+      <AppBtnFacebook />
+      <AppBtnFacebook btn-style="link--footer" />
+      <AppBtnInsta />
+      <AppBtnInsta btn-style="link--footer" />
     </div>
   </div>
 </template>

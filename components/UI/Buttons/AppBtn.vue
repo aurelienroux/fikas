@@ -38,8 +38,7 @@ export default {
     color: $white;
 
     &:hover {
-      background-color: $white;
-      color: $perrywinkle;
+      opacity: 0.7;
     }
   }
 }
