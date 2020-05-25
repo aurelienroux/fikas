@@ -24,8 +24,8 @@ export default {
 <style lang="scss" scoped>
 .icon {
   fill: $white;
-  height: 4rem;
-  width: 4rem;
+  height: 2rem;
+  width: 2rem;
 
   &--menu {
     fill: $perrywinkle;

@@ -49,7 +49,7 @@
 <style lang="scss" scoped>
 .logo {
   fill: $white;
-  height: 4rem;
-  width: 21.2rem;
+  height: 2rem;
+  width: 10.6rem;
 }
 </style>
