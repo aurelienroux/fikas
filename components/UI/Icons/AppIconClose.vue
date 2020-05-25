@@ -1,0 +1,34 @@
+<template>
+  <svg viewBox="0 0 20 20" class="icon" :class="iconStyle">
+    <path
+      class="st0"
+      d="M19.61,16.09L13.52,10l6.09-6.09c0.51-0.51,0.51-1.25,0.05-1.71l-1.81-1.81c-0.51-0.51-1.25-0.51-1.76,0
+	L10,6.48L3.91,0.39C3.4-0.12,2.65-0.12,2.19,0.34L0.38,2.15c-0.51,0.51-0.51,1.25,0,1.76L6.48,10l-6.09,6.09
+	c-0.51,0.51-0.51,1.25,0,1.76l1.81,1.81c0.46,0.46,1.2,0.46,1.71-0.05L10,13.52l6.09,6.09c0.51,0.51,1.25,0.51,1.76,0l1.81-1.81
+	C20.12,17.34,20.12,16.6,19.61,16.09z"
+    />
+  </svg>
+</template>
+
+<script>
+export default {
+  props: {
+    iconStyle: {
+      type: String,
+      default: ''
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.icon {
+  fill: $white;
+  height: 4rem;
+  width: 4rem;
+
+  &--menu {
+    fill: $perrywinkle;
+  }
+}
+</style>
