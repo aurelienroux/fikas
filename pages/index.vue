@@ -1,56 +1,53 @@
 <template>
   <div class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        fikas
-      </h1>
-      <h2 class="subtitle">
-        fikas festival
-      </h2>
+      <AppBtn>test btn</AppBtn>
+      <AppBtn btn-style="button--full">S'inscrire a l infolettre</AppBtn>
+      <AppBtnYoutube />
+      <AppBtnYoutube btn-style="link--footer" />
+      <AppBtnFacebook />
+      <AppBtnFacebook btn-style="link--footer" />
+      <AppBtnInsta />
+      <AppBtnInsta btn-style="link--footer" />
+
+      <div style="background: red; padding: 2rem">
+        <AppIconMore />
+        <AppIconPrev />
+        <AppIconNext />
+        <AppIconMenuDrop />
+        <AppIconVideoScroll />
+        <AppIconClose />
+        <AppIconClose icon-style="icon--menu" />
+        <AppLogoFooter />
+        <AppLogo />
+        <div class="bg"></div>
+        <div class="bg-two"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
+export default {}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.bg {
+  background-image: url('~assets/images/bg1.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid black;
+  height: 20rem;
+  width: 20rem;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.bg-two {
+  background-image: url('~assets/images/bg2.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid black;
+  height: 43rem;
+  width: 192rem;
 }
 </style>
