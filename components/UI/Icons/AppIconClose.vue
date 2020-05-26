@@ -1,5 +1,5 @@
 <template>
-  <svg viewBox="0 0 20 20" class="icon" :class="iconStyle">
+  <svg viewBox="0 0 20 20" class="icon" :class="iconStyle" v-on="$listeners">
     <path
       class="st0"
       d="M19.61,16.09L13.52,10l6.09-6.09c0.51-0.51,0.51-1.25,0.05-1.71l-1.81-1.81c-0.51-0.51-1.25-0.51-1.76,0
