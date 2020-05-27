@@ -1,17 +1,25 @@
 <template>
   <header class="header">
-    <div class="header__top">
+    <div class="top">
       <AppLogo />
       <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
-    <div class="header__menu" :class="{ open: openMenu }">
-      <div>A propos</div>
-      <div class="header__news">
+    <div class="menu" :class="{ open: openMenu }">
+      <AppDrawer title="A propos">
+        <nuxt-link class="menu-sublink" to="/">Le festival</nuxt-link>
+        <nuxt-link class="menu-sublink" to="/">L equipe</nuxt-link>
+        <nuxt-link class="menu-sublink" to="/">Partenaires</nuxt-link>
+      </AppDrawer>
+      <AppDrawer title="Programmation">
+        <nuxt-link class="menu-sublink" to="/">testtest</nuxt-link>
+      </AppDrawer>
+      <nuxt-link class="menu-link" to="/">Contact</nuxt-link>
+      <div class="news">
         <AppBtn btn-style="button--full">
           S'inscrire a l infolettre
         </AppBtn>
       </div>
-      <div class="header__social">
+      <div class="social">
         <AppBtnFacebook />
         <AppBtnInsta />
         <AppBtnYoutube />
@@ -22,11 +30,16 @@
 
 <script>
 import Vue from 'vue'
+import AppDrawer from '@/components/AppDrawer'
 
 export default Vue.extend({
+  components: {
+    AppDrawer
+  },
+
   data() {
     return {
-      openMenu: false
+      openMenu: true
     }
   },
   methods: {
@@ -39,12 +52,12 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .header {
+  color: $white;
   font-family: Rubik;
   font-size: 1.8rem;
   font-weight: bold;
-  color: $white;
 
-  &__top {
+  & .top {
     background-color: $aqua-blue;
     border: none;
     display: flex;
@@ -55,7 +68,7 @@ export default Vue.extend({
     z-index: 10;
   }
 
-  &__menu {
+  & .menu {
     background-color: $aqua-blue;
     border: none;
     bottom: 0;
@@ -68,18 +81,25 @@ export default Vue.extend({
     z-index: 5;
 
     &.open {
-      display: initial;
+      display: fixed;
       left: 0;
     }
   }
 
-  &__news {
+  & .menu-link {
+    color: $white;
+    display: block;
+    padding: 1.5rem 0;
+    text-decoration: none;
+  }
+
+  & .news {
     display: block;
     margin: 4rem 0 4rem;
     text-align: center;
   }
 
-  &__social {
+  & .social {
     display: flex;
     justify-content: center;
 

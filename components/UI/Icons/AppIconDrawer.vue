@@ -2,7 +2,6 @@
   <div class="icon" :class="{ open: iconStyle }" v-on="$listeners">
     <div class="bar bar--one"></div>
     <div class="bar bar--two"></div>
-    <div class="bar bar--three"></div>
   </div>
 </template>
 
@@ -20,41 +19,30 @@ export default {
 <style lang="scss" scoped>
 .icon {
   height: 2rem;
+  position: relative;
   width: 2rem;
 
   & .bar {
     background-color: $perrywinkle;
     border-radius: 0.1rem;
-    height: 0.5rem;
+    position: absolute;
     transition: 0.3s;
+  }
+
+  .bar--one {
+    height: 0.4rem;
+    top: calc(50% - 0.2rem);
     width: 2rem;
   }
 
-  .bar--one,
   .bar--two {
-    margin-bottom: 0.3rem;
-  }
-
-  &.open .bar--one {
-    left: 1px;
-    position: relative;
-    top: -2px;
-    transform-origin: top left;
-    transform: rotate(45deg);
-    width: 26px;
+    height: 2rem;
+    left: calc(50% - 0.2rem);
+    width: 0.4rem;
   }
 
   &.open .bar--two {
     display: none;
-  }
-
-  &.open .bar--three {
-    left: 1px;
-    position: relative;
-    top: 7px;
-    transform-origin: bottom left;
-    transform: rotate(-45deg);
-    width: 26px;
   }
 }
 </style>
