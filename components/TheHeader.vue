@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__top">
       <AppLogo />
-      <AppIconClose icon-style="icon--menu" @click="displayMenu" />
+      <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
     <div class="header__menu" :class="{ open: openMenu }">
       <div>A propos</div>
