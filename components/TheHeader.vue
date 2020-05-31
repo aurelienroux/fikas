@@ -8,58 +8,51 @@
         <div class="menu-link">
           A propos
           <AppIconMenuDrop />
-          <!-- <ul>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-        </ul> -->
+          <ul class="menu-dropdown">
+            <li>
+              <nuxt-link class="menu-sublink" to="/festival">
+                le festival
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="menu-sublink" to="/">
+                l equipe
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="menu-sublink" to="/">
+                Partenaires
+              </nuxt-link>
+            </li>
+          </ul>
         </div>
         <div class="menu-link">
           Programmation
           <AppIconMenuDrop />
-          <!-- <ul>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-        </ul> -->
+          <ul class="menu-dropdown">
+            <li>
+              <nuxt-link class="menu-sublink" to="/">
+                test
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="menu-sublink" to="/">
+                test test
+              </nuxt-link>
+            </li>
+          </ul>
         </div>
         <nuxt-link to="/contact" class="menu-link">Contact</nuxt-link>
       </div>
       <button class="btn-lang">EN</button>
-      <!-- <AppIconMenu :icon-style="openMenu" @click="displayMenu" /> -->
     </div>
-    <!-- <div class="menu" :class="{ open: openMenu }">
-      <AppDrawer title="A propos">
-        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
-          Le festival
-        </nuxt-link>
-        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
-          L equipe
-        </nuxt-link>
-        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
-          Partenaires
-        </nuxt-link>
-      </AppDrawer>
-      <AppDrawer title="Programmation">
-        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
-          testtest
-        </nuxt-link>
-      </AppDrawer>
-      <nuxt-link class="menu-link" to="/contact" @click.native="closeMenu">
-        Contact
-      </nuxt-link>
-    </div> -->
   </header>
 </template>
 
 <script>
 import Vue from 'vue'
-// import AppDrawer from '@/components/AppDrawer'
 
 export default Vue.extend({
-  // components: {
-  //   AppDrawer
-  // },
   data() {
     return {
       openMenu: false
@@ -113,16 +106,47 @@ export default Vue.extend({
     align-items: stretch;
     display: flex;
     flex: 1;
-  }
 
-  & .menu-link {
-    align-items: center;
-    color: $white;
-    cursor: pointer;
-    display: flex;
-    height: 100%;
-    padding: 0 2rem;
-    text-decoration: none;
+    &-link {
+      align-items: center;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      height: 100%;
+      padding: 0 2rem;
+      text-decoration: none;
+      position: relative;
+
+      &:hover {
+        color: $charcoal-grey;
+        background: $white;
+      }
+    }
+
+    &-dropdown {
+      background-color: $aqua-blue;
+      border-top: 0.2rem solid $white;
+      left: 0;
+      list-style-type: none;
+      padding: 0;
+      position: absolute;
+      top: calc(100% - 0.2rem);
+      width: 100%;
+    }
+
+    &-sublink {
+      color: $white;
+      display: block;
+      font-size: 1.4rem;
+      font-weight: normal;
+      padding: 1rem 2rem;
+      text-decoration: none;
+
+      &:hover {
+        color: $charcoal-grey;
+        background: $white;
+      }
+    }
   }
 
   & .btn-lang {
