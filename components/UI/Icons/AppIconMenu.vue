@@ -35,13 +35,17 @@ export default {
     margin-bottom: 0.3rem;
   }
 
-  &.open .bar--one {
-    left: 1px;
+  &.open .bar--one,
+  &.open .bar--three {
+    left: 0.1rem;
     position: relative;
-    top: -2px;
+    width: 2.6rem;
+  }
+
+  &.open .bar--one {
+    top: -0.2rem;
     transform-origin: top left;
     transform: rotate(45deg);
-    width: 26px;
   }
 
   &.open .bar--two {
@@ -49,12 +53,9 @@ export default {
   }
 
   &.open .bar--three {
-    left: 1px;
-    position: relative;
-    top: 7px;
+    top: 0.7rem;
     transform-origin: bottom left;
     transform: rotate(-45deg);
-    width: 26px;
   }
 }
 </style>

@@ -47,7 +47,7 @@ export default {}
 .container-inside {
   color: $charcoal-grey;
   font-family: Karla;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.33;
   text-align: left;
   width: 100%;
