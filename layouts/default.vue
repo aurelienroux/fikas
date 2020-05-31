@@ -1,7 +1,7 @@
 <template>
   <div>
     <TheHeader />
-    <nuxt />
+    <nuxt class="container" />
   </div>
 </template>
 
@@ -25,5 +25,11 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+</style>
+
+<style lang="scss" scoped>
+.container {
+  padding-top: 8rem;
 }
 </style>

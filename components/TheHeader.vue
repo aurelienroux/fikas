@@ -1,19 +1,31 @@
 <template>
   <header class="header">
     <div class="top">
-      <AppLogo />
+      <nuxt-link to="/" @click.native="closeMenu">
+        <AppLogo />
+      </nuxt-link>
       <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
     <div class="menu" :class="{ open: openMenu }">
       <AppDrawer title="A propos">
-        <nuxt-link class="menu-sublink" to="/">Le festival</nuxt-link>
-        <nuxt-link class="menu-sublink" to="/">L equipe</nuxt-link>
-        <nuxt-link class="menu-sublink" to="/">Partenaires</nuxt-link>
+        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
+          Le festival
+        </nuxt-link>
+        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
+          L equipe
+        </nuxt-link>
+        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
+          Partenaires
+        </nuxt-link>
       </AppDrawer>
       <AppDrawer title="Programmation">
-        <nuxt-link class="menu-sublink" to="/">testtest</nuxt-link>
+        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
+          testtest
+        </nuxt-link>
       </AppDrawer>
-      <nuxt-link class="menu-link" to="/">Contact</nuxt-link>
+      <nuxt-link class="menu-link" to="/contact" @click.native="closeMenu">
+        Contact
+      </nuxt-link>
       <div class="news">
         <AppBtn btn-style="button--full">
           S'inscrire a l infolettre
@@ -39,12 +51,15 @@ export default Vue.extend({
 
   data() {
     return {
-      openMenu: true
+      openMenu: false
     }
   },
   methods: {
     displayMenu() {
       this.openMenu = !this.openMenu
+    },
+    closeMenu() {
+      this.openMenu = false
     }
   }
 })
@@ -56,6 +71,8 @@ export default Vue.extend({
   font-family: Rubik;
   font-size: 1.8rem;
   font-weight: bold;
+  position: fixed;
+  width: 100%;
 
   & .top {
     background-color: $aqua-blue;
@@ -72,6 +89,7 @@ export default Vue.extend({
     background-color: $aqua-blue;
     border: none;
     bottom: 0;
+    height: 100vh;
     left: -100%;
     padding: 2rem;
     position: absolute;
@@ -81,7 +99,6 @@ export default Vue.extend({
     z-index: 5;
 
     &.open {
-      display: fixed;
       left: 0;
     }
   }
