@@ -1,16 +1,19 @@
 <template>
   <div>
+    <TheHeaderMobile />
     <TheHeader />
-    <nuxt class="container" />
+    <nuxt />
   </div>
 </template>
 
 <script>
 import TheHeader from '@/components/TheHeader'
+import TheHeaderMobile from '@/components/TheHeaderMobile'
 
 export default {
   components: {
-    TheHeader
+    TheHeader,
+    TheHeaderMobile
   }
 }
 </script>
@@ -26,10 +29,8 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-</style>
 
-<style lang="scss" scoped>
-.container {
-  padding-top: 8rem;
+img {
+  max-width: 100%;
 }
 </style>

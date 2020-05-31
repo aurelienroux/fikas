@@ -1,5 +1,9 @@
 <template>
   <div class="container-inside">
+    <img
+      src="https://images.unsplash.com/photo-1523179985834-1363f5c47d84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+      alt=""
+    />
     Fondé en 2015 par Christel Durand, l’organisme diffusion culturelle FIKA(S)
     inaugure son premier événement en mars 2016 : le Festival Immersif de Kultur
     et d’Art Scandinave et Nordique. Inspiré du mot suédois fika qui désigne la
@@ -45,7 +49,6 @@ export default {}
   font-family: Karla;
   font-size: 24px;
   line-height: 1.33;
-  padding: 20px;
   text-align: left;
   width: 100%;
 }

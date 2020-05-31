@@ -1,30 +1,12 @@
 <template>
-  <header class="header">
+  <header class="header-mobile">
     <div class="top">
       <nuxt-link to="/" @click.native="closeMenu">
         <AppLogo />
       </nuxt-link>
-      <div>
-        A propos
-        <!-- <ul>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-        </ul> -->
-      </div>
-      <div>
-        Programmation
-        <!-- <ul>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-          <li><nuxt-link to="/">a</nuxt-link></li>
-        </ul> -->
-      </div>
-      <nuxt-link to="/contact">Contact</nuxt-link>
-      <button>EN</button>
-      <!-- <AppIconMenu :icon-style="openMenu" @click="displayMenu" /> -->
+      <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
-    <!-- <div class="menu" :class="{ open: openMenu }">
+    <div class="menu" :class="{ open: openMenu }">
       <AppDrawer title="A propos">
         <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
           Le festival
@@ -44,6 +26,7 @@
       <nuxt-link class="menu-link" to="/contact" @click.native="closeMenu">
         Contact
       </nuxt-link>
+      <button class="btn-lang">EN</button>
       <div class="news">
         <AppBtn btn-style="button--full">
           S'inscrire a l infolettre
@@ -54,18 +37,18 @@
         <AppBtnInsta />
         <AppBtnYoutube />
       </div>
-    </div> -->
+    </div>
   </header>
 </template>
 
 <script>
 import Vue from 'vue'
-// import AppDrawer from '@/components/AppDrawer'
+import AppDrawer from '@/components/AppDrawer'
 
 export default Vue.extend({
-  // components: {
-  //   AppDrawer
-  // },
+  components: {
+    AppDrawer
+  },
   data() {
     return {
       openMenu: false
@@ -83,25 +66,20 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.header {
-  background-color: $aqua-blue;
+.header-mobile {
   color: $white;
   font-family: Rubik;
   font-size: 1.8rem;
   font-weight: bold;
   position: fixed;
   width: 100%;
-  display: none;
 
   @include for-tablet-portrait-up {
-    display: initial;
+    display: none;
   }
 
   & .top {
-    max-width: 120rem;
-    margin: 0 auto;
-    // old
-    // background-color: red;
+    background-color: $aqua-blue;
     border: none;
     display: flex;
     justify-content: space-between;
@@ -112,7 +90,6 @@ export default Vue.extend({
   }
 
   & .menu {
-    // old
     background-color: $aqua-blue;
     border: none;
     bottom: 0;
@@ -130,11 +107,23 @@ export default Vue.extend({
     }
   }
 
-  & .menu-link {
+  & .menu-link,
+  & .btn-lang {
     color: $white;
-    display: block;
     padding: 1.5rem 0;
+  }
+
+  & .menu-link {
+    display: block;
     text-decoration: none;
+  }
+
+  & .btn-lang {
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
   }
 
   & .news {
