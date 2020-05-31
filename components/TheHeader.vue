@@ -89,7 +89,7 @@ export default Vue.extend({
   position: fixed;
   width: 100%;
 
-  @include for-tablet-portrait-up {
+  @include for-tablet-landscape-up {
     display: initial;
   }
 
