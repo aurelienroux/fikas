@@ -1,27 +1,31 @@
 <template>
   <header class="header">
-    <div class="top">
-      <nuxt-link to="/" @click.native="closeMenu">
+    <div class="header-container">
+      <nuxt-link to="/" class="logo" @click.native="closeMenu">
         <AppLogo />
       </nuxt-link>
-      <div>
-        A propos
-        <!-- <ul>
+      <div class="menu">
+        <div class="menu-link">
+          A propos
+          <AppIconMenuDrop />
+          <!-- <ul>
           <li><nuxt-link to="/">a</nuxt-link></li>
           <li><nuxt-link to="/">a</nuxt-link></li>
           <li><nuxt-link to="/">a</nuxt-link></li>
         </ul> -->
-      </div>
-      <div>
-        Programmation
-        <!-- <ul>
+        </div>
+        <div class="menu-link">
+          Programmation
+          <AppIconMenuDrop />
+          <!-- <ul>
           <li><nuxt-link to="/">a</nuxt-link></li>
           <li><nuxt-link to="/">a</nuxt-link></li>
           <li><nuxt-link to="/">a</nuxt-link></li>
         </ul> -->
+        </div>
+        <nuxt-link to="/contact" class="menu-link">Contact</nuxt-link>
       </div>
-      <nuxt-link to="/contact">Contact</nuxt-link>
-      <button>EN</button>
+      <button class="btn-lang">EN</button>
       <!-- <AppIconMenu :icon-style="openMenu" @click="displayMenu" /> -->
     </div>
     <!-- <div class="menu" :class="{ open: openMenu }">
@@ -44,16 +48,6 @@
       <nuxt-link class="menu-link" to="/contact" @click.native="closeMenu">
         Contact
       </nuxt-link>
-      <div class="news">
-        <AppBtn btn-style="button--full">
-          S'inscrire a l infolettre
-        </AppBtn>
-      </div>
-      <div class="social">
-        <AppBtnFacebook />
-        <AppBtnInsta />
-        <AppBtnYoutube />
-      </div>
     </div> -->
   </header>
 </template>
@@ -84,72 +78,63 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .header {
+  align-items: center;
   background-color: $aqua-blue;
   color: $white;
+  display: none;
   font-family: Rubik;
   font-size: 1.8rem;
   font-weight: bold;
+  height: 8rem;
   position: fixed;
   width: 100%;
-  display: none;
 
   @include for-tablet-portrait-up {
     display: initial;
   }
 
-  & .top {
-    max-width: 120rem;
-    margin: 0 auto;
-    // old
-    // background-color: red;
-    border: none;
+  &-container {
     display: flex;
-    justify-content: space-between;
-    padding: 2rem;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 0 2rem;
     position: relative;
     width: 100%;
-    z-index: 10;
+  }
+
+  .logo {
+    align-items: center;
+    display: flex;
+    margin-right: 2rem;
   }
 
   & .menu {
-    // old
-    background-color: $aqua-blue;
-    border: none;
-    bottom: 0;
-    height: 100vh;
-    left: -100%;
-    padding: 2rem;
-    position: absolute;
-    top: 6rem;
-    transition: 0.3s;
-    width: 100%;
-    z-index: 5;
-
-    &.open {
-      left: 0;
-    }
+    align-items: stretch;
+    display: flex;
+    flex: 1;
   }
 
   & .menu-link {
+    align-items: center;
     color: $white;
-    display: block;
-    padding: 1.5rem 0;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    padding: 0 2rem;
     text-decoration: none;
   }
 
-  & .news {
-    display: block;
-    margin: 4rem 0 4rem;
-    text-align: center;
-  }
-
-  & .social {
-    display: flex;
-    justify-content: center;
-
-    a {
-      margin: 0 2rem;
-    }
+  & .btn-lang {
+    background: transparent;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    font-weight: bold;
+    height: 100%;
+    padding: 0 2rem;
+    position: relative;
+    right: -2rem;
   }
 }
 </style>

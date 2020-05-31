@@ -51,5 +51,10 @@
   fill: $white;
   height: 2rem;
   width: 10.6rem;
+
+  @include for-tablet-portrait-up {
+    height: 4rem;
+    width: 21.2rem;
+  }
 }
 </style>
