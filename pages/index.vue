@@ -286,23 +286,4 @@
 export default {}
 </script>
 
-<style>
-.bg {
-  background-image: url('~assets/images/bg1.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid black;
-  height: 20rem;
-  width: 20rem;
-}
-.bg-two {
-  background-image: url('~assets/images/bg2.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid black;
-  height: 43rem;
-  width: 192rem;
-}
-</style>
+<style></style>

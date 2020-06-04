@@ -25,7 +25,6 @@ export default Vue.extend({
   display: inline-flex;
   height: 6rem;
   justify-content: center;
-  margin-top: 4rem;
   width: 6rem;
 
   .icon {
