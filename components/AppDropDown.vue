@@ -1,92 +1,79 @@
 <template>
-  <header class="header">
-    <div class="header-container">
-      <nuxt-link to="/" exact class="logo" @click.native="closeMenu">
-        <AppLogo />
-      </nuxt-link>
-      <div class="menu">
-        <AppDropDown title="A propos">
-          <li>
-            <nuxt-link class="menu-sublink" to="/festival">
-              le festival
-            </nuxt-link>
-            <nuxt-link class="menu-sublink" to="/test">
-              le festival
-            </nuxt-link>
-          </li>
-        </AppDropDown>
-
-        <AppDropDown title="Prog">
-          <li>
-            <nuxt-link class="menu-sublink" to="/archives">
-              archives
-            </nuxt-link>
-          </li>
-        </AppDropDown>
-
-        <nuxt-link to="/contact" class="menu-link">Contact</nuxt-link>
-      </div>
-      <button class="btn-lang">EN</button>
-    </div>
-  </header>
+  <div class="menu-link" @mouseenter="showHover" @mouseleave="hideHover">
+    {{ title }}
+    <AppIconMenuDrop />
+    <ul class="menu-dropdown" :class="{ show: showLinks }">
+      <slot />
+    </ul>
+  </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import AppDropDown from '@/components/AppDropDown'
 
 export default Vue.extend({
-  components: {
-    AppDropDown
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {
-      openMenu: false
+      showLinks: true
     }
   },
   methods: {
-    displayMenu() {
-      this.openMenu = !this.openMenu
+    showHover() {
+      this.showLinks = true
     },
-    closeMenu() {
-      this.openMenu = false
+    hideHover() {
+      this.showLinks = false
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
-.header {
-  align-items: center;
-  background-color: $aqua-blue;
-  color: $white;
+.menu-dropdown li {
   display: none;
-  font-family: Rubik;
-  font-size: 1.8rem;
-  font-weight: bold;
-  height: 8rem;
-  position: fixed;
-  width: 100%;
+}
 
-  @include for-tablet-landscape-up {
-    display: initial;
-  }
+.menu-dropdown.show li {
+  display: initial;
+}
 
-  &-container {
-    display: flex;
-    height: 100%;
-    margin: 0 auto;
-    max-width: 120rem;
-    padding: 0 2rem;
-    position: relative;
-    width: 100%;
-  }
+.header {
+  // align-items: center;
+  // background-color: $aqua-blue;
+  // color: $white;
+  // display: none;
+  // font-family: Rubik;
+  // font-size: 1.8rem;
+  // font-weight: bold;
+  // height: 8rem;
+  // position: fixed;
+  // width: 100%;
 
-  .logo {
-    align-items: center;
-    display: flex;
-    margin-right: 2rem;
-  }
+  // @include for-tablet-landscape-up {
+  //   display: initial;
+  // }
+
+  // &-container {
+  //   display: flex;
+  //   height: 100%;
+  //   margin: 0 auto;
+  //   max-width: 120rem;
+  //   padding: 0 2rem;
+  //   position: relative;
+  //   width: 100%;
+  // }
+
+  // .logo {
+  //   align-items: center;
+  //   display: flex;
+  //   margin-right: 2rem;
+  // }
 
   & .menu {
     align-items: stretch;
