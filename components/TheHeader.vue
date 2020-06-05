@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header-container">
-      <nuxt-link to="/" class="logo" @click.native="closeMenu">
+      <nuxt-link to="/" exact class="logo" @click.native="closeMenu">
         <AppLogo />
       </nuxt-link>
       <div class="menu">
@@ -14,16 +14,6 @@
                 le festival
               </nuxt-link>
             </li>
-            <li>
-              <nuxt-link class="menu-sublink" to="/">
-                l equipe
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link class="menu-sublink" to="/">
-                Partenaires
-              </nuxt-link>
-            </li>
           </ul>
         </div>
         <div class="menu-link">
@@ -31,13 +21,8 @@
           <AppIconMenuDrop />
           <ul class="menu-dropdown">
             <li>
-              <nuxt-link class="menu-sublink" to="/">
-                test
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link class="menu-sublink" to="/">
-                test test
+              <nuxt-link class="menu-sublink" to="/archives">
+                archives
               </nuxt-link>
             </li>
           </ul>
@@ -159,6 +144,13 @@ export default Vue.extend({
     padding: 0 2rem;
     position: relative;
     right: -2rem;
+  }
+
+  .nuxt-link-exact-active {
+    background: red;
+  }
+  .nuxt-link-active {
+    border: 2px solid lime;
   }
 }
 </style>

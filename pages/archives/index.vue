@@ -1,5 +1,5 @@
 <template>
-  <div>festival</div>
+  <div>archives</div>
 </template>
 
 <script>
@@ -8,4 +8,8 @@ import Vue from 'vue'
 export default Vue.extend({})
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+div {
+  padding: 20rem;
+}
+</style>
