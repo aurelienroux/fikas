@@ -13,6 +13,9 @@
               <nuxt-link class="menu-sublink" to="/festival">
                 le festival
               </nuxt-link>
+              <nuxt-link class="menu-sublink" to="/test">
+                le festival
+              </nuxt-link>
             </li>
           </ul>
         </div>
@@ -102,20 +105,19 @@ export default Vue.extend({
       text-decoration: none;
       position: relative;
 
-      &:hover {
-        color: $charcoal-grey;
-        background: $white;
-      }
+      // &:hover {
+      //   color: $charcoal-grey;
+      //   background: $white;
+      // }
     }
 
     &-dropdown {
       background-color: $aqua-blue;
-      border-top: 0.2rem solid $white;
       left: 0;
       list-style-type: none;
       padding: 0;
       position: absolute;
-      top: calc(100% - 0.2rem);
+      top: 100%;
       width: 100%;
     }
 
@@ -125,7 +127,19 @@ export default Vue.extend({
       font-size: 1.4rem;
       font-weight: normal;
       padding: 1rem 2rem;
+      position: relative;
       text-decoration: none;
+
+      &::after {
+        background-color: $white;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 20px;
+      }
 
       &:hover {
         color: $charcoal-grey;
@@ -146,11 +160,9 @@ export default Vue.extend({
     right: -2rem;
   }
 
-  .nuxt-link-exact-active {
-    background: red;
-  }
-  .nuxt-link-active {
-    border: 2px solid lime;
+  .menu-sublink.nuxt-link-exact-active {
+    background: $white;
+    color: $charcoal-grey;
   }
 }
 </style>
