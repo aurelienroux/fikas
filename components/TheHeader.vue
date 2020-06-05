@@ -102,21 +102,6 @@ export default Vue.extend({
       padding: 0 2rem;
       text-decoration: none;
       position: relative;
-
-      // &:hover {
-      //   color: $charcoal-grey;
-      //   background: $white;
-      // }
-    }
-
-    &-dropdown {
-      background-color: $aqua-blue;
-      left: 0;
-      list-style-type: none;
-      padding: 0;
-      position: absolute;
-      top: 100%;
-      width: 100%;
     }
 
     &-sublink {
