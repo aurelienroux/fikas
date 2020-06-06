@@ -5,28 +5,54 @@
         <AppLogo />
       </nuxt-link>
       <div class="menu">
-        <AppDropDown title="A propos">
+        <AppDropDown
+          title="A propos"
+          :class="{ 'active-menu': currentMenu === 'about' }"
+        >
           <li>
-            <nuxt-link class="menu-sublink" to="/festival">
+            <nuxt-link
+              class="menu-sublink"
+              to="/festival"
+              @click.native="changeCurrentMenu('about')"
+            >
               le festival
             </nuxt-link>
-            <nuxt-link class="menu-sublink" to="/test">
+            <nuxt-link
+              class="menu-sublink"
+              to="/test"
+              @click.native="changeCurrentMenu('about')"
+            >
               le festival
             </nuxt-link>
           </li>
         </AppDropDown>
 
-        <AppDropDown title="Prog">
+        <AppDropDown
+          title="Prog"
+          :class="{ 'active-menu': currentMenu === 'prog' }"
+        >
           <li>
-            <nuxt-link class="menu-sublink" to="/archives">
+            <nuxt-link
+              class="menu-sublink"
+              to="/archives"
+              @click.native="changeCurrentMenu('prog')"
+            >
               archives
             </nuxt-link>
           </li>
         </AppDropDown>
 
-        <nuxt-link to="/contact" class="menu-link">Contact</nuxt-link>
+        <nuxt-link
+          to="/contact"
+          class="menu-link"
+          :class="{ 'active-menu': currentMenu === 'contact' }"
+          @click.native="changeCurrentMenu('contact')"
+        >
+          Contact
+        </nuxt-link>
       </div>
       <button class="btn-lang">EN</button>
+      {{ currentMenu }}
     </div>
   </header>
 </template>
@@ -44,18 +70,30 @@ export default Vue.extend({
       openMenu: false
     }
   },
+  computed: {
+    currentMenu() {
+      return this.$store.state.menu.currentMenuLink
+    }
+  },
   methods: {
     displayMenu() {
       this.openMenu = !this.openMenu
     },
     closeMenu() {
       this.openMenu = false
+      this.$store.commit('menu/change', 'home')
+    },
+    changeCurrentMenu(link) {
+      this.$store.commit('menu/change', link)
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
+.active-menu {
+  color: red !important;
+}
 .header {
   align-items: center;
   background-color: $aqua-blue;
