@@ -2,6 +2,7 @@ import Vue from 'vue'
 import AppBtn from '~/components/UI/Buttons/AppBtn.vue'
 import AppBtnFacebook from '~/components/UI/Buttons/AppBtnFacebook.vue'
 import AppBtnInsta from '~/components/UI/Buttons/AppBtnInsta.vue'
+import AppBtnScrollTop from '~/components/UI/Buttons/AppBtnScrollTop.vue'
 import AppBtnYoutube from '~/components/UI/Buttons/AppBtnYoutube.vue'
 import AppIconClose from '~/components/UI/Icons/AppIconClose.vue'
 import AppIconDrawer from '~/components/UI/Icons/AppIconDrawer.vue'
@@ -17,6 +18,7 @@ import AppLogoFooter from '~/components/UI/Logos/AppLogoFooter.vue'
 Vue.component('AppBtn', AppBtn)
 Vue.component('AppBtnFacebook', AppBtnFacebook)
 Vue.component('AppBtnInsta', AppBtnInsta)
+Vue.component('AppBtnScrollTop', AppBtnScrollTop)
 Vue.component('AppBtnYoutube', AppBtnYoutube)
 Vue.component('AppIconClose', AppIconClose)
 Vue.component('AppIconDrawer', AppIconDrawer)
