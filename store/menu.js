@@ -1,3 +1,10 @@
+export const menuEnum = {
+  home: 'home',
+  about: 'about',
+  prog: 'prog',
+  contact: 'contact'
+}
+
 export const state = () => ({
   currentMenuLink: 'home'
 })

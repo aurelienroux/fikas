@@ -7,20 +7,20 @@
       <div class="menu">
         <AppDropDown
           title="A propos"
-          :class="{ 'active-menu': currentMenu === 'about' }"
+          :class="{ 'menu-active': currentMenu === menuEnum.about }"
         >
           <li>
             <nuxt-link
               class="menu-sublink"
               to="/festival"
-              @click.native="changeCurrentMenu('about')"
+              @click.native="changeCurrentMenu(menuEnum.about)"
             >
               le festival
             </nuxt-link>
             <nuxt-link
               class="menu-sublink"
               to="/test"
-              @click.native="changeCurrentMenu('about')"
+              @click.native="changeCurrentMenu(menuEnum.about)"
             >
               le festival
             </nuxt-link>
@@ -28,13 +28,13 @@
         </AppDropDown>
         <AppDropDown
           title="Programmation"
-          :class="{ 'active-menu': currentMenu === 'prog' }"
+          :class="{ 'menu-active': currentMenu === menuEnum.prog }"
         >
           <li>
             <nuxt-link
               class="menu-sublink"
               to="/archives"
-              @click.native="changeCurrentMenu('prog')"
+              @click.native="changeCurrentMenu(menuEnum.prog)"
             >
               archives
             </nuxt-link>
@@ -43,8 +43,8 @@
         <nuxt-link
           to="/contact"
           class="menu-link"
-          :class="{ 'active-menu': currentMenu === 'contact' }"
-          @click.native="changeCurrentMenu('contact')"
+          :class="{ 'menu-active': currentMenu === menuEnum.contact }"
+          @click.native="changeCurrentMenu(menuEnum.contact)"
         >
           Contact
         </nuxt-link>
@@ -57,6 +57,7 @@
 <script>
 import Vue from 'vue'
 import AppDropDown from '@/components/AppDropDown'
+import { menuEnum } from '@/store/menu'
 
 export default Vue.extend({
   components: {
@@ -64,7 +65,8 @@ export default Vue.extend({
   },
   data() {
     return {
-      openMenu: false
+      openMenu: false,
+      menuEnum
     }
   },
   computed: {
@@ -78,7 +80,7 @@ export default Vue.extend({
     },
     closeMenu() {
       this.openMenu = false
-      this.$store.commit('menu/change', 'home')
+      this.$store.commit('menu/change', menuEnum.home)
     },
     changeCurrentMenu(link) {
       this.$store.commit('menu/changeMenu', link)
@@ -88,9 +90,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.active-menu {
-  border-bottom: 2px solid $white !important;
-}
 .header {
   align-items: center;
   background-color: $aqua-blue;
@@ -130,14 +129,18 @@ export default Vue.extend({
 
     &-link {
       align-items: center;
+      border-bottom: 2px solid $aqua-blue;
       color: $white;
       cursor: pointer;
       display: flex;
       height: 100%;
       padding: 0 2rem;
-      text-decoration: none;
       position: relative;
-      border-bottom: 2px solid $aqua-blue;
+      text-decoration: none;
+    }
+
+    &-active {
+      border-bottom: 2px solid $white;
     }
 
     &-sublink {
