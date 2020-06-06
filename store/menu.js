@@ -3,7 +3,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  change(state, link) {
+  changeMenu(state, link) {
     state.currentMenuLink = link
   }
 }

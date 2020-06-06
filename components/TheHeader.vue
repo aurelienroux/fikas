@@ -26,9 +26,8 @@
             </nuxt-link>
           </li>
         </AppDropDown>
-
         <AppDropDown
-          title="Prog"
+          title="Programmation"
           :class="{ 'active-menu': currentMenu === 'prog' }"
         >
           <li>
@@ -41,7 +40,6 @@
             </nuxt-link>
           </li>
         </AppDropDown>
-
         <nuxt-link
           to="/contact"
           class="menu-link"
@@ -52,7 +50,6 @@
         </nuxt-link>
       </div>
       <button class="btn-lang">EN</button>
-      {{ currentMenu }}
     </div>
   </header>
 </template>
@@ -84,7 +81,7 @@ export default Vue.extend({
       this.$store.commit('menu/change', 'home')
     },
     changeCurrentMenu(link) {
-      this.$store.commit('menu/change', link)
+      this.$store.commit('menu/changeMenu', link)
     }
   }
 })
@@ -92,7 +89,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .active-menu {
-  color: red !important;
+  border-bottom: 2px solid $white !important;
 }
 .header {
   align-items: center;
@@ -140,6 +137,7 @@ export default Vue.extend({
       padding: 0 2rem;
       text-decoration: none;
       position: relative;
+      border-bottom: 2px solid $aqua-blue;
     }
 
     &-sublink {
