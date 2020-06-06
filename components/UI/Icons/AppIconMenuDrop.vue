@@ -15,6 +15,9 @@
 .icon {
   fill: $white;
   height: 0.6rem;
+  margin: 0.5rem;
+  position: relative;
+  top: 0.2rem;
   width: 0.8rem;
 }
 </style>
