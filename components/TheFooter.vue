@@ -6,11 +6,12 @@
         <div>
           <AppLogoFooter class="logo" />
           <p>
-            &copy; FIKA(S) {{ new Date().getFullYear() }} | Tous droits réservés
+            &copy; FIKA(S) {{ new Date().getFullYear() }} |
+            {{ $t('footer.copyright') }}
           </p>
         </div>
         <AppBtn class="newsletter" btn-style="button--full">
-          s'inscrire a l'infolettre
+          {{ $t('footer.newsletter') }}
         </AppBtn>
         <div>
           <AppBtnFacebook class="social-btn" />

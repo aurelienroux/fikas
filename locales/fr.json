@@ -1,0 +1,13 @@
+{
+  "header": {
+    "about": "A propos",
+    "archives": "Archives",
+    "contact": "Contact",
+    "festival": "Le festival",
+    "programmation": "Programmation"
+  },
+  "footer": {
+    "copyright": "Tous droits reserves",
+    "newsletter": "S'inscrire à l'infolettre"
+  }
+}

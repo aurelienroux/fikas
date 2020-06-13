@@ -1,55 +1,55 @@
 <template>
   <header class="header">
     <div class="header-container">
-      <nuxt-link to="/" exact class="logo" @click.native="closeMenu">
+      <nuxt-link
+        class="logo"
+        :to="localePath('/')"
+        exact
+        @click.native="closeMenu"
+      >
         <AppLogo />
       </nuxt-link>
       <div class="menu">
         <AppDropDown
-          title="A propos"
+          :title="$t('header.about')"
           :class="{ 'menu-active': currentMenu === menuEnum.about }"
         >
           <li>
             <nuxt-link
               class="menu-sublink"
-              to="/festival"
+              :to="localePath('/festival')"
               @click.native="changeCurrentMenu(menuEnum.about)"
             >
-              le festival
-            </nuxt-link>
-            <nuxt-link
-              class="menu-sublink"
-              to="/test"
-              @click.native="changeCurrentMenu(menuEnum.about)"
-            >
-              le festival
+              {{ $t('header.festival') }}
             </nuxt-link>
           </li>
         </AppDropDown>
         <AppDropDown
-          title="Programmation"
+          :title="$t('programmation')"
           :class="{ 'menu-active': currentMenu === menuEnum.prog }"
         >
           <li>
             <nuxt-link
               class="menu-sublink"
-              to="/archives"
+              :to="localePath('/archives')"
               @click.native="changeCurrentMenu(menuEnum.prog)"
             >
-              archives
+              {{ $t('header.archives') }}
             </nuxt-link>
           </li>
         </AppDropDown>
         <nuxt-link
-          to="/contact"
           class="menu-link"
           :class="{ 'menu-active': currentMenu === menuEnum.contact }"
+          :to="localePath('/contact')"
           @click.native="changeCurrentMenu(menuEnum.contact)"
         >
-          Contact
+          {{ $t('header.contact') }}
         </nuxt-link>
       </div>
-      <button class="btn-lang">EN</button>
+      <nuxt-link class="btn-lang" :to="switchLocalePath(switchLocale)">
+        {{ switchLocale }}
+      </nuxt-link>
     </div>
   </header>
 </template>
@@ -72,6 +72,9 @@ export default Vue.extend({
   computed: {
     currentMenu() {
       return this.$store.state.menu.currentMenuLink
+    },
+    switchLocale() {
+      return this.$i18n.locale === 'fr' ? 'en' : 'fr'
     }
   },
   methods: {
@@ -171,15 +174,15 @@ export default Vue.extend({
   }
 
   & .btn-lang {
+    align-items: center;
     background: transparent;
-    border: none;
     color: $white;
-    cursor: pointer;
-    font-weight: bold;
-    height: 100%;
+    display: flex;
     padding: 0 2rem;
     position: relative;
     right: -2rem;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   .menu-sublink.nuxt-link-exact-active {
