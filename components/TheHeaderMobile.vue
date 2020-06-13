@@ -89,6 +89,7 @@ export default Vue.extend({
         class: this.openMenu ? 'body-fixed' : ''
       }
     }
+
   }
 })
 </script>
