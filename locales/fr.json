@@ -7,7 +7,9 @@
     "programmation": "Programmation"
   },
   "footer": {
-    "copyright": "Tous droits reserves",
-    "newsletter": "S'inscrire à l'infolettre"
+    "copyright": "Tous droits reserves"
+  },
+  "newsletter": {
+    "subscription": "S'inscrire à l'infolettre"
   }
 }

@@ -11,7 +11,7 @@
           </p>
         </div>
         <AppBtn class="newsletter" btn-style="button--full">
-          {{ $t('footer.newsletter') }}
+          {{ $t('newsletter.subscription') }}
         </AppBtn>
         <div>
           <AppBtnFacebook class="social-btn" />

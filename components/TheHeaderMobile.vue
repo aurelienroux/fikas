@@ -1,35 +1,51 @@
 <template>
   <header class="header-mobile">
     <div class="top">
-      <nuxt-link to="/" @click.native="closeMenu">
+      <nuxt-link :to="localePath('/')" exact @click.native="closeMenu">
         <AppLogo />
       </nuxt-link>
       <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
     <div class="menu" :class="{ open: openMenu }">
-      <AppDrawer title="A propos">
-        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
-          Le festival
-        </nuxt-link>
-        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
-          L equipe
-        </nuxt-link>
-        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
-          Partenaires
+      <AppDrawer :title="$t('header.about')">
+        <nuxt-link
+          class="menu-sublink"
+          :to="localePath('/festival')"
+          @click.native="closeMenu"
+        >
+          {{ $t('header.festival') }}
         </nuxt-link>
       </AppDrawer>
-      <AppDrawer title="Programmation">
-        <nuxt-link class="menu-sublink" to="/" @click.native="closeMenu">
-          testtest
+
+      <AppDrawer :title="$t('header.programmation')">
+        <nuxt-link
+          class="menu-sublink"
+          :to="localePath('/archives')"
+          @click.native="closeMenu"
+        >
+          {{ $t('header.archives') }}
         </nuxt-link>
       </AppDrawer>
-      <nuxt-link class="menu-link" to="/contact" @click.native="closeMenu">
-        Contact
+
+      <nuxt-link
+        class="menu-link"
+        :to="localePath('/contact')"
+        @click.native="closeMenu"
+      >
+        {{ $t('header.contact') }}
       </nuxt-link>
-      <button class="btn-lang">EN</button>
+
+      <nuxt-link
+        class="btn-lang"
+        :to="switchLocalePath(switchLocale)"
+        @click.native="closeMenu"
+      >
+        {{ switchLocale }}
+      </nuxt-link>
+
       <div class="news">
         <AppBtn btn-style="button--full">
-          S'inscrire a l infolettre
+          {{ $t('newsletter.subscription') }}
         </AppBtn>
       </div>
       <div class="social">
@@ -52,6 +68,11 @@ export default Vue.extend({
   data() {
     return {
       openMenu: false
+    }
+  },
+  computed: {
+    switchLocale() {
+      return this.$i18n.locale === 'fr' ? 'en' : 'fr'
     }
   },
   methods: {
@@ -119,10 +140,9 @@ export default Vue.extend({
   }
 
   & .btn-lang {
-    background: transparent;
-    border: none;
-    font-weight: bold;
-    text-align: left;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
     width: 100%;
   }
 

@@ -25,7 +25,7 @@
           </li>
         </AppDropDown>
         <AppDropDown
-          :title="$t('programmation')"
+          :title="$t('header.programmation')"
           :class="{ 'menu-active': currentMenu === menuEnum.prog }"
         >
           <li>
