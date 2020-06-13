@@ -8,14 +8,12 @@
 </template>
 
 <script>
-
 import TheHeader from '@/components/TheHeader'
 import TheHeaderMobile from '@/components/TheHeaderMobile'
 import TheFooter from '@/components/TheFooter'
 
 export default {
   components: {
-
     TheHeader,
     TheHeaderMobile,
     TheFooter
@@ -27,6 +25,10 @@ export default {
 html {
   font-size: 10px;
   scroll-behavior: smooth;
+}
+
+body.body-fixed {
+  position: fixed;
 }
 
 *,

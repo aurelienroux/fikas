@@ -1,6 +1,6 @@
 {
   "name": "fikas",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "fikas festival",
   "author": "Aurélien Roux",
   "private": true,
@@ -16,7 +16,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "nuxt-i18n": "^6.12.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
