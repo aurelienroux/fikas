@@ -27,6 +27,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body.body-fixed {
+  position: fixed;
+}
+
 *,
 *:before,
 *:after {

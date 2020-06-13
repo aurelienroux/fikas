@@ -82,6 +82,13 @@ export default Vue.extend({
     closeMenu() {
       this.openMenu = false
     }
+  },
+  head() {
+    return {
+      bodyAttrs: {
+        class: this.openMenu ? 'body-fixed' : ''
+      }
+    }
   }
 })
 </script>
@@ -94,6 +101,7 @@ export default Vue.extend({
   font-weight: bold;
   position: fixed;
   width: 100%;
+  z-index: 10;
 
   @include for-tablet-landscape-up {
     display: none;
