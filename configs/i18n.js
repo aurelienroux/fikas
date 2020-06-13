@@ -1,7 +1,12 @@
 module.exports = {
-  locales: ['en', 'fr'],
+  locales: [
+    { code: 'en', iso: 'en-US' },
+    { code: 'fr', iso: 'fr-FR' }
+  ],
   defaultLocale: 'fr',
   strategy: 'prefix',
+  seo: true,
+  baseUrl: process.env.BASE_URL,
   vueI18n: {
     fallbackLocale: 'fr',
     messages: {
