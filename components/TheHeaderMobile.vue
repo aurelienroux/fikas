@@ -7,7 +7,7 @@
       <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
     <div class="menu" :class="{ open: openMenu }">
-      <AppDrawer :title="about">
+      <AppDrawer title="about">
         <nuxt-link
           class="menu-sublink"
           to="/festival"
@@ -17,7 +17,7 @@
         </nuxt-link>
       </AppDrawer>
 
-      <AppDrawer :title="programmation">
+      <AppDrawer title="programmation">
         <nuxt-link
           class="menu-sublink"
           to="/archives"

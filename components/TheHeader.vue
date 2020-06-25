@@ -6,7 +6,7 @@
       </nuxt-link>
       <div class="menu">
         <AppDropDown
-          :title="about"
+          title="about"
           :class="{ 'menu-active': currentMenu === menuEnum.about }"
         >
           <li>
@@ -27,7 +27,7 @@
           </li>
         </AppDropDown>
         <AppDropDown
-          :title="programmation"
+          title="programmation"
           :class="{ 'menu-active': currentMenu === menuEnum.prog }"
         >
           <li>
@@ -171,15 +171,15 @@ export default Vue.extend({
   }
 
   & .btn-lang {
-    align-items: center;
     background: transparent;
+    border: none;
     color: $white;
-    display: flex;
+    cursor: pointer;
+    font-weight: bold;
+    height: 100%;
     padding: 0 2rem;
     position: relative;
     right: -2rem;
-    text-decoration: none;
-    text-transform: uppercase;
   }
 
   .menu-sublink.nuxt-link-exact-active {
