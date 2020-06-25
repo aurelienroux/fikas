@@ -19,7 +19,7 @@
             </nuxt-link>
             <nuxt-link
               class="menu-sublink"
-              to="/test"
+              to="/festival"
               @click.native="changeCurrentMenu(menuEnum.about)"
             >
               le festival
