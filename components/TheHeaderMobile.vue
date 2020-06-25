@@ -1,51 +1,41 @@
 <template>
   <header class="header-mobile">
     <div class="top">
-      <nuxt-link :to="localePath('/')" exact @click.native="closeMenu">
+      <nuxt-link to="/" exact @click.native="closeMenu">
         <AppLogo />
       </nuxt-link>
       <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
     <div class="menu" :class="{ open: openMenu }">
-      <AppDrawer :title="$t('header.about')">
+      <AppDrawer :title="about">
         <nuxt-link
           class="menu-sublink"
-          :to="localePath('/festival')"
+          to="/festival"
           @click.native="closeMenu"
         >
-          {{ $t('header.festival') }}
+          festival
         </nuxt-link>
       </AppDrawer>
 
-      <AppDrawer :title="$t('header.programmation')">
+      <AppDrawer :title="programmation">
         <nuxt-link
           class="menu-sublink"
-          :to="localePath('/archives')"
+          to="/archives"
           @click.native="closeMenu"
         >
-          {{ $t('header.archives') }}
+          archives
         </nuxt-link>
       </AppDrawer>
 
-      <nuxt-link
-        class="menu-link"
-        :to="localePath('/contact')"
-        @click.native="closeMenu"
-      >
-        {{ $t('header.contact') }}
+      <nuxt-link class="menu-link" to="/contact" @click.native="closeMenu">
+        contact
       </nuxt-link>
 
-      <nuxt-link
-        class="btn-lang"
-        :to="switchLocalePath(switchLocale)"
-        @click.native="closeMenu"
-      >
-        {{ switchLocale }}
-      </nuxt-link>
+      <button class="btn-lang">EN</button>
 
       <div class="news">
         <AppBtn btn-style="button--full">
-          {{ $t('newsletter.subscription') }}
+          subscription
         </AppBtn>
       </div>
       <div class="social">
@@ -70,11 +60,6 @@ export default Vue.extend({
       openMenu: false
     }
   },
-  computed: {
-    switchLocale() {
-      return this.$i18n.locale === 'fr' ? 'en' : 'fr'
-    }
-  },
   methods: {
     displayMenu() {
       this.openMenu = !this.openMenu
@@ -89,7 +74,6 @@ export default Vue.extend({
         class: this.openMenu ? 'body-fixed' : ''
       }
     }
-
   }
 })
 </script>
