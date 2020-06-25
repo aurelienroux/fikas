@@ -20,7 +20,14 @@
               :to="localePath('/festival')"
               @click.native="changeCurrentMenu(menuEnum.about)"
             >
-              {{ $t('header.festival') }}
+              le festival
+            </nuxt-link>
+            <nuxt-link
+              class="menu-sublink"
+              to="/festival"
+              @click.native="changeCurrentMenu(menuEnum.about)"
+            >
+              le festival
             </nuxt-link>
           </li>
         </AppDropDown>

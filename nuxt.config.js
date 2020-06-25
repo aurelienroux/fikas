@@ -1,12 +1,74 @@
 export default {
   mode: 'universal',
-  head: require('./configs/head'),
-  css: require('./configs/css'),
-  plugins: require('./configs/plugins'),
-  buildModules: require('./configs/buildModules'),
-  styleResources: require('./configs/styleResources'),
-  modules: require('./configs/modules'),
-  axios: require('./configs/axios'),
-  build: require('./configs/build'),
-  i18n: require('./configs/i18n')
+  target: 'static',
+  /*
+   ** Headers of the page
+   */
+  head: {
+    title: process.env.npm_package_name || '',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Karla&family=Rubik:wght@400;700&display=swap'
+      }
+    ]
+  },
+  /*
+   ** Customize the progress-bar color
+   */
+  loading: { color: '#fff' },
+  /*
+   ** Global CSS
+   */
+  css: ['normalize.css/normalize.css'],
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [{ src: '~/plugins/global.js' }],
+  /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources'
+  ],
+  styleResources: {
+    scss: ['~assets/scss/index.scss']
+  },
+  /*
+   ** Nuxt.js modules
+   */
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv'
+  ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
+  /*
+   ** Build configuration
+   */
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    cssSourceMap: true,
+    extend(config, ctx) {}
+  }
 }
