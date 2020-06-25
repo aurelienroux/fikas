@@ -1,23 +1,18 @@
 <template>
   <header class="header">
     <div class="header-container">
-      <nuxt-link
-        class="logo"
-        :to="localePath('/')"
-        exact
-        @click.native="closeMenu"
-      >
+      <nuxt-link class="logo" to="/" exact @click.native="closeMenu">
         <AppLogo />
       </nuxt-link>
       <div class="menu">
         <AppDropDown
-          :title="$t('header.about')"
+          :title="about"
           :class="{ 'menu-active': currentMenu === menuEnum.about }"
         >
           <li>
             <nuxt-link
               class="menu-sublink"
-              :to="localePath('/festival')"
+              to="/festival"
               @click.native="changeCurrentMenu(menuEnum.about)"
             >
               le festival
@@ -32,31 +27,29 @@
           </li>
         </AppDropDown>
         <AppDropDown
-          :title="$t('header.programmation')"
+          :title="programmation"
           :class="{ 'menu-active': currentMenu === menuEnum.prog }"
         >
           <li>
             <nuxt-link
               class="menu-sublink"
-              :to="localePath('/archives')"
+              to="/archives"
               @click.native="changeCurrentMenu(menuEnum.prog)"
             >
-              {{ $t('header.archives') }}
+              archives
             </nuxt-link>
           </li>
         </AppDropDown>
         <nuxt-link
           class="menu-link"
           :class="{ 'menu-active': currentMenu === menuEnum.contact }"
-          :to="localePath('/contact')"
+          to="/contact"
           @click.native="changeCurrentMenu(menuEnum.contact)"
         >
-          {{ $t('header.contact') }}
+          contact
         </nuxt-link>
       </div>
-      <nuxt-link class="btn-lang" :to="switchLocalePath(switchLocale)">
-        {{ switchLocale }}
-      </nuxt-link>
+      <button class="btn-lang">EN</button>
     </div>
   </header>
 </template>
@@ -79,9 +72,6 @@ export default Vue.extend({
   computed: {
     currentMenu() {
       return this.$store.state.menu.currentMenuLink
-    },
-    switchLocale() {
-      return this.$i18n.locale === 'fr' ? 'en' : 'fr'
     }
   },
   methods: {
