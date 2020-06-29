@@ -1,41 +1,51 @@
 <template>
   <header class="header-mobile">
     <div class="top">
-      <nuxt-link to="/" exact @click.native="closeMenu">
+      <nuxt-link :to="localePath('/')" exact @click.native="closeMenu">
         <AppLogo />
       </nuxt-link>
       <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
     <div class="menu" :class="{ open: openMenu }">
-      <AppDrawer title="about">
+      <AppDrawer :title="$t('header.about')">
         <nuxt-link
           class="menu-sublink"
-          to="/festival"
+          :to="localePath('/festival')"
           @click.native="closeMenu"
         >
-          festival
+          {{ $t('header.festival') }}
         </nuxt-link>
       </AppDrawer>
 
-      <AppDrawer title="programmation">
+      <AppDrawer :title="$t('header.programmation')">
         <nuxt-link
           class="menu-sublink"
-          to="/archives"
+          :to="localePath('/archives')"
           @click.native="closeMenu"
         >
-          archives
+          {{ $t('header.archives') }}
         </nuxt-link>
       </AppDrawer>
 
-      <nuxt-link class="menu-link" to="/contact" @click.native="closeMenu">
-        contact
+      <nuxt-link
+        class="menu-link"
+        :to="localePath('/contact')"
+        @click.native="closeMenu"
+      >
+        {{ $t('header.contact') }}
       </nuxt-link>
 
-      <button class="btn-lang">EN</button>
+      <nuxt-link
+        class="btn-lang"
+        :to="switchLocalePath(switchLocale)"
+        @click.native="closeMenu"
+      >
+        {{ switchLocale }}
+      </nuxt-link>
 
       <div class="news">
         <AppBtn btn-style="button--full">
-          subscription
+          {{ $t('newsletter.subscription') }}
         </AppBtn>
       </div>
       <div class="social">
@@ -58,6 +68,11 @@ export default Vue.extend({
   data() {
     return {
       openMenu: false
+    }
+  },
+  computed: {
+    switchLocale() {
+      return this.$i18n.locale === 'fr' ? 'en' : 'fr'
     }
   },
   methods: {
