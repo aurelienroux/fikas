@@ -83,7 +83,7 @@ export default Vue.extend({
     },
     closeMenu() {
       this.openMenu = false
-      this.$store.commit('menu/change', menuEnum.home)
+      this.$store.commit('menu/changeMenu', menuEnum.home)
     },
     changeCurrentMenu(link) {
       this.$store.commit('menu/changeMenu', link)
