@@ -54,7 +54,15 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    'nuxt-i18n',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: 'HjQSMT5E6T1aBYgn4dbb5wtt',
+        cacheProvider: 'memory'
+      }
+    ]
   ],
   /*
    ** Axios module configuration
@@ -70,5 +78,22 @@ export default {
      */
     cssSourceMap: true,
     extend(config, ctx) {}
+  },
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US' },
+      { code: 'fr', iso: 'fr-FR' }
+    ],
+    defaultLocale: 'fr',
+    strategy: 'prefix',
+    seo: true,
+    baseUrl: process.env.BASE_URL,
+    vueI18n: {
+      fallbackLocale: 'fr',
+      messages: {
+        en: require('./locales/en.json'),
+        fr: require('./locales/fr.json')
+      }
+    }
   }
 }
