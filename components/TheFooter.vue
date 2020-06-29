@@ -5,10 +5,13 @@
       <div class="wrapper">
         <div>
           <AppLogoFooter class="logo" />
-          <p>&copy; FIKA(S) {{ new Date().getFullYear() }} | footer</p>
+          <p>
+            &copy; FIKA(S) {{ new Date().getFullYear() }} |
+            {{ $t('footer.copyright') }}
+          </p>
         </div>
         <AppBtn class="newsletter" btn-style="button--full">
-          newsletter
+          {{ $t('newsletter.subscription') }}
         </AppBtn>
         <div>
           <AppBtnFacebook class="social-btn" />
