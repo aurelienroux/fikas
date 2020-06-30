@@ -104,6 +104,7 @@ export default Vue.extend({
   height: 8rem;
   position: fixed;
   width: 100%;
+  z-index: 10;
 
   @include for-tablet-landscape-up {
     display: initial;
@@ -174,15 +175,15 @@ export default Vue.extend({
   }
 
   & .btn-lang {
+    align-items: center;
     background: transparent;
-    border: none;
     color: $white;
-    cursor: pointer;
-    font-weight: bold;
-    height: 100%;
+    display: flex;
     padding: 0 2rem;
     position: relative;
     right: -2rem;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   .menu-sublink.nuxt-link-exact-active {
