@@ -37,15 +37,9 @@ export default {
       default: () => {}
     }
   },
-  data() {
-    return {
-      width: 0,
-      height: 0
-    }
-  },
   computed: {
     videoLinkMobile() {
-      return `https://www.youtube.com/embed/${this.blok.video_id}?showinfo=0&autoplay=0&mute=1&modestbranding=1&controls=0&loop=1&playlist=${this.blok.video_id}`
+      return `https://www.youtube.com/embed/${this.blok.video_id}?showinfo=0&autoplay=0&mute=1&modestbranding=1&controls=1&loop=1&playlist=${this.blok.video_id}`
     },
     videoLinkDesktop() {
       return `https://www.youtube.com/embed/${this.blok.video_id}?showinfo=0&autoplay=1&mute=1&modestbranding=1&controls=0&loop=1&playlist=${this.blok.video_id}`
@@ -53,7 +47,7 @@ export default {
   },
   methods: {
     videoScroll() {
-      // console.log('test scroll')
+      // TODO:
     }
   }
 }
