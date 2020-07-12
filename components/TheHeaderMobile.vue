@@ -100,6 +100,7 @@ export default Vue.extend({
   font-size: 1.8rem;
   font-weight: bold;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 10;
 

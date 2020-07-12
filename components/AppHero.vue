@@ -15,11 +15,6 @@ export default {
       type: Object,
       default: () => {}
     }
-  },
-  data() {
-    return {
-      color: 'orange'
-    }
   }
 }
 </script>
