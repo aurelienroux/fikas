@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ full: !windowTop }">
     <div class="header-container">
       <nuxt-link
         class="logo"
@@ -66,7 +66,8 @@ export default Vue.extend({
   data() {
     return {
       openMenu: false,
-      menuEnum
+      menuEnum,
+      windowTop: true
     }
   },
   computed: {
@@ -76,6 +77,12 @@ export default Vue.extend({
     switchLocale() {
       return this.$i18n.locale === 'fr' ? 'en' : 'fr'
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.tranparentMenu)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.tranparentMenu)
   },
   methods: {
     displayMenu() {
@@ -87,6 +94,13 @@ export default Vue.extend({
     },
     changeCurrentMenu(link) {
       this.$store.commit('menu/changeMenu', link)
+    },
+    tranparentMenu() {
+      if (window.scrollY === 0) {
+        this.windowTop = true
+      } else {
+        this.windowTop = false
+      }
     }
   }
 })
@@ -95,7 +109,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .header {
   align-items: center;
-  background-color: $aqua-blue;
+  background-color: transparent;
   color: $white;
   display: none;
   font-family: Rubik;
@@ -105,6 +119,11 @@ export default Vue.extend({
   position: fixed;
   width: 100%;
   z-index: 10;
+  transition: 0.3s;
+
+  &.full {
+    background-color: $aqua-blue;
+  }
 
   @include for-tablet-landscape-up {
     display: initial;
@@ -133,7 +152,6 @@ export default Vue.extend({
 
     &-link {
       align-items: center;
-      border-bottom: 2px solid $aqua-blue;
       color: $white;
       cursor: pointer;
       display: flex;
