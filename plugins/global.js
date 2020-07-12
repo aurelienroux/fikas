@@ -14,8 +14,9 @@ import AppIconPrev from '~/components/UI/Icons/AppIconPrev.vue'
 import AppIconVideoScroll from '~/components/UI/Icons/AppIconVideoScroll.vue'
 import AppLogo from '~/components/UI/Logos/AppLogo.vue'
 import AppLogoFooter from '~/components/UI/Logos/AppLogoFooter.vue'
-import Hero from '~/components/Hero.vue'
-import Page from '~/components/Page.vue'
+import AppHero from '~/components/AppHero.vue'
+import AppHeroVideo from '~/components/AppHeroVideo.vue'
+import AppPage from '~/components/AppPage.vue'
 
 Vue.component('AppBtn', AppBtn)
 Vue.component('AppBtnFacebook', AppBtnFacebook)
@@ -32,5 +33,6 @@ Vue.component('AppIconPrev', AppIconPrev)
 Vue.component('AppIconVideoScroll', AppIconVideoScroll)
 Vue.component('AppLogo', AppLogo)
 Vue.component('AppLogoFooter', AppLogoFooter)
-Vue.component('hero', Hero)
-Vue.component('page', Page)
+Vue.component('hero', AppHero)
+Vue.component('hero-video', AppHeroVideo)
+Vue.component('page', AppPage)

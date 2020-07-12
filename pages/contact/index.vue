@@ -1,21 +1,57 @@
 <template>
-  <div>
-    <!-- <img
-      src="https://images.unsplash.com/photo-1523179985834-1363f5c47d84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-      alt=""
-    /> -->
-    contact
-  </div>
+  <main class="container">
+    <component
+      :is="story.content.component"
+      v-if="story.content.component"
+      :key="story.content._uid"
+      :blok="story.content"
+    ></component>
+  </main>
 </template>
 
 <script>
-import Vue from 'vue'
-
-export default Vue.extend({})
-</script>
-
-<style lang="scss" scoped>
-div {
-  padding: 20rem;
+export default {
+  name: 'Contact',
+  asyncData(context) {
+    return context.app.$storyapi
+      .get(`cdn/stories/${context.app.i18n.locale}/contact`, {
+        version: 'draft'
+      })
+      .then((res) => {
+        return res.data
+      })
+      .catch((res) => {
+        if (!res.response) {
+          context.error({
+            statusCode: 404,
+            message: 'Failed to receive content form api'
+          })
+        } else {
+          context.error({
+            statusCode: res.response.status,
+            message: res.response.data
+          })
+        }
+      })
+  },
+  data() {
+    return {
+      story: { content: {} }
+    }
+  },
+  mounted() {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else {
+        this.$nuxt.$router.go({
+          path: this.$nuxt.$router.currentRoute,
+          force: true
+        })
+      }
+    })
+  }
 }
-</style>
+</script>
