@@ -1,38 +1,40 @@
 import Vue from 'vue'
-import AppBtn from '~/components/UI/Buttons/AppBtn.vue'
-import AppBtnFacebook from '~/components/UI/Buttons/AppBtnFacebook.vue'
-import AppBtnInsta from '~/components/UI/Buttons/AppBtnInsta.vue'
-import AppBtnScrollTop from '~/components/UI/Buttons/AppBtnScrollTop.vue'
-import AppBtnYoutube from '~/components/UI/Buttons/AppBtnYoutube.vue'
-import AppIconClose from '~/components/UI/Icons/AppIconClose.vue'
-import AppIconDrawer from '~/components/UI/Icons/AppIconDrawer.vue'
-import AppIconMenu from '~/components/UI/Icons/AppIconMenu.vue'
-import AppIconMenuDrop from '~/components/UI/Icons/AppIconMenuDrop.vue'
-import AppIconMore from '~/components/UI/Icons/AppIconMore.vue'
-import AppIconNext from '~/components/UI/Icons/AppIconNext.vue'
-import AppIconPrev from '~/components/UI/Icons/AppIconPrev.vue'
-import AppIconVideoScroll from '~/components/UI/Icons/AppIconVideoScroll.vue'
-import AppLogo from '~/components/UI/Logos/AppLogo.vue'
-import AppLogoFooter from '~/components/UI/Logos/AppLogoFooter.vue'
-import AppHero from '~/components/AppHero.vue'
-import AppHeroVideo from '~/components/AppHeroVideo.vue'
-import AppPage from '~/components/AppPage.vue'
+import Btn from '~/components/UI/Buttons/Btn.vue'
+import BtnFacebook from '~/components/UI/Buttons/BtnFacebook.vue'
+import BtnInsta from '~/components/UI/Buttons/BtnInsta.vue'
+import BtnScrollTop from '~/components/UI/Buttons/BtnScrollTop.vue'
+import BtnYoutube from '~/components/UI/Buttons/BtnYoutube.vue'
+import IconClose from '~/components/UI/Icons/IconClose.vue'
+import IconDrawer from '~/components/UI/Icons/IconDrawer.vue'
+import IconMenu from '~/components/UI/Icons/IconMenu.vue'
+import IconMenuDrop from '~/components/UI/Icons/IconMenuDrop.vue'
+import IconMore from '~/components/UI/Icons/IconMore.vue'
+import IconNext from '~/components/UI/Icons/IconNext.vue'
+import IconPrev from '~/components/UI/Icons/IconPrev.vue'
+import IconVideoScroll from '~/components/UI/Icons/IconVideoScroll.vue'
+import Logo from '~/components/UI/Logos/Logo.vue'
+import LogoFooter from '~/components/UI/Logos/LogoFooter.vue'
+import Hero from '~/components/Hero.vue'
+import HeroVideo from '~/components/HeroVideo.vue'
+import Page from '~/components/Page.vue'
+import Layout from '~/components/Layout.vue'
 
-Vue.component('AppBtn', AppBtn)
-Vue.component('AppBtnFacebook', AppBtnFacebook)
-Vue.component('AppBtnInsta', AppBtnInsta)
-Vue.component('AppBtnScrollTop', AppBtnScrollTop)
-Vue.component('AppBtnYoutube', AppBtnYoutube)
-Vue.component('AppIconClose', AppIconClose)
-Vue.component('AppIconDrawer', AppIconDrawer)
-Vue.component('AppIconMenu', AppIconMenu)
-Vue.component('AppIconMenuDrop', AppIconMenuDrop)
-Vue.component('AppIconMore', AppIconMore)
-Vue.component('AppIconNext', AppIconNext)
-Vue.component('AppIconPrev', AppIconPrev)
-Vue.component('AppIconVideoScroll', AppIconVideoScroll)
-Vue.component('AppLogo', AppLogo)
-Vue.component('AppLogoFooter', AppLogoFooter)
-Vue.component('hero', AppHero)
-Vue.component('hero-video', AppHeroVideo)
-Vue.component('page', AppPage)
+Vue.component('Btn', Btn)
+Vue.component('BtnFacebook', BtnFacebook)
+Vue.component('BtnInsta', BtnInsta)
+Vue.component('BtnScrollTop', BtnScrollTop)
+Vue.component('BtnYoutube', BtnYoutube)
+Vue.component('IconClose', IconClose)
+Vue.component('IconDrawer', IconDrawer)
+Vue.component('IconMenu', IconMenu)
+Vue.component('IconMenuDrop', IconMenuDrop)
+Vue.component('IconMore', IconMore)
+Vue.component('IconNext', IconNext)
+Vue.component('IconPrev', IconPrev)
+Vue.component('IconVideoScroll', IconVideoScroll)
+Vue.component('Logo', Logo)
+Vue.component('LogoFooter', LogoFooter)
+Vue.component('hero', Hero)
+Vue.component('hero-video', HeroVideo)
+Vue.component('page', Page)
+Vue.component('layout', Layout)

@@ -4,21 +4,21 @@
     <div class="container">
       <div class="wrapper">
         <div>
-          <AppLogoFooter class="logo" />
+          <LogoFooter class="logo" />
           <p>
             &copy; FIKA(S) {{ new Date().getFullYear() }} |
             {{ $t('footer.copyright') }}
           </p>
         </div>
-        <AppBtn class="newsletter" btn-style="button--full">
+        <Btn class="newsletter" btn-style="button--full">
           {{ $t('newsletter.subscription') }}
-        </AppBtn>
+        </Btn>
         <div>
-          <AppBtnFacebook class="social-btn" />
-          <AppBtnInsta class="social-btn" />
-          <AppBtnYoutube class="social-btn" />
+          <BtnFacebook class="social-btn" />
+          <BtnInsta class="social-btn" />
+          <BtnYoutube class="social-btn" />
         </div>
-        <AppBtnScrollTop class="scroll-btn" />
+        <BtnScrollTop class="scroll-btn" />
       </div>
     </div>
   </footer>

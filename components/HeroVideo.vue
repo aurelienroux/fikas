@@ -24,7 +24,7 @@
     </div>
     <div class="overlay">
       <h1 class="seo-title">{{ blok.title }}</h1>
-      <AppIconVideoScroll class="video-scroll" @click.native="videoScroll" />
+      <IconVideoScroll class="video-scroll" @click.native="videoScroll" />
     </div>
   </div>
 </template>

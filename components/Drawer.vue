@@ -2,7 +2,7 @@
   <div class="drawer">
     <div class="title" @click="openDrawer">
       {{ title }}
-      <AppIconDrawer :class="{ open }" />
+      <IconDrawer :class="{ open }" />
     </div>
     <div class="container" :class="{ open }">
       <slot />
