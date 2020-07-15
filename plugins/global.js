@@ -18,6 +18,7 @@ import Hero from '~/components/Hero.vue'
 import HeroVideo from '~/components/HeroVideo.vue'
 import Page from '~/components/Page.vue'
 import Layout from '~/components/Layout.vue'
+import PageHeadline from '~/components/PageHeadline.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -34,7 +35,8 @@ Vue.component('IconPrev', IconPrev)
 Vue.component('IconVideoScroll', IconVideoScroll)
 Vue.component('Logo', Logo)
 Vue.component('LogoFooter', LogoFooter)
-Vue.component('hero', Hero)
-Vue.component('hero-video', HeroVideo)
-Vue.component('page', Page)
-Vue.component('layout', Layout)
+Vue.component('Hero', Hero)
+Vue.component('Hero-video', HeroVideo)
+Vue.component('Page', Page)
+Vue.component('Layout', Layout)
+Vue.component('Page-headline', PageHeadline)
