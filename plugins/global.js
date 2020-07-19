@@ -19,6 +19,8 @@ import HeroVideo from '~/components/HeroVideo.vue'
 import Page from '~/components/Page.vue'
 import Layout from '~/components/Layout.vue'
 import PageHeadline from '~/components/PageHeadline.vue'
+import Edition from '~/components/Edition.vue'
+import Year from '~/components/Year.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -40,3 +42,5 @@ Vue.component('Hero-video', HeroVideo)
 Vue.component('Page', Page)
 Vue.component('Layout', Layout)
 Vue.component('Page-headline', PageHeadline)
+Vue.component('Edition', Edition)
+Vue.component('Year', Year)

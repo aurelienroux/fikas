@@ -25,13 +25,14 @@ export default Vue.extend({
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding-bottom: 4rem;
 
   & p {
     color: $charcoal-grey;
     font-family: $font-primary;
     font-size: 2.4rem;
     line-height: 1.33;
-    max-width: 1200px;
+    max-width: 120rem;
     padding: 2rem;
     position: relative;
   }
