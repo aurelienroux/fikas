@@ -17,6 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 .button {
+  background: transparent;
   border-radius: 3rem;
   border: solid 0.2rem $perrywinkle;
   color: $perrywinkle;

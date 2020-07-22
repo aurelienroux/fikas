@@ -1,6 +1,6 @@
 <template>
   <div class="scroll-top" @click="scrollTop">
-    <AppIconVideoScroll />
+    <IconVideoScroll />
   </div>
 </template>
 

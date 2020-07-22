@@ -7,10 +7,10 @@
         exact
         @click.native="closeMenu"
       >
-        <AppLogo />
+        <Logo />
       </nuxt-link>
       <div class="menu">
-        <AppDropDown
+        <DropDown
           :title="$t('header.about')"
           :class="{ 'menu-active': currentMenu === menuEnum.about }"
         >
@@ -23,8 +23,8 @@
               {{ $t('header.festival') }}
             </nuxt-link>
           </li>
-        </AppDropDown>
-        <AppDropDown
+        </DropDown>
+        <DropDown
           :title="$t('header.programmation')"
           :class="{ 'menu-active': currentMenu === menuEnum.prog }"
         >
@@ -37,7 +37,7 @@
               {{ $t('header.archives') }}
             </nuxt-link>
           </li>
-        </AppDropDown>
+        </DropDown>
         <nuxt-link
           class="menu-link"
           :class="{ 'menu-active': currentMenu === menuEnum.contact }"
@@ -56,12 +56,12 @@
 
 <script>
 import Vue from 'vue'
-import AppDropDown from '@/components/AppDropDown'
+import DropDown from '@/components/DropDown'
 import { menuEnum } from '@/store/menu'
 
 export default Vue.extend({
   components: {
-    AppDropDown
+    DropDown
   },
   data() {
     return {
