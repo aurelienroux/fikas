@@ -14,13 +14,13 @@ import IconPrev from '~/components/UI/Icons/IconPrev.vue'
 import IconVideoScroll from '~/components/UI/Icons/IconVideoScroll.vue'
 import Logo from '~/components/UI/Logos/Logo.vue'
 import LogoFooter from '~/components/UI/Logos/LogoFooter.vue'
-import Hero from '~/components/Hero.vue'
-import HeroVideo from '~/components/HeroVideo.vue'
+import Hero from '~/components/heros/Hero.vue'
+import HeroVideo from '~/components/heros/HeroVideo.vue'
 import Page from '~/components/Page.vue'
 import Layout from '~/components/Layout.vue'
 import PageHeadline from '~/components/PageHeadline.vue'
-import Edition from '~/components/Edition.vue'
-import Year from '~/components/Year.vue'
+import Edition from '~/components/editions/Edition.vue'
+import Year from '~/components/editions/Year.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)

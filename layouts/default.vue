@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader'
-import TheHeaderMobile from '@/components/TheHeaderMobile'
-import TheFooter from '@/components/TheFooter'
+import TheHeader from '@/components/globals/TheHeader'
+import TheHeaderMobile from '@/components/globals/TheHeaderMobile'
+import TheFooter from '@/components/globals/TheFooter'
 
 export default {
   components: {
