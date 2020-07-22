@@ -2,12 +2,12 @@
   <header class="header-mobile">
     <div class="top">
       <nuxt-link :to="localePath('/')" exact @click.native="closeMenu">
-        <AppLogo />
+        <Logo />
       </nuxt-link>
-      <AppIconMenu :icon-style="openMenu" @click="displayMenu" />
+      <IconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
     <div class="menu" :class="{ open: openMenu }">
-      <AppDrawer :title="$t('header.about')">
+      <Drawer :title="$t('header.about')">
         <nuxt-link
           class="menu-sublink"
           :to="localePath('/festival')"
@@ -15,9 +15,9 @@
         >
           {{ $t('header.festival') }}
         </nuxt-link>
-      </AppDrawer>
+      </Drawer>
 
-      <AppDrawer :title="$t('header.programmation')">
+      <Drawer :title="$t('header.programmation')">
         <nuxt-link
           class="menu-sublink"
           :to="localePath('/archives')"
@@ -25,7 +25,7 @@
         >
           {{ $t('header.archives') }}
         </nuxt-link>
-      </AppDrawer>
+      </Drawer>
 
       <nuxt-link
         class="menu-link"
@@ -44,14 +44,14 @@
       </nuxt-link>
 
       <div class="news">
-        <AppBtn btn-style="button--full">
+        <Btn btn-style="button--full">
           {{ $t('newsletter.subscription') }}
-        </AppBtn>
+        </Btn>
       </div>
       <div class="social">
-        <AppBtnFacebook />
-        <AppBtnInsta />
-        <AppBtnYoutube />
+        <BtnFacebook />
+        <BtnInsta />
+        <BtnYoutube />
       </div>
     </div>
   </header>
@@ -59,11 +59,11 @@
 
 <script>
 import Vue from 'vue'
-import AppDrawer from '@/components/AppDrawer'
+import Drawer from '@/components/Drawer'
 
 export default Vue.extend({
   components: {
-    AppDrawer
+    Drawer
   },
   data() {
     return {

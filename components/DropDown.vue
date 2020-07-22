@@ -1,7 +1,7 @@
 <template>
   <div class="menu-link" @mouseenter="showHover" @mouseleave="hideHover">
     {{ title }}
-    <AppIconMenuDrop />
+    <IconMenuDrop />
     <ul class="menu-dropdown" :class="{ show: showLinks }">
       <slot />
     </ul>

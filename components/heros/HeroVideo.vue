@@ -1,6 +1,11 @@
 <template>
   <div v-editable="blok" class="hero-video">
-    <div class="video-container">
+    <div
+      v-if="!blok.video_id"
+      class="image-container"
+      :style="{ backgroundImage: `url('${blok.image.filename}')` }"
+    ></div>
+    <div v-else class="video-container">
       <iframe
         class="video-mobile"
         width="640"
@@ -24,7 +29,7 @@
     </div>
     <div class="overlay">
       <h1 class="seo-title">{{ blok.title }}</h1>
-      <AppIconVideoScroll class="video-scroll" @click.native="videoScroll" />
+      <IconVideoScroll class="video-scroll" @click.native="videoScroll" />
     </div>
   </div>
 </template>
@@ -63,6 +68,18 @@ export default {
   @include for-tablet-landscape-up {
     margin-top: 0;
     height: 100vh;
+  }
+}
+
+.image-container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 34rem;
+  width: 100%;
+
+  @include for-tablet-landscape-up {
+    height: 100%;
   }
 }
 
