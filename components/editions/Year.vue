@@ -1,13 +1,13 @@
 <template>
-  <div class="container">
+  <div class="year">
     <div
-      class="image"
+      class="year__image"
       :style="{ backgroundImage: `url('${blok.image.filename}')` }"
     ></div>
-    <div class="purple-bg"></div>
-    <a class="year-text" :href="blok.link.cached_url">
-      <p class="year">{{ blok.year }}</p>
-      <p class="archives">
+    <div class="year__bg"></div>
+    <a class="year__content" :href="blok.link.cached_url">
+      <p class="year__number">{{ blok.year }}</p>
+      <p class="year__archives">
         {{ blok.link_text }}
         <IconMore />
       </p>
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.year {
   display: grid;
   grid-template-columns: 2rem repeat(20, 1fr) 2rem;
   grid-template-rows: repeat(20, 2.7rem);
@@ -39,48 +39,48 @@ export default {
     flex: 1;
     margin: 2rem;
   }
-}
 
-.image {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  grid-column-end: -2;
-  grid-column-start: 2;
-  grid-row-end: -4;
-  grid-row-start: 1;
-  z-index: 2;
-}
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column-end: -2;
+    grid-column-start: 2;
+    grid-row-end: -4;
+    grid-row-start: 1;
+    z-index: 2;
+  }
 
-.purple-bg {
-  background: $very-light-purple;
-  grid-column-end: -1;
-  grid-column-start: 3;
-  grid-row-end: -1;
-  grid-row-start: 16;
-  z-index: 1;
-}
+  &__bg {
+    background: $very-light-purple;
+    grid-column-end: -1;
+    grid-column-start: 3;
+    grid-row-end: -1;
+    grid-row-start: 16;
+    z-index: 1;
+  }
 
-.year-text {
-  align-self: center;
-  color: $white;
-  font-family: $font-secondary;
-  grid-column-end: -2;
-  grid-column-start: 3;
-  grid-row-end: -1;
-  grid-row-start: 18;
-  justify-self: end;
-  text-decoration: none;
-  z-index: 2;
+  &__content {
+    align-self: center;
+    color: $white;
+    font-family: $font-secondary;
+    grid-column-end: -2;
+    grid-column-start: 3;
+    grid-row-end: -1;
+    grid-row-start: 18;
+    justify-self: end;
+    text-decoration: none;
+    z-index: 2;
+  }
 
-  .year {
+  &__number {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
     text-align: right;
   }
 
-  .archives {
+  &__archives {
     font-size: 1.4rem;
     height: 2.2rem;
     text-align: right;

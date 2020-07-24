@@ -21,6 +21,7 @@ import Layout from '~/components/Layout.vue'
 import PageHeadline from '~/components/PageHeadline.vue'
 import Edition from '~/components/editions/Edition.vue'
 import Year from '~/components/editions/Year.vue'
+import Greenblock from '~/components/Greenblock.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -44,3 +45,4 @@ Vue.component('Layout', Layout)
 Vue.component('Page-headline', PageHeadline)
 Vue.component('Edition', Edition)
 Vue.component('Year', Year)
+Vue.component('Greenblock', Greenblock)

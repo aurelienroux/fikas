@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="hero-video">
+  <div v-editable="blok" class="herovideo">
     <div class="video-container">
       <iframe
         class="video-mobile"
@@ -22,9 +22,12 @@
       >
       </iframe>
     </div>
-    <div class="overlay">
-      <h1 class="seo-title">{{ blok.title }}</h1>
-      <AppIconVideoScroll class="video-scroll" @click.native="videoScroll" />
+    <div class="herovideo__overlay">
+      <h1 class="herovideo__overlay__title">{{ blok.title }}</h1>
+      <AppIconVideoScroll
+        class="herovideo__overlay__scroll"
+        @click.native="videoScroll"
+      />
     </div>
   </div>
 </template>
@@ -54,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hero-video {
+.herovideo {
   height: 34rem;
   margin-top: 6rem;
   overflow: hidden;
@@ -64,80 +67,80 @@ export default {
     margin-top: 0;
     height: 100vh;
   }
-}
 
-.video-container {
-  background: $black;
-  height: 34rem;
-  position: relative;
-  width: 100%;
-
-  @include for-tablet-landscape-up {
-    height: 100%;
-  }
-}
-
-.video-mobile {
-  bottom: 0;
-  display: initial;
-  height: 34rem;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: scale(1.6);
-  width: 100%;
-
-  @include for-tablet-landscape-up {
+  &__overlay {
+    align-items: flex-end;
+    bottom: 0;
     display: none;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    @include for-tablet-landscape-up {
+      display: flex;
+    }
+
+    &__title {
+      position: absolute;
+      bottom: 1000rem;
+    }
+
+    &__scroll {
+      cursor: pointer;
+      margin: 4rem;
+
+      display: none;
+      @include for-tablet-landscape-up {
+        display: initial;
+      }
+    }
   }
-}
 
-.video-desktop {
-  bottom: 0;
-  display: none;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: scale(1.6);
-  width: 100%;
+  .video-container {
+    background: $black;
+    height: 34rem;
+    position: relative;
+    width: 100%;
 
-  @include for-tablet-landscape-up {
+    @include for-tablet-landscape-up {
+      height: 100%;
+    }
+  }
+
+  .video-mobile {
+    bottom: 0;
     display: initial;
+    height: 34rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(1.6);
+    width: 100%;
+
+    @include for-tablet-landscape-up {
+      display: none;
+    }
   }
-}
 
-.overlay {
-  align-items: flex-end;
-  bottom: 0;
-  display: none;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
+  .video-desktop {
+    bottom: 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(1.6);
+    width: 100%;
 
-  @include for-tablet-landscape-up {
-    display: flex;
-  }
-}
-
-.seo-title {
-  position: absolute;
-  bottom: 1000rem;
-}
-
-.video-scroll {
-  cursor: pointer;
-  margin: 4rem;
-
-  display: none;
-  @include for-tablet-landscape-up {
-    display: initial;
+    @include for-tablet-landscape-up {
+      display: initial;
+    }
   }
 }
 </style>
