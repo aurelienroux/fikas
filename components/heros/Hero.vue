@@ -1,10 +1,10 @@
 <template>
   <div v-editable="blok" class="hero">
     <div
-      class="image"
+      class="hero__image"
       :style="{ backgroundImage: `url('${blok.image.filename}')` }"
     ></div>
-    <h1 class="title">{{ blok.title }}</h1>
+    <h1 class="hero__title">{{ blok.title }}</h1>
   </div>
 </template>
 
@@ -31,21 +31,7 @@ export default {
     height: 60rem;
   }
 
-  .title {
-    color: $white;
-    font-family: $font-secondary;
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 4rem;
-    z-index: 10;
-
-    @include for-tablet-landscape-up {
-      font-size: 6rem;
-      margin-bottom: 8rem;
-    }
-  }
-
-  .image {
+  &__image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,6 +47,20 @@ export default {
       height: 100%;
       opacity: 0.25;
       width: 100%;
+    }
+
+    &__title {
+      color: $white;
+      font-family: $font-secondary;
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 4rem;
+      z-index: 10;
+
+      @include for-tablet-landscape-up {
+        font-size: 6rem;
+        margin-bottom: 8rem;
+      }
     }
   }
 }
