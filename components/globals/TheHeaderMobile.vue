@@ -15,6 +15,13 @@
         >
           {{ $t('header.festival') }}
         </nuxt-link>
+        <nuxt-link
+          class="menu-sublink"
+          :to="localePath('/equipe')"
+          @click.native="changeCurrentMenu(menuEnum.about)"
+        >
+          {{ $t('header.equipe') }}
+        </nuxt-link>
       </Drawer>
 
       <Drawer :title="$t('header.programmation')">
