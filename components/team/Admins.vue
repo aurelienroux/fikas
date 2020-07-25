@@ -31,7 +31,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .admins {
   max-width: 120rem;
-  padding: 4rem 2rem;
+  padding: 7rem 2rem;
   position: relative;
   width: 100%;
 
@@ -46,7 +46,7 @@ export default Vue.extend({
     @include for-desktop-up {
       left: -4rem;
       position: absolute;
-      top: 12rem;
+      top: 17rem;
       transform: rotate(-90deg);
     }
 
@@ -58,7 +58,7 @@ export default Vue.extend({
         display: initial;
         height: 0.2rem;
         position: absolute;
-        right: -7.1rem;
+        right: -9rem;
         top: 3.5rem;
         width: 8rem;
       }

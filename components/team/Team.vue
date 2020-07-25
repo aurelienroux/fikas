@@ -31,7 +31,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .team {
   max-width: 120rem;
-  padding: 4rem 2rem;
+  padding: 7rem 2rem;
   position: relative;
   width: 100%;
 
@@ -46,7 +46,7 @@ export default Vue.extend({
     @include for-desktop-up {
       left: -9rem;
       position: absolute;
-      top: 12rem;
+      top: 22rem;
       transform: rotate(-90deg);
     }
 
@@ -58,7 +58,7 @@ export default Vue.extend({
         display: initial;
         height: 0.2rem;
         position: absolute;
-        right: -7.1rem;
+        right: -9rem;
         top: 3.5rem;
         width: 8rem;
       }
@@ -68,7 +68,7 @@ export default Vue.extend({
   &__container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
 }
 </style>

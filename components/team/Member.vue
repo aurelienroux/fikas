@@ -1,8 +1,7 @@
 <template>
   <div class="member">
     <p class="member__title">{{ blok.title }}</p>
-    <p class="member__name">{{ blok.name | markdown }}</p>
-    <p class="member__name">{{ blok.name | richtext }}</p>
+    <div class="member__name" v-html="richtext"></div>
   </div>
 </template>
 
@@ -15,6 +14,13 @@ export default Vue.extend({
       type: Object,
       default: () => {}
     }
+  },
+  computed: {
+    richtext() {
+      return this.blok.name
+        ? this.$storyapi.richTextResolver.render(this.blok.name)
+        : ''
+    }
   }
 })
 </script>
@@ -25,7 +31,7 @@ export default Vue.extend({
   margin-bottom: 2.5rem;
   padding-right: 2rem;
 
-  @include for-desktop-up {
+  @include for-tablet-portrait-up {
     flex-basis: 50%;
   }
 
@@ -33,11 +39,25 @@ export default Vue.extend({
     color: $aqua-blue;
     font-family: $font-secondary;
     font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   &__name {
     font-family: $font-primary;
     font-size: 2rem;
+  }
+}
+</style>
+
+<style lang="scss">
+.member__name {
+  a {
+    text-decoration: none;
+  }
+
+  .link-styling {
+    color: $perrywinkle;
+    text-decoration: none;
   }
 }
 </style>
