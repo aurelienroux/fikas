@@ -26,6 +26,7 @@ import Admins from '~/components/team/Admins.vue'
 import Team from '~/components/team/Team.vue'
 import Avatar from '~/components/team/Avatar.vue'
 import Member from '~/components/team/Member.vue'
+import Pinkblock from '~/components/Pinkblock.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -54,3 +55,4 @@ Vue.component('Admins', Admins)
 Vue.component('Team', Team)
 Vue.component('Avatar', Avatar)
 Vue.component('Member', Member)
+Vue.component('Pinkblock', Pinkblock)
