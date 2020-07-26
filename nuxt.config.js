@@ -85,9 +85,8 @@ export default {
       { code: 'fr', iso: 'fr-FR' }
     ],
     defaultLocale: 'fr',
-    strategy: 'prefix',
+    strategy: 'prefix_except_default',
     seo: true,
-    baseUrl: process.env.BASE_URL,
     vueI18n: {
       fallbackLocale: 'fr',
       messages: {

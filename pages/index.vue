@@ -13,8 +13,10 @@
 export default {
   name: 'Homepage',
   asyncData(context) {
+    const locale = context.app.i18n.locale === 'en' ? '/en' : ''
+
     return context.app.$storyapi
-      .get(`cdn/stories/${context.app.i18n.locale}/home`, {
+      .get(`cdn/stories${locale}/home`, {
         version: 'draft'
       })
       .then((res) => {
