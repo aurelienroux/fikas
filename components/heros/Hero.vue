@@ -48,6 +48,20 @@ export default {
       opacity: 0.25;
       width: 100%;
     }
+
+    &__title {
+      color: $white;
+      font-family: $font-secondary;
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 4rem;
+      z-index: 10;
+
+      @include for-tablet-landscape-up {
+        font-size: 6rem;
+        margin-bottom: 8rem;
+      }
+    }
   }
 
   &__title {
