@@ -25,7 +25,7 @@ export default Vue.extend({
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding-bottom: 4rem;
+  margin: 4rem 0;
 
   & p {
     color: $charcoal-grey;
