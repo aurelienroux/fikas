@@ -27,6 +27,9 @@ import Team from '~/components/team/Team.vue'
 import Avatar from '~/components/team/Avatar.vue'
 import Member from '~/components/team/Member.vue'
 import Pinkblock from '~/components/Pinkblock.vue'
+import Partners from '~/components/partners/Partners.vue'
+import PartnerImage from '~/components/partners/PartnerImage.vue'
+import PartnerText from '~/components/partners/PartnerText.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -56,3 +59,6 @@ Vue.component('Team', Team)
 Vue.component('Avatar', Avatar)
 Vue.component('Member', Member)
 Vue.component('Pinkblock', Pinkblock)
+Vue.component('Partners', Partners)
+Vue.component('PartnerImage', PartnerImage)
+Vue.component('PartnerText', PartnerText)
