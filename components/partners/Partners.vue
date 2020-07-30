@@ -1,13 +1,14 @@
 <template>
-  <div class="team">
-    <h2 class="team__title">
+  <div class="partners">
+    <h2 class="partners__title">
       {{ blok.title }}
       <div class="layout-bar"></div>
     </h2>
-    <div class="team__container">
+    <div class="partners__container">
+      {{ blok.partners }}
       <component
         :is="blok.component"
-        v-for="blok in blok.members"
+        v-for="blok in blok.components"
         :key="blok._uid"
         :blok="blok"
       ></component>
@@ -29,7 +30,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.team {
+.partners {
   max-width: 120rem;
   padding: 7rem 2rem;
   position: relative;
@@ -37,30 +38,25 @@ export default Vue.extend({
 
   &__title {
     color: $aqua-blue;
+    display: inline-block;
     font-family: $font-secondary;
     font-size: 4rem;
     font-weight: 600;
     margin-bottom: 4rem;
+    position: relative;
     text-transform: uppercase;
 
-    @include for-desktop-up {
-      left: -9rem;
-      position: absolute;
-      top: 22rem;
-      transform: rotate(-90deg);
-    }
-
     .layout-bar {
+      background-color: $light-teal;
       display: none;
+      height: 0.2rem;
+      position: absolute;
+      right: -9rem;
+      top: 3.5rem;
+      width: 8rem;
 
-      @include for-desktop-up {
-        background-color: $light-teal;
+      @include for-tablet-landscape-up {
         display: initial;
-        height: 0.2rem;
-        position: absolute;
-        right: -9rem;
-        top: 3.5rem;
-        width: 8rem;
       }
     }
   }
@@ -68,7 +64,7 @@ export default Vue.extend({
   &__container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
   }
 }
 </style>

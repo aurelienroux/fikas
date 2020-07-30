@@ -18,9 +18,16 @@
         <nuxt-link
           class="menu-sublink"
           :to="localePath('/equipe')"
-          @click.native="changeCurrentMenu(menuEnum.about)"
+          @click.native="closeMenu"
         >
           {{ $t('header.equipe') }}
+        </nuxt-link>
+        <nuxt-link
+          class="menu-sublink"
+          :to="localePath('/partenaires')"
+          @click.native="closeMenu"
+        >
+          {{ $t('header.partenaires') }}
         </nuxt-link>
       </Drawer>
 
