@@ -1,15 +1,15 @@
 <template>
-  <div class="hleft">
-    <div class="hleft__image">
+  <div class="hright">
+    <div class="hright__image">
       <div
-        class="hleft__cover"
+        class="hright__cover"
         :style="{ backgroundImage: `url('${blok.image.filename}')` }"
       ></div>
-      <div class="hleft__year">
+      <div class="hright__year">
         {{ blok.year }}
       </div>
     </div>
-    <div class="hleft__text">
+    <div class="hright__text">
       {{ blok.text }}
     </div>
   </div>
@@ -29,7 +29,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.hleft {
+.hright {
   display: flex;
   flex-direction: column;
   margin-bottom: 8rem;
