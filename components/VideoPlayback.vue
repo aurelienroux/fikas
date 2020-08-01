@@ -17,6 +17,9 @@
       </iframe>
       <div class="player__bg"></div>
     </div>
+    <Btn v-if="blok.show_button" class="button">
+      {{ blok.button_text }}
+    </Btn>
   </div>
 </template>
 
@@ -44,6 +47,7 @@ export default Vue.extend({
   padding: 7rem 2rem;
   position: relative;
   width: 100%;
+  text-align: center;
 
   &__title {
     color: $aqua-blue;
@@ -103,6 +107,10 @@ export default Vue.extend({
     grid-column-start: 2;
     grid-row-end: -1;
     grid-row-start: 2;
+  }
+
+  .button {
+    margin: 8rem 0;
   }
 }
 </style>
