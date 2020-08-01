@@ -45,6 +45,13 @@
           <li>
             <nuxt-link
               class="menu-sublink"
+              to="/programmation"
+              @click.native="changeCurrentMenu(menuEnum.prog)"
+            >
+              {{ $t('header.programmation') }}
+            </nuxt-link>
+            <nuxt-link
+              class="menu-sublink"
               to="/archives"
               @click.native="changeCurrentMenu(menuEnum.prog)"
             >
