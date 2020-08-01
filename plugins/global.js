@@ -33,6 +33,7 @@ import PartnerText from '~/components/partners/PartnerText.vue'
 import History from '~/components/history/History.vue'
 import HistoryLeft from '~/components/history/HistoryLeft.vue'
 import HistoryRight from '~/components/history/HistoryRight.vue'
+import VideoPlayback from '~/components/VideoPlayback.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -68,3 +69,4 @@ Vue.component('PartnerText', PartnerText)
 Vue.component('History', History)
 Vue.component('HistoryLeft', HistoryLeft)
 Vue.component('HistoryRight', HistoryRight)
+Vue.component('VideoPlayback', VideoPlayback)
