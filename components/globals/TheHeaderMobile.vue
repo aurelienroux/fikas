@@ -116,7 +116,7 @@ export default Vue.extend({
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
 
   @include for-tablet-landscape-up {
     display: none;

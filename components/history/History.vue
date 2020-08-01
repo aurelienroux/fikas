@@ -1,10 +1,10 @@
 <template>
-  <div class="partners">
-    <h2 class="partners__title">
+  <div class="history">
+    <h2 class="history__title">
       {{ blok.title }}
       <div class="layout-bar"></div>
     </h2>
-    <div class="partners__container">
+    <div>
       <component
         :is="blok.component"
         v-for="blok in blok.components"
@@ -29,7 +29,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.partners {
+.history {
   max-width: 120rem;
   padding: 7rem 2rem;
   position: relative;
@@ -37,25 +37,30 @@ export default Vue.extend({
 
   &__title {
     color: $aqua-blue;
-    display: inline-block;
     font-family: $font-secondary;
     font-size: 4rem;
     font-weight: 600;
     margin-bottom: 4rem;
-    position: relative;
     text-transform: uppercase;
 
-    .layout-bar {
-      background-color: $light-teal;
-      display: none;
-      height: 0.2rem;
+    @include for-desktop-up {
+      left: -14rem;
       position: absolute;
-      right: -9rem;
-      top: 3.5rem;
-      width: 8rem;
+      top: 26rem;
+      transform: rotate(-90deg);
+    }
 
-      @include for-tablet-landscape-up {
+    .layout-bar {
+      display: none;
+
+      @include for-desktop-up {
+        background-color: $light-teal;
         display: initial;
+        height: 0.2rem;
+        position: absolute;
+        right: -9rem;
+        top: 3.5rem;
+        width: 8rem;
       }
     }
   }
