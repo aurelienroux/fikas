@@ -36,6 +36,8 @@ import HistoryRight from '~/components/history/HistoryRight.vue'
 import VideoPlayback from '~/components/VideoPlayback.vue'
 import FilterEvents from '~/components/filters/FilterEvents.vue'
 import FilterButton from '~/components/filters/FilterButton.vue'
+import ProgEvents from '~/components/progEvents/progEvents'
+import ProgEvent from '~/components/progEvents/progEvent'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -74,3 +76,5 @@ Vue.component('HistoryRight', HistoryRight)
 Vue.component('VideoPlayback', VideoPlayback)
 Vue.component('FilterEvents', FilterEvents)
 Vue.component('FilterButton', FilterButton)
+Vue.component('ProgEvents', ProgEvents)
+Vue.component('ProgEvent', ProgEvent)
