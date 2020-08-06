@@ -5,6 +5,7 @@
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
+      :events="events"
     ></component>
   </main>
 </template>
@@ -12,33 +13,34 @@
 <script>
 export default {
   name: 'Programmation',
-  asyncData(context) {
-    const locale = context.app.i18n.locale === 'en' ? '/en' : ''
-
-    return context.app.$storyapi
-      .get(`cdn/stories${locale}/programmation`, {
-        version: 'draft'
-      })
-      .then((res) => {
-        return res.data
-      })
-      .catch((res) => {
-        if (!res.response) {
-          context.error({
-            statusCode: 404,
-            message: 'Failed to receive content form api'
-          })
-        } else {
-          context.error({
-            statusCode: res.response.status,
-            message: res.response.data
-          })
-        }
-      })
-  },
-  data() {
-    return {
-      story: { content: {} }
+  async asyncData(context) {
+    const locale = context.app.i18n.locale === 'en' ? 'en/' : ''
+    try {
+      const [story, events] = await Promise.all([
+        context.app.$storyapi.get(`cdn/stories/${locale}programmation`, {
+          version: 'draft'
+        }),
+        context.app.$storyapi.get(`cdn/stories`, {
+          version: 'draft',
+          starts_with: `${locale}evenements`
+        })
+      ])
+      return {
+        story: story.data.story,
+        events: events.data.stories
+      }
+    } catch (error) {
+      if (!error.response) {
+        context.error({
+          statusCode: 404,
+          message: 'Failed to receive content from api'
+        })
+      } else {
+        context.error({
+          statusCode: error.response.status,
+          message: error.response.data
+        })
+      }
     }
   },
   mounted() {

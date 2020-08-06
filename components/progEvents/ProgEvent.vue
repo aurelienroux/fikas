@@ -15,6 +15,9 @@
     <div>storeFilter: {{ storeFilter }}</div>
     <div>event category: {{ blok.category }}</div>
     <div>activeFilter: {{ activeFilter }}</div>
+    <nuxt-link :to="blok.link.cached_url">
+      the link
+    </nuxt-link>
   </div>
 </template>
 

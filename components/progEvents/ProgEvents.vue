@@ -1,11 +1,13 @@
 <template>
   <div class="events">
     <component
-      :is="blok.component"
-      v-for="blok in blok.components"
-      :key="blok._uid"
-      :blok="blok"
-    ></component>
+      :is="event.content.component"
+      v-for="(event, index) in events"
+      :key="index"
+      :blok="event.content"
+    >
+      {{ event.content.component }}
+    </component>
   </div>
 </template>
 
@@ -17,6 +19,10 @@ export default Vue.extend({
     blok: {
       type: Object,
       default: () => {}
+    },
+    events: {
+      type: Array,
+      default: () => []
     }
   }
 })

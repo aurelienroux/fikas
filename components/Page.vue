@@ -5,6 +5,7 @@
       v-for="blok in blok.body"
       :key="blok._uid"
       :blok="blok"
+      :events="events"
     ></component>
   </div>
 </template>
@@ -15,6 +16,10 @@ export default {
     blok: {
       type: Object,
       default: () => {}
+    },
+    events: {
+      type: Array,
+      default: () => []
     }
   }
 }
