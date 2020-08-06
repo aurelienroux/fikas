@@ -24,10 +24,16 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .filters {
-  border: 1px solid;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
   max-width: 120rem;
   padding: 7rem 2rem;
   position: relative;
   width: 100%;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+  }
 }
 </style>
