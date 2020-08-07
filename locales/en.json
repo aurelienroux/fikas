@@ -14,5 +14,7 @@
   "newsletter": {
     "subscription": "Subscribe to newsletter"
   },
-  "more-details": "more details"
+  "programmation": {
+    "more": "more details"
+  }
 }

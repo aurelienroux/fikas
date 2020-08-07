@@ -14,5 +14,7 @@
   "newsletter": {
     "subscription": "S'inscrire à l'infolettre"
   },
-  "more-details": "en savoir plus"
+  "programmation": {
+    "more": "en savoir plus"
+  }
 }

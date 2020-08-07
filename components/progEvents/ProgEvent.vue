@@ -11,7 +11,7 @@
       <p class="event__time">{{ blok.time }}</p>
       <p class="event__location">{{ blok.location }}</p>
       <nuxt-link class="event__link" :to="blok.link.cached_url">
-        {{ $t('more-details') }}
+        {{ $t('programmation.more') }}
         <IconMore />
       </nuxt-link>
     </div>
