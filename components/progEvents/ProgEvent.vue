@@ -1,23 +1,20 @@
 <template>
   <div v-if="activeFilter" class="event">
-    <div>
-      {{ blok.title }}
+    <div
+      class="event__image"
+      :style="{ backgroundImage: `url('${blok.image.filename}')` }"
+    ></div>
+    <div class="event__bg"></div>
+    <div class="event__content">
+      <p class="event__title">{{ blok.title }}</p>
+      <p v-if="blok.date" class="event__date">{{ formatedDate }}</p>
+      <p class="event__time">{{ blok.time }}</p>
+      <p class="event__location">{{ blok.location }}</p>
+      <nuxt-link class="event__link" :to="blok.link.cached_url">
+        {{ $t('more-details') }}
+        <IconMore />
+      </nuxt-link>
     </div>
-    <div>
-      {{ formatedDate }}
-    </div>
-    <div>
-      {{ blok.time }}
-    </div>
-    <div>
-      {{ blok.location }}
-    </div>
-    <div>storeFilter: {{ storeFilter }}</div>
-    <div>event category: {{ blok.category }}</div>
-    <div>activeFilter: {{ activeFilter }}</div>
-    <nuxt-link :to="blok.link.cached_url">
-      the link
-    </nuxt-link>
   </div>
 </template>
 
@@ -58,7 +55,70 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .event {
-  border: 1px solid;
+  display: grid;
   flex-basis: 50%;
+  grid-template-columns: 8rem 1fr 2.4rem;
+  grid-template-rows: 32rem 7rem 1fr;
+  margin-bottom: 8rem;
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-row-start: 1;
+    z-index: 10;
+  }
+
+  &__bg {
+    background: $very-light-purple;
+    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-row-end: 4;
+    grid-row-start: 2;
+  }
+
+  &__content {
+    padding: 2rem;
+    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-row-end: 4;
+    grid-row-start: 3;
+  }
+
+  &__title {
+    color: $white;
+    font-family: $font-secondary;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  &__date,
+  &__time,
+  &__location {
+    color: $charcoal-grey;
+    font-family: $font-primary;
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  &__date {
+    font-weight: 700;
+  }
+
+  &__link {
+    display: block;
+    margin-top: 2rem;
+    font-family: $font-secondary;
+    font-size: 1.4rem;
+    text-align: left;
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: right;
+  }
 }
 </style>

@@ -30,12 +30,16 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .events {
-  border: 1px solid;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   max-width: 120rem;
-  padding: 7rem 2rem;
+  padding: 4rem 2rem 7rem;
   position: relative;
   width: 100%;
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+  }
 }
 </style>

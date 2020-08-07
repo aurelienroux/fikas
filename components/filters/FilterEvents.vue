@@ -28,7 +28,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   max-width: 120rem;
-  padding: 7rem 2rem;
+  padding: 7rem 2rem 0;
   position: relative;
   width: 100%;
 
