@@ -30,8 +30,34 @@
         {{ $t('programmation.facebookEvent') }}
       </a>
     </div>
-    <div class="social">
-      {{ $t('programmation.share') }}
+    <div class="share">
+      <p>
+        {{ $t('programmation.share') }}
+      </p>
+      <a
+        class="share__icon"
+        href="http://"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <font-awesome-icon :icon="['fab', 'facebook']" />
+      </a>
+      <a
+        class="share__icon"
+        href="http://"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <font-awesome-icon :icon="['fab', 'twitter']" />
+      </a>
+      <a
+        class="share__icon"
+        :href="'mailto:?subject=FikasFest - ' + story.content.title"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <font-awesome-icon :icon="['fas', 'envelope']" />
+      </a>
     </div>
   </div>
 </template>
@@ -120,15 +146,24 @@ export default Vue.extend({
     }
   }
 
-  .social {
+  .share {
     background-color: $very-light-purple;
     background-image: url('~@/assets/images/bg2.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: $charcoal-grey;
     flex: 1;
+    font-family: $font-primary;
+    font-size: 2.4rem;
     margin-top: 0.2rem;
     padding: 2.5rem;
+
+    &__icon svg {
+      color: $white;
+      margin-right: 4rem;
+      margin-top: 1.5rem;
+    }
   }
 }
 </style>

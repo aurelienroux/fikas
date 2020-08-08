@@ -38,6 +38,7 @@
       <div class="band__social">
         <a
           v-if="band.officialsite && band.officialsite.url"
+          class="share__button"
           target="_blank"
           :href="band.officialsite.url"
         >
@@ -45,23 +46,29 @@
         </a>
         <a
           v-if="band.facebook && band.facebook.url"
+          class="share__button"
           target="_blank"
           :href="band.facebook.url"
         >
+          <font-awesome-icon :icon="['fab', 'facebook']" />
           Facebook
         </a>
         <a
           v-if="band.twitter && band.twitter.url"
+          class="share__button"
           target="_blank"
           :href="band.twitter.url"
         >
+          <font-awesome-icon :icon="['fab', 'twitter']" />
           Twitter
         </a>
         <a
           v-if="band.instagram && band.instagram.url"
+          class="share__button"
           target="_blank"
           :href="band.instagram.url"
         >
+          <font-awesome-icon :icon="['fab', 'instagram']" />
           Instagram
         </a>
       </div>
@@ -178,6 +185,12 @@ export default Vue.extend({
         margin-right: 2rem;
         text-decoration: none;
       }
+    }
+
+    .share__button {
+      display: inline-block;
+      margin-bottom: 2rem;
+      white-space: nowrap;
     }
   }
 }
