@@ -2,7 +2,7 @@
   <div v-if="activeFilter" class="event">
     <div
       class="event__image"
-      :style="{ backgroundImage: `url('${blok.image.filename}')` }"
+      :style="{ backgroundImage: `url('${blok.thumbnail.filename}')` }"
     ></div>
     <div class="event__bg"></div>
     <div class="event__content">

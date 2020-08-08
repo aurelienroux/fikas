@@ -15,6 +15,10 @@
     "subscription": "Subscribe to newsletter"
   },
   "programmation": {
-    "more": "more details"
+    "buytickets": "Buy tickets",
+    "facebookEvent": "Facebook Event",
+    "more": "more details",
+    "officialsite": "Official site",
+    "share": "Share"
   }
 }
