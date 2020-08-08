@@ -14,7 +14,7 @@ module.exports = {
     {
       rel: 'stylesheet',
       href:
-        'https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Karla&family=Rubik:wght@400;700&display=swap'
+        'https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap'
     }
   ]
 }
