@@ -34,6 +34,11 @@ export default Vue.extend({})
 .footer {
   width: 100%;
 
+  img {
+    position: relative;
+    top: 0.2rem;
+  }
+
   .container {
     background-color: $aqua-blue;
     color: $white;

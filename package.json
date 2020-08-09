@@ -14,10 +14,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^0.1.10",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
+    "moment": "^2.27.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.13.1",
+    "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^6.12.2",
     "storyblok-nuxt": "^1.2.0"
   },

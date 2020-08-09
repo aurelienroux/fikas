@@ -39,6 +39,13 @@
         >
           {{ $t('header.archives') }}
         </nuxt-link>
+        <nuxt-link
+          class="menu-sublink"
+          :to="localePath('/programmation')"
+          @click.native="closeMenu"
+        >
+          {{ $t('header.programmation') }}
+        </nuxt-link>
       </Drawer>
 
       <nuxt-link

@@ -13,5 +13,12 @@
   },
   "newsletter": {
     "subscription": "Subscribe to newsletter"
+  },
+  "programmation": {
+    "buytickets": "Buy tickets",
+    "facebookEvent": "Facebook Event",
+    "more": "more details",
+    "officialsite": "Official site",
+    "share": "Share"
   }
 }

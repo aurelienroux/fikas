@@ -13,5 +13,12 @@
   },
   "newsletter": {
     "subscription": "S'inscrire à l'infolettre"
+  },
+  "programmation": {
+    "buytickets": "Acheter des billets",
+    "facebookEvent": "Événement Facebook",
+    "more": "en savoir plus",
+    "officialsite": "Site officiel",
+    "share": "Partager"
   }
 }

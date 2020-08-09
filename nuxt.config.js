@@ -20,7 +20,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Karla&family=Rubik:wght@400;700&display=swap'
+          'https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap'
       }
     ]
   },
@@ -61,6 +61,21 @@ export default {
       {
         accessToken: 'HjQSMT5E6T1aBYgn4dbb5wtt',
         cacheProvider: 'memory'
+      }
+    ],
+    [
+      'nuxt-fontawesome',
+      {
+        imports: [
+          {
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: ['fas']
+          },
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
+          }
+        ]
       }
     ]
   ],
