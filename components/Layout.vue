@@ -7,6 +7,7 @@
       v-for="blok in blok.components"
       :key="blok._uid"
       :blok="blok"
+      :events="events"
     ></component>
   </div>
 </template>
@@ -19,6 +20,10 @@ export default Vue.extend({
     blok: {
       type: Object,
       default: () => {}
+    },
+    events: {
+      type: Array,
+      default: () => []
     }
   }
 })
