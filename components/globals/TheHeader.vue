@@ -52,6 +52,13 @@
             </nuxt-link>
             <nuxt-link
               class="menu-sublink"
+              to="/offfikas"
+              @click.native="changeCurrentMenu(menuEnum.prog)"
+            >
+              {{ $t('header.offfikas') }}
+            </nuxt-link>
+            <nuxt-link
+              class="menu-sublink"
               to="/archives"
               @click.native="changeCurrentMenu(menuEnum.prog)"
             >

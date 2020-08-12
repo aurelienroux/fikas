@@ -41,6 +41,13 @@
         </nuxt-link>
         <nuxt-link
           class="menu-sublink"
+          :to="localePath('/offfikas')"
+          @click.native="closeMenu"
+        >
+          {{ $t('header.offfikas') }}
+        </nuxt-link>
+        <nuxt-link
+          class="menu-sublink"
           :to="localePath('/programmation')"
           @click.native="closeMenu"
         >
