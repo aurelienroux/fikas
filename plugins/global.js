@@ -38,6 +38,8 @@ import FilterEvents from '~/components/filters/FilterEvents.vue'
 import FilterButton from '~/components/filters/FilterButton.vue'
 import ProgEvents from '~/components/progEvents/ProgEvents'
 import ProgEvent from '~/components/progEvents/ProgEvent'
+import OffEvents from '~/components/progEvents/OffEvents'
+import OffEvent from '~/components/progEvents/OffEvent'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -78,3 +80,5 @@ Vue.component('FilterEvents', FilterEvents)
 Vue.component('FilterButton', FilterButton)
 Vue.component('ProgEvents', ProgEvents)
 Vue.component('ProgEvent', ProgEvent)
+Vue.component('OffEvents', OffEvents)
+Vue.component('OffEvent', OffEvent)
