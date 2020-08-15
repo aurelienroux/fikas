@@ -136,7 +136,7 @@ export default Vue.extend({
   @include for-big-desktop-up {
     left: -11rem;
     position: absolute;
-    top: 24rem;
+    top: 17rem;
     transform: rotate(-90deg);
   }
 
@@ -148,7 +148,7 @@ export default Vue.extend({
       display: initial;
       height: 0.2rem;
       position: absolute;
-      right: -7.1rem;
+      right: -9rem;
       top: 3.5rem;
       width: 8rem;
     }
