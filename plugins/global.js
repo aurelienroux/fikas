@@ -40,6 +40,8 @@ import ProgEvents from '~/components/progEvents/ProgEvents'
 import ProgEvent from '~/components/progEvents/ProgEvent'
 import OffEvents from '~/components/progEvents/OffEvents'
 import OffEvent from '~/components/progEvents/OffEvent'
+import ArchiveSelector from '~/components/archives/ArchiveSelector'
+import ArchiveYear from '~/components/archives/ArchiveYear'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -82,3 +84,5 @@ Vue.component('ProgEvents', ProgEvents)
 Vue.component('ProgEvent', ProgEvent)
 Vue.component('OffEvents', OffEvents)
 Vue.component('OffEvent', OffEvent)
+Vue.component('ArchiveSelector', ArchiveSelector)
+Vue.component('ArchiveYear', ArchiveYear)
