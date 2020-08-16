@@ -57,7 +57,7 @@ export default Vue.extend({
     margin-bottom: 4rem;
     text-transform: uppercase;
 
-    @include for-desktop-up {
+    @include for-big-desktop-up {
       left: -20rem;
       position: absolute;
       top: 32rem;
@@ -67,7 +67,7 @@ export default Vue.extend({
     .layout-bar {
       display: none;
 
-      @include for-desktop-up {
+      @include for-big-desktop-up {
         background-color: $light-teal;
         display: initial;
         height: 0.2rem;
