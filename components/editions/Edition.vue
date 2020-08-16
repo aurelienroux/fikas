@@ -50,7 +50,7 @@ export default {
   padding: 0 2rem;
   text-transform: uppercase;
 
-  @include for-desktop-up {
+  @include for-big-desktop-up {
     left: -11rem;
     position: absolute;
     top: 24rem;
@@ -60,7 +60,7 @@ export default {
   .layout-bar {
     display: none;
 
-    @include for-desktop-up {
+    @include for-big-desktop-up {
       background-color: $light-teal;
       display: initial;
       height: 0.2rem;
