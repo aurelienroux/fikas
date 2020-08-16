@@ -2,16 +2,14 @@
   <div class="contact-form">
     <form
       method="post"
-      name="contact"
+      name="contact-form"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
-      @submit="checkForm"
     >
-      <input class="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact-form" />
+
       <input type="text" name="firstname" placeholder="first" />
       <input type="text" name="lastname" placeholder="last" />
-      <div data-netlify-recaptcha="true"></div>
       <input type="submit" value="submit" />
     </form>
   </div>
