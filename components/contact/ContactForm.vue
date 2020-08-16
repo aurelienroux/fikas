@@ -3,8 +3,8 @@
     <form
       method="post"
       name="contact"
-      netlify
-      netlify-honeypot="bot-field"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       @submit="checkForm"
     >
