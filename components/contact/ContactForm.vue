@@ -6,7 +6,7 @@
       netlify
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
-      @submit.prevent="checkForm"
+      @submit="checkForm"
     >
       <input class="hidden" name="bot-field" />
       <input type="text" name="firstname" placeholder="first" />
