@@ -5,6 +5,7 @@
       name="contact-form"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      @submit.prevent="submitForm"
     >
       <input type="hidden" name="form-name" value="contact-form" />
 
@@ -20,7 +21,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   methods: {
-    checkForm() {
+    submitForm() {
       console.log('form submit')
     }
   }
