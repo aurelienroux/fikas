@@ -1,37 +1,106 @@
 <template>
   <div class="contact-form">
-    <form
-      method="post"
-      name="contact-form"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="form-name" value="contact-form" />
-      <input type="hidden" name="bot-field" />
-      <input type="text" name="FirstName:" placeholder="first" required />
-      <input type="text" name="LastName:" placeholder="last" required />
-      <input type="email" name="Email:" placeholder="email" required />
-      <select name="Subject:">
-        <option selected>Question generales</option>
-        <option>benevol</option>
-        <option>Partneriat</option>
-      </select>
-      <textarea name="Message:" rows="4" cols="50" />
-
-      <input type="submit" value="submit" />
-    </form>
+    <Form />
+    <div class="content">
+      <div class="content__social">
+        <BtnFacebook class="content__social-btn" />
+        <BtnInsta class="content__social-btn" />
+        <BtnYoutube class="content__social-btn" />
+      </div>
+      <div class="content__newsletter">
+        <div class="content__text">
+          <h2>{{ $t('newsletter.newsletter') }}</h2>
+          <p>{{ blok.newsletter_text }}</p>
+          <Btn btn-style="button--full">
+            {{ $t('newsletter.register') }}
+          </Btn>
+        </div>
+      </div>
+      <div class="content__volunteer">
+        <div class="content__text">
+          <h2>{{ $t('contact.volunteer') }}</h2>
+          <p>{{ blok.volunteer_text }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-
-export default Vue.extend({})
+import Form from '@/components/contact/Form'
+export default Vue.extend({
+  components: {
+    Form
+  },
+  props: {
+    blok: {
+      type: Object,
+      default: () => {}
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>
 .contact-form {
-  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  max-width: 120rem;
+  padding: 4rem 2rem;
   position: relative;
+  width: 100%;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+  }
+
+  .content {
+    flex: 1;
+
+    &__social {
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto 4rem;
+      max-width: 20rem;
+    }
+
+    &__text {
+      background: $white;
+      padding: 4rem 2rem;
+      text-align: center;
+
+      h2 {
+        color: $aqua-blue;
+        font-family: $font-secondary;
+        font-size: 3.6rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: $charcoal-grey;
+        font-family: $font-primary;
+        font-size: 2rem;
+        line-height: 1.4;
+      }
+    }
+
+    &__newsletter,
+    &__volunteer {
+      background-image: url('~@/assets/images/bg2.svg');
+      margin-bottom: 4rem;
+      padding: 4rem;
+    }
+
+    &__newsletter {
+      background-color: $light-teal;
+    }
+
+    &__volunteer {
+      background-color: $very-light-purple;
+    }
+  }
 }
 </style>

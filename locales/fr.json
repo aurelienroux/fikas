@@ -1,19 +1,30 @@
 {
+  "archives": {
+    "photos": "photos",
+    "videos": "vidéos"
+  },
+  "contact": {
+    "volunteer": "Bénévolat",
+    "email": "Courriel*",
+    "first": "Prénom",
+    "general": "Questions Générales",
+    "last": "Nom*",
+    "partner": "Partenariat",
+    "selectSubject": "Choisissez un sujet",
+    "submit": "Envoyer"
+  },
+  "footer": {
+    "copyright": "Tous droits réservés"
+  },
   "header": {
-    "about": "A propos",
+    "about": "À propos",
     "archives": "Archives",
     "contact": "Contact",
-    "equipe": "Equipe",
+    "equipe": "Équipe",
     "festival": "Le festival",
     "offfikas": "OffFikas",
     "partenaires": "Partenaires",
     "programmation": "Programmation"
-  },
-  "footer": {
-    "copyright": "Tous droits reserves"
-  },
-  "newsletter": {
-    "subscription": "S'inscrire à l'infolettre"
   },
   "programmation": {
     "buytickets": "Acheter des billets",
@@ -22,8 +33,9 @@
     "officialsite": "Site officiel",
     "share": "Partager"
   },
-  "archives": {
-    "photos": "photos",
-    "videos": "vidéos"
+  "newsletter": {
+    "newsletter": "infolettre",
+    "register": "M'inscrire",
+    "subscription": "S'inscrire à l'infolettre"
   }
 }
