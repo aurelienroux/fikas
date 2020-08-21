@@ -51,21 +51,21 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .link {
-  background: $topaz;
+  background: $white;
   border-radius: 100%;
   display: inline-block;
   height: 4rem;
   width: 4rem;
 
   svg {
-    fill: $white;
+    fill: $perrywinkle;
   }
 
   &--footer {
-    background: $white;
+    background: $topaz;
 
     svg {
-      fill: $perrywinkle;
+      fill: $white;
     }
   }
 }

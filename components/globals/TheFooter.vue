@@ -14,9 +14,9 @@
           {{ $t('newsletter.subscription') }}
         </Btn>
         <div>
-          <BtnFacebook class="social-btn" />
-          <BtnInsta class="social-btn" />
-          <BtnYoutube class="social-btn" />
+          <BtnFacebook class="social-btn" btn-style="link--footer" />
+          <BtnInsta class="social-btn" btn-style="link--footer" />
+          <BtnYoutube class="social-btn" btn-style="link--footer" />
         </div>
         <BtnScrollTop class="scroll-btn" />
       </div>
