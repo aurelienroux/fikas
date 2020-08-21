@@ -1,101 +1,105 @@
 <template>
   <div class="contact-form">
-    <form
-      method="post"
-      name="contact-form"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="form-name" value="contact-form" />
-      <input type="hidden" name="bot-field" />
-      <input type="text" name="FirstName:" :placeholder="$t('contact.first')" />
-      <input
-        type="text"
-        name="LastName:"
-        :placeholder="$t('contact.last')"
-        required
-      />
-      <input
-        type="email"
-        name="Email:"
-        :placeholder="$t('contact.email')"
-        required
-      />
-      <select name="Subject:">
-        <option disabled selected>{{ $t('contact.selectSubject') }}</option>
-        <option>{{ $t('contact.general') }}</option>
-        <option>{{ $t('contact.volunteer') }}</option>
-        <option>{{ $t('contact.partner') }}</option>
-      </select>
-      <textarea name="Message:" rows="4" cols="50" />
-
-      <input type="submit" value="submit" />
-    </form>
+    <Form />
+    <div class="content">
+      <div class="content__social">
+        <BtnFacebook class="content__social-btn" />
+        <BtnInsta class="content__social-btn" />
+        <BtnYoutube class="content__social-btn" />
+      </div>
+      <div class="content__newsletter">
+        <div class="content__text">
+          <h2>{{ $t('newsletter.newsletter') }}</h2>
+          <p>{{ blok.newsletter_text }}</p>
+          <Btn btn-style="button--full">
+            {{ $t('newsletter.register') }}
+          </Btn>
+        </div>
+      </div>
+      <div class="content__volunteer">
+        <div class="content__text">
+          <h2>{{ $t('contact.volunteer') }}</h2>
+          <p>{{ blok.volunteer_text }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-
-export default Vue.extend({})
+import Form from '@/components/contact/Form'
+export default Vue.extend({
+  components: {
+    Form
+  },
+  props: {
+    blok: {
+      type: Object,
+      default: () => {}
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>
 .contact-form {
-  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  max-width: 120rem;
+  padding: 4rem 2rem;
   position: relative;
+  width: 100%;
 
-  form {
-    display: flex;
-    flex-direction: column;
+  @include for-tablet-landscape-up {
+    flex-direction: row;
   }
 
-  input[type='text'],
-  input[type='email'],
-  select,
-  textarea {
-    background-color: transparent;
-    border-radius: 1rem;
-    border: solid 0.2rem $perrywinkle;
-    color: $charcoal-grey;
-    font-family: $font-primary;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    padding-left: 2rem;
+  .content {
+    flex: 1;
 
-    &::placeholder {
-      color: rgba(48, 52, 66, 0.7);
+    &__social {
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto 4rem;
+      max-width: 20rem;
     }
-  }
 
-  input[type='text'],
-  input[type='email'],
-  select {
-    height: 6rem;
-  }
+    &__text {
+      background: $white;
+      padding: 4rem 2rem;
+      text-align: center;
 
-  textarea {
-    padding: 2rem;
-  }
+      h2 {
+        color: $aqua-blue;
+        font-family: $font-secondary;
+        font-size: 3.6rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
 
-  input[type='submit'] {
-    align-self: flex-end;
-    background-color: $perrywinkle;
-    border-radius: 3rem;
-    border: solid 0.2rem $perrywinkle;
-    color: $white;
-    cursor: pointer;
-    display: inline-block;
-    font-family: $font-secondary;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 1rem 0 1rem 1rem;
-    padding: 2rem 3rem;
-    transition: 0.3s;
+      p {
+        color: $charcoal-grey;
+        font-family: $font-primary;
+        font-size: 2rem;
+        line-height: 1.4;
+      }
+    }
 
-    &:hover {
-      background: transparent;
-      color: $perrywinkle;
+    &__newsletter,
+    &__volunteer {
+      background-image: url('~@/assets/images/bg2.svg');
+      margin-bottom: 4rem;
+      padding: 4rem;
+    }
+
+    &__newsletter {
+      background-color: $light-teal;
+    }
+
+    &__volunteer {
+      background-color: $very-light-purple;
     }
   }
 }

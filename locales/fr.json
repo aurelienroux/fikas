@@ -34,6 +34,8 @@
     "share": "Partager"
   },
   "newsletter": {
+    "newsletter": "infolettre",
+    "register": "M'inscrire",
     "subscription": "S'inscrire à l'infolettre"
   }
 }

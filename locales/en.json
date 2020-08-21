@@ -34,6 +34,8 @@
     "share": "Share"
   },
   "newsletter": {
+    "newsletter": "newsletter",
+    "register": "Register",
     "subscription": "Subscribe to newsletter"
   }
 }
