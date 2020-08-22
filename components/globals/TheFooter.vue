@@ -10,7 +10,11 @@
             {{ $t('footer.copyright') }}
           </p>
         </div>
-        <Btn class="newsletter" btn-style="button--full">
+        <Btn
+          class="newsletter"
+          btn-style="button--full"
+          @click="openNewsletter"
+        >
           {{ $t('newsletter.subscription') }}
         </Btn>
         <div>
@@ -21,13 +25,24 @@
         <BtnScrollTop class="scroll-btn" />
       </div>
     </div>
+    <NewsletterForm />
   </footer>
 </template>
 
 <script>
 import Vue from 'vue'
+import NewsletterForm from '@/components/globals/TheNewsletterForm'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: {
+    NewsletterForm
+  },
+  methods: {
+    openNewsletter() {
+      this.$store.commit('menu/toggleNewsletter')
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>
