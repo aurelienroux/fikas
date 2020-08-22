@@ -34,8 +34,10 @@
     "share": "Share"
   },
   "newsletter": {
+    "dontmiss": "Don't miss anything",
     "newsletter": "newsletter",
     "register": "Register",
+    "subscribe": "Subscribe to our newsletter",
     "subscription": "Subscribe to newsletter"
   }
 }
