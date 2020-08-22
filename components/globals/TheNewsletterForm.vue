@@ -6,7 +6,6 @@
       <input
         v-model="form.email"
         type="email"
-        name="Email:"
         :placeholder="$t('contact.email')"
         required
       />
