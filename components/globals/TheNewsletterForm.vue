@@ -1,20 +1,10 @@
 <template>
   <div class="newsletter" :class="{ 'newsletter--open': newsletterState }">
-    <p>
-      {{ $t('newsletter.dontmiss') }}
-    </p>
-    <p>
-      {{ $t('newsletter.subscribe') }}
-    </p>
-    <form action="">
-      <input type="text" name="FirstName:" :placeholder="$t('contact.first')" />
+    <p>{{ $t('newsletter.dontmiss') }}</p>
+    <p>{{ $t('newsletter.subscribe') }}</p>
+    <form ref="subscribe" action="" @submit.prevent="subscribe()">
       <input
-        type="text"
-        name="LastName:"
-        :placeholder="$t('contact.last')"
-        required
-      />
-      <input
+        v-model="form.email"
         type="email"
         name="Email:"
         :placeholder="$t('contact.email')"
@@ -22,6 +12,7 @@
       />
       <input type="submit" :value="$t('contact.submit')" />
     </form>
+    {{ response.message }}
     <button @click="closeNewsletter">
       <font-awesome-icon :icon="['fas', 'times']" />
     </button>
@@ -30,8 +21,21 @@
 
 <script>
 import Vue from 'vue'
+import axios from 'axios'
 
 export default Vue.extend({
+  data() {
+    return {
+      form: {
+        email: ''
+      },
+      response: {
+        status: null,
+        message: 'test'
+      },
+      cachedForm: {}
+    }
+  },
   computed: {
     newsletterState() {
       return this.$store.state.menu.newsletterOpen
@@ -40,6 +44,17 @@ export default Vue.extend({
   methods: {
     closeNewsletter() {
       this.$store.commit('menu/toggleNewsletter')
+    },
+    async subscribe(event) {
+      const formData = { ...this.form }
+      try {
+        const { data, status } = await axios.post('/api/subscribe', formData)
+        this.response.status = status
+        this.response.message = `Thanks, ${data.email_address} is subscribed!`
+        this.$refs.subscribe.reset()
+      } catch (e) {
+        console.log(e)
+      }
     }
   }
 })
