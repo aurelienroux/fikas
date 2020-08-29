@@ -10,8 +10,14 @@
     >
       <input type="hidden" name="form-name" value="newsletter-form" />
       <input type="hidden" name="news-bot-field" />
-      <input type="text" name="FirstName:" :placeholder="$t('contact.first')" />
       <input
+        class="input"
+        type="text"
+        name="FirstName:"
+        :placeholder="$t('contact.first')"
+      />
+      <input
+        class="input"
         type="text"
         name="LastName:"
         :placeholder="$t('contact.last')"
@@ -109,6 +115,7 @@ export default Vue.extend({
     }
   }
 
+  .input,
   input[type='text'],
   input[type='email'] {
     border: solid 0.2rem $white;
