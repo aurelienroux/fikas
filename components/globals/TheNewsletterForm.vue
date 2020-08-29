@@ -25,6 +25,7 @@
       />
       <input type="submit" :value="$t('contact.submit')" />
     </form>
+
     <button @click="closeNewsletter">
       <font-awesome-icon :icon="['fas', 'times']" />
     </button>
