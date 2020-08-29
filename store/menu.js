@@ -6,11 +6,16 @@ export const menuEnum = {
 }
 
 export const state = () => ({
-  currentMenuLink: 'home'
+  currentMenuLink: 'home',
+  newsletterOpen: false
 })
 
 export const mutations = {
   changeMenu(state, link) {
     state.currentMenuLink = link
+  },
+
+  toggleNewsletter(state) {
+    state.newsletterOpen = !state.newsletterOpen
   }
 }

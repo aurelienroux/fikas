@@ -34,8 +34,10 @@
     "share": "Partager"
   },
   "newsletter": {
+    "dontmiss": "Ne manquez rien",
     "newsletter": "infolettre",
     "register": "M'inscrire",
+    "subscribe": "Inscrivez-vous à notre infolettre",
     "subscription": "S'inscrire à l'infolettre"
   }
 }
