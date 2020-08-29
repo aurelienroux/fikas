@@ -28,7 +28,6 @@
       <option>{{ $t('contact.partner') }}</option>
     </select>
     <textarea name="Message:" rows="12" cols="20" />
-
     <input type="submit" :value="$t('contact.submit')" />
   </form>
 </template>
