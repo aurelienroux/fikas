@@ -7,7 +7,7 @@ export const menuEnum = {
 
 export const state = () => ({
   currentMenuLink: 'home',
-  newsletterOpen: false
+  newsletterOpen: true
 })
 
 export const mutations = {
