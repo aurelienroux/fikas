@@ -1,7 +1,11 @@
 <template>
   <div class="headline">
     <p>{{ blok.text }}</p>
-    <nuxt-link class="button" :to="blok.link.cached_url">
+    <nuxt-link
+      v-if="blok.show_button"
+      class="button"
+      :to="blok.link.cached_url"
+    >
       {{ blok.button_text }}
     </nuxt-link>
   </div>
