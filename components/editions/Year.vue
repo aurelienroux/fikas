@@ -8,7 +8,7 @@
     <a class="year__content" :href="blok.link.cached_url">
       <p class="year__number">{{ blok.year }}</p>
       <p class="year__archives">
-        {{ blok.link_text }}
+        {{ $t('edition.archives') }}
         <IconMore />
       </p>
     </a>
@@ -29,16 +29,10 @@ export default {
 <style lang="scss" scoped>
 .year {
   display: grid;
+  flex-basis: 33.3333%;
   grid-template-columns: 2rem repeat(20, 1fr) 2rem;
   grid-template-rows: repeat(20, 2.7rem);
   margin: 0 auto 5rem;
-  max-width: 38.5rem;
-  max-width: 42.5rem;
-
-  @include for-tablet-landscape-up {
-    flex: 1;
-    margin: 2rem;
-  }
 
   &__image {
     background-position: center;

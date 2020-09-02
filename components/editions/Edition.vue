@@ -37,7 +37,7 @@ export default {
 .year-container {
   @include for-tablet-landscape-up {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
   }
 }
 
