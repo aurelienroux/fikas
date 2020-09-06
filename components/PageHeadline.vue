@@ -1,9 +1,13 @@
 <template>
   <div class="headline">
     <p>{{ blok.text }}</p>
-    <Btn v-if="blok.show_button" class="button">
+    <nuxt-link
+      v-if="blok.show_button"
+      class="button"
+      :to="blok.link.cached_url"
+    >
       {{ blok.button_text }}
-    </Btn>
+    </nuxt-link>
   </div>
 </template>
 
@@ -39,6 +43,32 @@ export default Vue.extend({
 }
 
 .button {
+  background: transparent;
+  border-radius: 3rem;
+  border: solid 0.2rem $perrywinkle;
+  color: $perrywinkle;
+  cursor: pointer;
+  font-family: $font-secondary;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 1rem;
+  padding: 2rem 3rem;
   position: relative;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $perrywinkle;
+    color: $white;
+  }
+
+  &--full {
+    background-color: $perrywinkle;
+    color: $white;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 </style>

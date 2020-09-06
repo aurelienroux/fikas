@@ -1,0 +1,29 @@
+<form
+  method="post"
+  name="newsletter-form"
+  data-netlify="true"
+  data-netlify-honeypot="news-bot-field"
+>
+  <input type="hidden" name="form-name" value="newsletter-form" />
+  <input type="hidden" name="news-bot-field" />
+  <input
+    class="input"
+    type="text"
+    name="FirstName:"
+    :placeholder="$t('contact.first')"
+  />
+  <input
+    class="input"
+    type="text"
+    name="LastName:"
+    :placeholder="$t('contact.last')"
+    required
+  />
+  <input
+    type="email"
+    name="Email:"
+    :placeholder="$t('contact.email')"
+    required
+  />
+  <input type="submit" :value="$t('contact.submit')" />
+</form>
