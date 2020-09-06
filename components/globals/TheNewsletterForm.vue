@@ -10,20 +10,27 @@
     >
       <input type="hidden" name="form-name" value="newsletter-form" />
       <input type="hidden" name="bot-field" />
-      <input type="text" name="FirstName:" :placeholder="$t('contact.first')" />
       <input
+        class="input-text"
+        type="text"
+        name="FirstName:"
+        :placeholder="$t('contact.first')"
+      />
+      <input
+        class="input-text"
         type="text"
         name="LastName:"
         :placeholder="$t('contact.last')"
         required
       />
       <input
+        class="input-email"
         type="email"
         name="Email:"
         :placeholder="$t('contact.email')"
         required
       />
-      <input type="submit" :value="$t('contact.submit')" />
+      <input class="input-submit" type="submit" :value="$t('contact.submit')" />
     </form>
 
     <button @click="closeNewsletter">
@@ -110,8 +117,8 @@ export default Vue.extend({
     }
   }
 
-  input[type='text'],
-  input[type='email'] {
+  .input-text,
+  .input-email {
     border: solid 0.2rem $white;
 
     @include for-tablet-landscape-up {
@@ -123,7 +130,7 @@ export default Vue.extend({
     }
   }
 
-  input[type='submit'] {
+  .input-submit {
     align-self: center;
     margin-top: 2rem;
   }

@@ -29,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 .edition {
   max-width: 120rem;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   position: relative;
   width: 100%;
 }
