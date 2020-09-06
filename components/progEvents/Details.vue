@@ -36,7 +36,7 @@
       </p>
       <a
         class="share__icon"
-        href="http://"
+        :href="fbSocialUrl()"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -44,7 +44,7 @@
       </a>
       <a
         class="share__icon"
-        href="http://"
+        :href="twitterSocialUrl()"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -83,6 +83,14 @@ export default Vue.extend({
       return this.story.content.prices
         ? this.$storyapi.richTextResolver.render(this.story.content.prices)
         : ''
+    }
+  },
+  methods: {
+    fbSocialUrl() {
+      return `https://www.facebook.com/sharer/sharer.php?u=${process.env.BASE_URL}${this.$route.fullPath}`
+    },
+    twitterSocialUrl() {
+      return `https://twitter.com/home?status=${process.env.BASE_URL}${this.$route.fullPath}`
     }
   }
 })
