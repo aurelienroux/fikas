@@ -11,7 +11,7 @@
         <div class="content__text">
           <h2>{{ $t('newsletter.newsletter') }}</h2>
           <p>{{ blok.newsletter_text }}</p>
-          <Btn btn-style="button--full">
+          <Btn btn-style="button--full" @click="openNewsletter">
             {{ $t('newsletter.register') }}
           </Btn>
         </div>
@@ -37,6 +37,11 @@ export default Vue.extend({
     blok: {
       type: Object,
       default: () => {}
+    }
+  },
+  methods: {
+    openNewsletter() {
+      this.$store.commit('menu/toggleNewsletter')
     }
   }
 })

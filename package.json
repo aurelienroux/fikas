@@ -8,8 +8,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt build && nuxt export",
-    "serve": "nuxt serve",
+    "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
@@ -24,7 +23,7 @@
     "mailchimp-api-v3": "^1.14.0",
     "moment": "^2.27.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.13.1",
+    "nuxt": "^2.14.0",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^6.12.2",
     "storyblok-nuxt": "^1.2.0"

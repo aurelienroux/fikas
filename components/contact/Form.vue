@@ -8,14 +8,21 @@
   >
     <input type="hidden" name="form-name" value="contact-form" />
     <input type="hidden" name="bot-field" />
-    <input type="text" name="FirstName:" :placeholder="$t('contact.first')" />
     <input
+      class="input-text"
+      type="text"
+      name="FirstName:"
+      :placeholder="$t('contact.first')"
+    />
+    <input
+      class="input-text"
       type="text"
       name="LastName:"
       :placeholder="$t('contact.last')"
       required
     />
     <input
+      class="input-email"
       type="email"
       name="Email:"
       :placeholder="$t('contact.email')"
@@ -28,7 +35,7 @@
       <option>{{ $t('contact.partner') }}</option>
     </select>
     <textarea name="Message:" rows="12" cols="20" />
-    <input type="submit" :value="$t('contact.submit')" />
+    <input class="input-submit" type="submit" :value="$t('contact.submit')" />
   </form>
 </template>
 
@@ -48,8 +55,8 @@ export default Vue.extend({})
     padding-right: 6rem;
   }
 
-  input[type='text'],
-  input[type='email'],
+  .input-text,
+  .input-email,
   select,
   textarea {
     border: solid 0.2rem $perrywinkle;
@@ -63,7 +70,7 @@ export default Vue.extend({})
     padding: 2rem;
   }
 
-  input[type='submit'] {
+  .input-submit {
     align-self: flex-end;
     margin: 1rem 0 1rem 1rem;
   }

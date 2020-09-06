@@ -13,6 +13,9 @@
     "selectSubject": "Choisissez un sujet",
     "submit": "Envoyer"
   },
+  "edition": {
+    "archives": "Voir les archives"
+  },
   "footer": {
     "copyright": "Tous droits réservés"
   },

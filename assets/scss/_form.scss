@@ -3,8 +3,8 @@ form {
   flex-direction: column;
 }
 
-input[type='text'],
-input[type='email'],
+.input-text,
+.input-email,
 select,
 textarea {
   background-color: transparent;
@@ -16,13 +16,13 @@ textarea {
   padding-left: 2rem;
 }
 
-input[type='text'],
-input[type='email'],
+.input-text,
+.input-email,
 select {
   height: 6rem;
 }
 
-input[type='submit'] {
+.input-submit {
   background-color: $perrywinkle;
   border-radius: 3rem;
   border: solid 0.2rem $perrywinkle;
