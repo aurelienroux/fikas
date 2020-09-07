@@ -68,6 +68,8 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .countries {
   margin: 8rem 0;
+  max-width: 120rem;
+  position: relative;
 
   &__title {
     color: $aqua-blue;
@@ -80,7 +82,7 @@ export default Vue.extend({
     @include for-big-desktop-up {
       left: -20rem;
       position: absolute;
-      top: 32rem;
+      top: 25rem;
       transform: rotate(-90deg);
     }
 
