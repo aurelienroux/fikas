@@ -87,7 +87,7 @@
 
 <script>
 import Vue from 'vue'
-import Drawer from '@/components/Drawer'
+import Drawer from '@/components/DrawerMenu'
 
 export default Vue.extend({
   components: {
