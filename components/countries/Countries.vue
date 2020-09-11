@@ -1,0 +1,126 @@
+<template>
+  <div class="countries">
+    <h2 class="countries__title">
+      {{ blok.title }}
+      <div class="layout-bar"></div>
+    </h2>
+    <div class="countries__mobile">
+      <img
+        class="countries__map"
+        src="~/assets/images/map-pays.png"
+        alt="countries map"
+      />
+      <Drawer
+        v-for="count in blok.country"
+        :key="count.title"
+        :title="count.title"
+        :color="count.background === true ? 'drawer--purple' : ''"
+      >
+        {{ count.content }}
+      </Drawer>
+    </div>
+    <div class="countries__desktop">
+      <Map @select-country="selectCountry" />
+      <Description
+        v-for="count in blok.country"
+        :id="count.id"
+        :key="count.title"
+        :display="displayCountry"
+        :content="count.content"
+        @hide-country="hideCountry"
+      />
+    </div>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue'
+import Drawer from '@/components/countries/DrawerMap'
+import Map from '@/components/countries/Map'
+import Description from '@/components/countries/Description'
+
+export default Vue.extend({
+  components: {
+    Drawer,
+    Map,
+    Description
+  },
+  props: {
+    blok: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  data() {
+    return {
+      displayCountry: null
+    }
+  },
+  methods: {
+    selectCountry(country) {
+      this.displayCountry = country
+    },
+    hideCountry() {
+      this.displayCountry = null
+    }
+  }
+})
+</script>
+
+<style lang="scss" scoped>
+.countries {
+  margin: 8rem 0;
+  max-width: 120rem;
+  position: relative;
+
+  &__title {
+    color: $aqua-blue;
+    font-family: $font-secondary;
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 0 2rem 4rem;
+    text-transform: uppercase;
+
+    @include for-big-desktop-up {
+      left: -20rem;
+      position: absolute;
+      top: 25rem;
+      transform: rotate(-90deg);
+    }
+
+    .layout-bar {
+      display: none;
+
+      @include for-big-desktop-up {
+        background-color: $light-teal;
+        display: initial;
+        height: 0.2rem;
+        position: absolute;
+        right: -9rem;
+        top: 3.5rem;
+        width: 8rem;
+      }
+    }
+  }
+
+  &__map {
+    margin-bottom: 4rem;
+  }
+
+  &__mobile {
+    display: initial;
+
+    @include for-desktop-up {
+      display: none;
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @include for-desktop-up {
+      display: initial;
+    }
+  }
+}
+</style>

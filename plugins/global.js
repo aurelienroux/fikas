@@ -44,7 +44,7 @@ import OffEvent from '~/components/progEvents/OffEvent'
 import ArchiveSelector from '~/components/archives/ArchiveSelector'
 import ArchiveYear from '~/components/archives/ArchiveYear'
 import ContactForm from '~/components/contact/ContactForm'
-import Countries from '@/components/Countries'
+import Countries from '@/components/countries/Countries'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
