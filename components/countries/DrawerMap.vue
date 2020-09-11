@@ -5,7 +5,7 @@
       <IconDrawerMap :class="{ open }" />
     </div>
     <div class="container" :class="{ open }">
-      <slot />
+      {{ content }}
     </div>
   </div>
 </template>
@@ -22,6 +22,10 @@ export default Vue.extend({
     color: {
       type: String,
       default: ''
+    },
+    content: {
+      type: String,
+      required: true
     }
   },
   data() {

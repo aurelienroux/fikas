@@ -6,27 +6,26 @@
     </h2>
     <div class="countries__mobile">
       <img
-        class="countries__map"
+        class="countries__image"
         src="~/assets/images/map-pays.png"
         alt="countries map"
       />
       <Drawer
-        v-for="count in blok.country"
-        :key="count.title"
-        :title="count.title"
-        :color="count.background === true ? 'drawer--purple' : ''"
-      >
-        {{ count.content }}
-      </Drawer>
+        v-for="country in blok.country"
+        :key="country.title"
+        :title="country.title"
+        :color="country.background === true ? 'drawer--purple' : ''"
+        :content="country.content"
+      />
     </div>
     <div class="countries__desktop">
       <Map @select-country="selectCountry" />
       <Description
-        v-for="count in blok.country"
-        :id="count.id"
-        :key="count.title"
-        :display="displayCountry"
-        :content="count.content"
+        v-for="country in blok.country"
+        :id="country.id"
+        :key="country.title"
+        :display-country="displayCountry"
+        :content="country.content"
         @hide-country="hideCountry"
       />
     </div>
@@ -103,7 +102,7 @@ export default Vue.extend({
     }
   }
 
-  &__map {
+  &__image {
     margin-bottom: 4rem;
   }
 

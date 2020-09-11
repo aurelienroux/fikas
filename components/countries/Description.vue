@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="display === id"
+    v-if="displayCountry === id"
     class="countries__description"
     :class="`countries__description--${id}`"
   >
@@ -18,7 +18,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    display: {
+    displayCountry: {
       default: null,
       type: String
     },
