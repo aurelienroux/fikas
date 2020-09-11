@@ -67,8 +67,8 @@ export default Vue.extend({
 
   &--aland {
     border-radius: 2rem 2rem 0 2rem;
-    top: 56rem;
     left: 58rem;
+    top: 56rem;
 
     @include for-big-desktop-up {
       top: 47rem;
@@ -77,8 +77,8 @@ export default Vue.extend({
 
   &--danemark {
     border-radius: 2rem 2rem 0 2rem;
-    top: 60rem;
     left: 25rem;
+    top: 60rem;
 
     @include for-big-desktop-up {
       top: 51rem;
@@ -87,8 +87,8 @@ export default Vue.extend({
 
   &--finland {
     border-radius: 2rem 0 2rem 2rem;
-    top: 43rem;
     left: 61rem;
+    top: 43rem;
 
     @include for-big-desktop-up {
       top: 34rem;
@@ -97,8 +97,8 @@ export default Vue.extend({
 
   &--feroe {
     border-radius: 2rem 2rem 0 2rem;
-    top: 50rem;
     left: 14rem;
+    top: 50rem;
 
     @include for-big-desktop-up {
       top: 41rem;
@@ -107,8 +107,8 @@ export default Vue.extend({
 
   &--groenland {
     border-radius: 0 2rem 2rem 2rem;
-    top: 30rem;
     left: 18rem;
+    top: 30rem;
 
     @include for-big-desktop-up {
       top: 22rem;
@@ -117,8 +117,8 @@ export default Vue.extend({
 
   &--iceland {
     border-radius: 0 2rem 2rem 2rem;
-    top: 55rem;
     left: 47rem;
+    top: 55rem;
 
     @include for-big-desktop-up {
       top: 46rem;
@@ -127,8 +127,8 @@ export default Vue.extend({
 
   &--norway {
     border-radius: 2rem 2rem 0 2rem;
-    top: 58rem;
     left: 27rem;
+    top: 58rem;
 
     @include for-big-desktop-up {
       top: 49rem;
@@ -137,8 +137,8 @@ export default Vue.extend({
 
   &--sweden {
     border-radius: 2rem 2rem 0 2rem;
-    top: 50rem;
     left: 47rem;
+    top: 50rem;
 
     @include for-big-desktop-up {
       top: 41rem;
