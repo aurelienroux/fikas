@@ -20,6 +20,7 @@
         :key="indexPhoto"
         :src="photo.image.filename"
         :alt="photo.image.alt"
+        @click="openLightBox(photo)"
       />
     </div>
     <div v-else class="archive-year__videos">
@@ -38,13 +39,24 @@
       >
       </iframe>
     </div>
+    <transition name="fade">
+      <Lightbox
+        v-if="showLightbox"
+        :image="selectedPicture"
+        @closeLightbox="showLightbox = false"
+      />
+    </transition>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
+import Lightbox from '@/components/archives/Lightbox'
 
 export default Vue.extend({
+  components: {
+    Lightbox
+  },
   props: {
     data: {
       type: Object,
@@ -57,12 +69,18 @@ export default Vue.extend({
   },
   data() {
     return {
-      showVideos: false
+      showVideos: false,
+      showLightbox: false,
+      selectedPicture: null
     }
   },
   methods: {
     switchMedia(media) {
       this.showVideos = media
+    },
+    openLightBox(photoData) {
+      this.showLightbox = true
+      this.selectedPicture = photoData
     }
   }
 })
@@ -111,6 +129,7 @@ export default Vue.extend({
     }
 
     img {
+      cursor: pointer;
       margin-bottom: 1.2rem;
     }
   }
@@ -129,8 +148,15 @@ export default Vue.extend({
 
     @include for-tablet-landscape-up {
       flex-basis: calc(50% - 1rem);
-      // margin: 1.2rem;
     }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 }
 </style>
