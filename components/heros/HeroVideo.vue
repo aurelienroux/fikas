@@ -29,7 +29,9 @@
     </div>
     <div class="overlay">
       <h1 class="seo-title">{{ blok.title }}</h1>
-      <IconVideoScroll class="video-scroll" @click.native="videoScroll" />
+      <a href="#layout">
+        <IconVideoScroll class="video-scroll" />
+      </a>
     </div>
   </div>
 </template>
@@ -48,11 +50,6 @@ export default {
     },
     videoLinkDesktop() {
       return `https://www.youtube.com/embed/${this.blok.video_id}?showinfo=0&autoplay=1&mute=1&modestbranding=1&controls=0&loop=1&playlist=${this.blok.video_id}`
-    }
-  },
-  methods: {
-    videoScroll() {
-      // TODO:
     }
   }
 }
