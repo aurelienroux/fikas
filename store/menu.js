@@ -1,8 +1,5 @@
 export const menuEnum = {
-  home: 'home',
-  about: 'about',
-  prog: 'prog',
-  contact: 'contact'
+  home: 'home'
 }
 
 export const state = () => ({
