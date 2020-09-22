@@ -6,63 +6,37 @@
       </nuxt-link>
       <IconMenu :icon-style="openMenu" @click="displayMenu" />
     </div>
+
     <div class="menu" :class="{ open: openMenu }">
-      <Drawer :title="$t('header.about')">
+      <!-- dropdown links layout -->
+      <Drawer
+        v-for="(dropdown, index) in navData.dropdowns"
+        :key="index"
+        :title="dropdown.text"
+      >
         <nuxt-link
+          v-for="(link, indexText) in dropdown.links"
+          :key="indexText"
           class="menu-sublink"
-          :to="localePath('/festival')"
+          :to="link.link.cached_url"
           @click.native="closeMenu"
         >
-          {{ $t('header.festival') }}
-        </nuxt-link>
-        <nuxt-link
-          class="menu-sublink"
-          :to="localePath('/equipe')"
-          @click.native="closeMenu"
-        >
-          {{ $t('header.equipe') }}
-        </nuxt-link>
-        <nuxt-link
-          class="menu-sublink"
-          :to="localePath('/partenaires')"
-          @click.native="closeMenu"
-        >
-          {{ $t('header.partenaires') }}
+          {{ link.text }}
         </nuxt-link>
       </Drawer>
 
-      <Drawer :title="$t('header.programmation')">
-        <nuxt-link
-          class="menu-sublink"
-          :to="localePath('/archives')"
-          @click.native="closeMenu"
-        >
-          {{ $t('header.archives') }}
-        </nuxt-link>
-        <nuxt-link
-          class="menu-sublink"
-          :to="localePath('/offfikas')"
-          @click.native="closeMenu"
-        >
-          {{ $t('header.offfikas') }}
-        </nuxt-link>
-        <nuxt-link
-          class="menu-sublink"
-          :to="localePath('/programmation')"
-          @click.native="closeMenu"
-        >
-          {{ $t('header.programmation') }}
-        </nuxt-link>
-      </Drawer>
-
+      <!-- single links layout -->
       <nuxt-link
+        v-for="(link, index) in navData.links"
+        :key="index"
         class="menu-link"
-        :to="localePath('/contact')"
+        :to="link.link.cached_url"
         @click.native="closeMenu"
       >
-        {{ $t('header.contact') }}
+        {{ link.text }}
       </nuxt-link>
 
+      <!-- lang switcher -->
       <nuxt-link
         class="btn-lang"
         :to="switchLocalePath(switchLocale)"
@@ -72,10 +46,11 @@
       </nuxt-link>
 
       <div class="news">
-        <Btn btn-style="button--full">
+        <Btn btn-style="button--full" @click="openNewsletter">
           {{ $t('newsletter.subscription') }}
         </Btn>
       </div>
+
       <div class="social">
         <BtnFacebook />
         <BtnInsta />
@@ -101,6 +76,13 @@ export default Vue.extend({
   computed: {
     switchLocale() {
       return this.$i18n.locale === 'fr' ? 'en' : 'fr'
+    },
+    navData() {
+      if (this.$i18n.locale === 'fr') {
+        return this.$store.state.navDataFR
+      } else {
+        return this.$store.state.navDataEN
+      }
     }
   },
   methods: {
@@ -109,6 +91,9 @@ export default Vue.extend({
     },
     closeMenu() {
       this.openMenu = false
+    },
+    openNewsletter() {
+      this.$store.commit('menu/toggleNewsletter')
     }
   },
   head() {

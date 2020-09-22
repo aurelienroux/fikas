@@ -19,16 +19,6 @@
   "footer": {
     "copyright": "Tous droits réservés"
   },
-  "header": {
-    "about": "À propos",
-    "archives": "Archives",
-    "contact": "Contact",
-    "equipe": "Équipe",
-    "festival": "Le festival",
-    "offfikas": "OffFikas",
-    "partenaires": "Partenaires",
-    "programmation": "Programmation"
-  },
   "programmation": {
     "buytickets": "Acheter des billets",
     "facebookEvent": "Événement Facebook",
