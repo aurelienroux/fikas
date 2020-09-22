@@ -9,72 +9,40 @@
       >
         <Logo />
       </nuxt-link>
+
       <div class="menu">
+        <!-- dropdown links layout -->
         <DropDown
-          :title="$t('header.about')"
-          :class="{ 'menu-active': currentMenu === menuEnum.about }"
+          v-for="(dropdown, index) in navData.dropdowns"
+          :key="index"
+          :title="dropdown.text"
+          :class="{ 'menu-active': currentMenu === dropdown.menuDecoration }"
         >
-          <li>
+          <li v-for="(link, indexText) in dropdown.links" :key="indexText">
             <nuxt-link
               class="menu-sublink"
-              :to="localePath('/festival')"
-              @click.native="changeCurrentMenu(menuEnum.about)"
+              :to="link.link.cached_url"
+              @click.native="changeCurrentMenu(link.menuDecoration)"
             >
-              {{ $t('header.festival') }}
-            </nuxt-link>
-            <nuxt-link
-              class="menu-sublink"
-              :to="localePath('/equipe')"
-              @click.native="changeCurrentMenu(menuEnum.about)"
-            >
-              {{ $t('header.equipe') }}
-            </nuxt-link>
-            <nuxt-link
-              class="menu-sublink"
-              :to="localePath('/partenaires')"
-              @click.native="changeCurrentMenu(menuEnum.about)"
-            >
-              {{ $t('header.partenaires') }}
+              {{ link.text }}
             </nuxt-link>
           </li>
         </DropDown>
-        <DropDown
-          :title="$t('header.programmation')"
-          :class="{ 'menu-active': currentMenu === menuEnum.prog }"
-        >
-          <li>
-            <nuxt-link
-              class="menu-sublink"
-              to="/programmation"
-              @click.native="changeCurrentMenu(menuEnum.prog)"
-            >
-              {{ $t('header.programmation') }}
-            </nuxt-link>
-            <nuxt-link
-              class="menu-sublink"
-              to="/offfikas"
-              @click.native="changeCurrentMenu(menuEnum.prog)"
-            >
-              {{ $t('header.offfikas') }}
-            </nuxt-link>
-            <nuxt-link
-              class="menu-sublink"
-              to="/archives"
-              @click.native="changeCurrentMenu(menuEnum.prog)"
-            >
-              {{ $t('header.archives') }}
-            </nuxt-link>
-          </li>
-        </DropDown>
+
+        <!-- single links layout -->
         <nuxt-link
+          v-for="(link, index) in navData.links"
+          :key="index"
           class="menu-link"
-          :class="{ 'menu-active': currentMenu === menuEnum.contact }"
-          :to="localePath('/contact')"
-          @click.native="changeCurrentMenu(menuEnum.contact)"
+          :class="{ 'menu-active': currentMenu === link.menuDecoration }"
+          :to="link.link.cached_url"
+          @click.native="changeCurrentMenu(link.menuDecoration)"
         >
-          {{ $t('header.contact') }}
+          {{ link.text }}
         </nuxt-link>
       </div>
+
+      <!-- lang switcher -->
       <nuxt-link class="btn-lang" :to="switchLocalePath(switchLocale)">
         {{ switchLocale }}
       </nuxt-link>
@@ -104,6 +72,13 @@ export default Vue.extend({
     },
     switchLocale() {
       return this.$i18n.locale === 'fr' ? 'en' : 'fr'
+    },
+    navData() {
+      if (this.$i18n.locale === 'fr') {
+        return this.$store.state.navDataFR
+      } else {
+        return this.$store.state.navDataEN
+      }
     }
   },
   mounted() {
