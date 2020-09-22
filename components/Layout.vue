@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div id="layout" class="layout">
     <div class="layout-bar"></div>
     <img src="~/assets/images/bg1.svg" alt="" />
     <component
