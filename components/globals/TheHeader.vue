@@ -32,7 +32,7 @@
         <!-- single links layout -->
         <nuxt-link
           v-for="(link, index) in navData.links"
-          :key="index"
+          :key="index + '-link'"
           class="menu-link"
           :class="{ 'menu-active': currentMenu === link.menuDecoration }"
           :to="link.link.cached_url"
