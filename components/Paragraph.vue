@@ -19,7 +19,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .paragraph {
-  margin: 8rem 0;
+  margin: 4rem 0;
   padding: 4rem 2rem;
   width: 100%;
 
