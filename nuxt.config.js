@@ -109,5 +109,16 @@ export default {
         fr: require('./locales/fr.json')
       }
     }
+  },
+  generate: {
+    exclude: [
+      '/evenements/festival',
+      '/evenements/partenaires',
+      '/evenements/equipe',
+      '/evenements/programmation',
+      '/evenements/offfikas',
+      '/evenements/archives',
+      '/evenements/contact'
+    ]
   }
 }
