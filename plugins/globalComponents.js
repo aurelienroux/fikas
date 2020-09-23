@@ -46,6 +46,7 @@ import ArchiveYear from '~/components/archives/ArchiveYear'
 import ContactForm from '~/components/contact/ContactForm'
 import Countries from '~/components/countries/Countries'
 import Paragraph from '~/components/Paragraph.vue'
+import PhotoDisplay from '~/components/PhotoDisplay.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -94,3 +95,4 @@ Vue.component('ArchiveYear', ArchiveYear)
 Vue.component('ContactForm', ContactForm)
 Vue.component('Countries', Countries)
 Vue.component('Paragraph', Paragraph)
+Vue.component('PhotoDisplay', PhotoDisplay)

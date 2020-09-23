@@ -1,7 +1,16 @@
 <template>
   <div id="layout" class="layout">
-    <div class="layout-bar"></div>
-    <img src="~/assets/images/bg1.svg" alt="" />
+    <div class="layout__bar"></div>
+    <img
+      class="layout__image layout__image--top"
+      src="~/assets/images/bg1.svg"
+      alt=""
+    />
+    <img
+      class="layout__image layout__image--bottom"
+      src="~/assets/images/bg1.svg"
+      alt=""
+    />
     <component
       :is="blok.component"
       v-for="blok in blok.components"
@@ -36,7 +45,7 @@ export default Vue.extend({
   flex-direction: column;
   position: relative;
 
-  &-bar {
+  &__bar {
     background-color: $light-teal;
     height: 8rem;
     width: 0.5rem;
@@ -45,25 +54,29 @@ export default Vue.extend({
       width: 0.2rem;
     }
   }
-}
 
-img {
-  left: 0;
-  max-width: 60rem;
-  position: absolute;
-  top: 8rem;
-  width: 75%;
+  &__image {
+    max-width: 60rem;
+    position: absolute;
+    width: 75%;
 
-  @include for-tablet-portrait-up {
-    width: 50%;
+    @include for-tablet-portrait-up {
+      width: 50%;
+    }
+
+    @include for-desktop-up {
+      width: 33%;
+    }
+
+    &--top {
+      left: 0;
+      top: 8rem;
+    }
+
+    &--bottom {
+      bottom: 35rem;
+      right: 0;
+    }
   }
-
-  @include for-desktop-up {
-    width: 33%;
-  }
-}
-
-.btn {
-  position: relative;
 }
 </style>
