@@ -1,5 +1,5 @@
 <template>
-  <div vfor class="bands">
+  <div class="bands">
     <div v-for="(band, index) in bands" :key="index" class="band">
       <h2 class="band__title">{{ band.title }}</h2>
       <p class="band__headline">
