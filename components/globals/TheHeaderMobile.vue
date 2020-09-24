@@ -28,7 +28,7 @@
       <!-- single links layout -->
       <nuxt-link
         v-for="(link, index) in navData.links"
-        :key="index"
+        :key="index + '-link'"
         class="menu-link"
         :to="link.link.cached_url"
         @click.native="closeMenu"
