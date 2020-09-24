@@ -6,9 +6,7 @@
       class="headline__button"
       :to="blok.link.cached_url"
     >
-      <Btn>
-        {{ blok.button_text }}
-      </Btn>
+      <Btn>{{ blok.button_text }}</Btn>
     </nuxt-link>
   </div>
 </template>

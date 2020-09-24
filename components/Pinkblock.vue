@@ -4,7 +4,9 @@
     <div class="pinkblock__container">
       <p class="pinkblock__title">{{ blok.title }}</p>
       <p class="pinkblock__text">{{ blok.text }}</p>
-      <Btn btn-style="button--full">{{ blok.button_text }}</Btn>
+      <nuxt-link v-if="blok.button_text" :to="blok.button_link.cached_url">
+        <Btn btn-style="button--full">{{ blok.button_text }}</Btn>
+      </nuxt-link>
     </div>
   </div>
 </template>
