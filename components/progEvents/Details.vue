@@ -87,10 +87,10 @@ export default Vue.extend({
   },
   methods: {
     fbSocialUrl() {
-      return `https://www.facebook.com/sharer/sharer.php?u=${process.env.BASE_URL}${this.$route.fullPath}`
+      return `https://www.facebook.com/sharer/sharer.php?u=https://fikasfest.com${this.$route.fullPath}`
     },
     twitterSocialUrl() {
-      return `https://twitter.com/home?status=${process.env.BASE_URL}${this.$route.fullPath}`
+      return `https://twitter.com/home?status=https://fikasfest.com${this.$route.fullPath}`
     }
   }
 })
