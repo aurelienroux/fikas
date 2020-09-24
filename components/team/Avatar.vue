@@ -1,6 +1,10 @@
 <template>
   <div class="avatar">
-    <img class="avatar__image" :src="blok.image.filename" alt="" />
+    <img
+      class="avatar__image"
+      :src="blok.image.filename"
+      :alt="blok.image.alt"
+    />
     <p class="avatar__name">{{ blok.name }}</p>
     <p class="avatar__role">{{ blok.role }}</p>
     <p class="avatar__work">{{ blok.work }}</p>

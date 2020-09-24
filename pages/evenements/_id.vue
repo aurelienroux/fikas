@@ -4,7 +4,7 @@
 
     <div class="layout">
       <div class="layout-bar"></div>
-      <img src="~/assets/images/bg1.svg" alt="" />
+      <img src="~/assets/images/bg1.svg" alt="layout decoration" />
 
       <div class="container">
         <Bands

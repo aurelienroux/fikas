@@ -2,7 +2,11 @@
   <div class="lightbox">
     <button @click="$emit('closeLightbox')"><IconClose /></button>
     <div class="container">
-      <img class="lightbox__image" :src="image.image.filename" :alt="image" />
+      <img
+        class="lightbox__image"
+        :src="image.image.filename"
+        :alt="image.image.alt"
+      />
       <p class="lightbox__credits">{{ image.credits }}</p>
     </div>
   </div>

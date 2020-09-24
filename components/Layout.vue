@@ -4,12 +4,12 @@
     <img
       class="layout__image layout__image--top"
       src="~/assets/images/bg1.svg"
-      alt=""
+      alt="layout decoration"
     />
     <img
       class="layout__image layout__image--bottom"
       src="~/assets/images/bg1.svg"
-      alt=""
+      alt="layout decoration"
     />
     <component
       :is="blok.component"
