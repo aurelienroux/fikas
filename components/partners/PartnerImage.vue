@@ -3,7 +3,7 @@
     <img
       class="partner-image__image"
       :src="blok.image.filename"
-      alt="partner image"
+      :alt="blok.image.alt"
     />
   </a>
 </template>

@@ -1,6 +1,10 @@
 <template>
   <div class="avatar">
-    <img class="avatar__image" :src="blok.image.filename" alt="" />
+    <img
+      class="avatar__image"
+      :src="blok.image.filename"
+      :alt="blok.image.alt"
+    />
     <p class="avatar__name">{{ blok.name }}</p>
     <p class="avatar__role">{{ blok.role }}</p>
     <p class="avatar__work">{{ blok.work }}</p>
@@ -30,6 +34,7 @@ export default Vue.extend({
     border-radius: 100%;
     height: 16rem;
     margin-bottom: 2rem;
+    object-fit: cover;
     width: 16rem;
   }
 
