@@ -34,6 +34,7 @@ export default Vue.extend({
     border-radius: 100%;
     height: 16rem;
     margin-bottom: 2rem;
+    object-fit: cover;
     width: 16rem;
   }
 
