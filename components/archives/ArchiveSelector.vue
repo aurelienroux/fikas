@@ -13,7 +13,7 @@
         />
         <div class="archive__buttons">
           <button
-            v-for="(year, index) in blok.components.slice().reverse()"
+            v-for="(year, index) in blok.components.slice()"
             :key="index"
             class="archive__button"
             :class="{ active: year.title === selectedYear }"
