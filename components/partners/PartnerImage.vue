@@ -23,11 +23,14 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .partner-image {
+  flex-basis: calc(30rem - 6rem);
   margin: 1rem;
+  text-align: center;
 
   &__image {
     height: 14rem;
-    width: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 }
 </style>
