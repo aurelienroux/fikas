@@ -83,7 +83,7 @@ export default Vue.extend({
 
     .layout-bar {
       background-color: $light-teal;
-      bottom: 0rem;
+      bottom: 0;
       height: 0.2rem;
       left: 0;
       position: absolute;
