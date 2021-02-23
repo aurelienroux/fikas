@@ -37,7 +37,6 @@ export default Vue.extend({
 
   &__title {
     color: $aqua-blue;
-    display: inline-block;
     font-family: $font-secondary;
     font-size: 4rem;
     font-weight: 600;
@@ -47,16 +46,11 @@ export default Vue.extend({
 
     .layout-bar {
       background-color: $light-teal;
-      display: none;
+      bottom: 0rem;
       height: 0.2rem;
+      left: 0;
       position: absolute;
-      right: -9rem;
-      top: 3.5rem;
       width: 8rem;
-
-      @include for-tablet-landscape-up {
-        display: initial;
-      }
     }
   }
 

@@ -131,27 +131,16 @@ export default Vue.extend({
   font-size: 4rem;
   font-weight: 600;
   margin-bottom: 2rem;
+  position: relative;
   text-transform: uppercase;
 
-  @include for-big-desktop-up {
-    left: -11rem;
-    position: absolute;
-    top: 17rem;
-    transform: rotate(-90deg);
-  }
-
   .layout-bar {
-    display: none;
-
-    @include for-big-desktop-up {
-      background-color: $light-teal;
-      display: initial;
-      height: 0.2rem;
-      position: absolute;
-      right: -9rem;
-      top: 3.5rem;
-      width: 8rem;
-    }
+    background-color: $light-teal;
+    bottom: 0rem;
+    height: 0.2rem;
+    left: 0;
+    position: absolute;
+    width: 8rem;
   }
 }
 </style>
