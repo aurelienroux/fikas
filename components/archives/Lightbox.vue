@@ -41,7 +41,9 @@ export default Vue.extend({
 
   .container {
     margin: 2rem;
+    max-height: 80vh;
     max-width: 90rem;
+    text-align: center;
   }
 
   button {
@@ -56,6 +58,10 @@ export default Vue.extend({
     svg {
       fill: $perrywinkle;
     }
+  }
+
+  &__image {
+    max-height: 100%;
   }
 
   &__credits {
