@@ -14,7 +14,7 @@
         {{ $t('archives.videos') }}
       </button>
       <button
-        v-if="data.prog"
+        v-if="data.prog_button"
         :class="{ active: showProg === true }"
         @click="switchMedia('prog')"
       >
