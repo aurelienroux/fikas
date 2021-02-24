@@ -4,7 +4,7 @@
     <div class="container">
       <img
         class="lightbox__image"
-        :src="image.image.filename"
+        :src="resizeImg(image.image.filename)"
         :alt="image.image.alt"
       />
       <p class="lightbox__credits">{{ image.credits }}</p>
@@ -20,6 +20,15 @@ export default Vue.extend({
     image: {
       type: Object,
       default: () => null
+    }
+  },
+  methods: {
+    resizeImg(originalUrl) {
+      const newUrl = originalUrl.replace(
+        'https://a.storyblok.com',
+        'https://img2.storyblok.com/1200x0'
+      )
+      return newUrl
     }
   }
 })

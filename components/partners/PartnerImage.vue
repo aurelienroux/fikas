@@ -2,7 +2,7 @@
   <a :href="blok.link.url" target="_blank" class="partner-image">
     <img
       class="partner-image__image"
-      :src="blok.image.filename"
+      :src="resizeImg(blok.image.filename)"
       :alt="blok.image.alt"
     />
   </a>
@@ -17,6 +17,15 @@ export default Vue.extend({
       type: Object,
       default: () => {}
     }
+  },
+  methods: {
+    resizeImg(originalUrl) {
+      const newUrl = originalUrl.replace(
+        'https://a.storyblok.com',
+        'https://img2.storyblok.com/300x0'
+      )
+      return newUrl
+    }
   }
 })
 </script>
@@ -24,7 +33,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .partner-image {
   flex-basis: calc(30rem - 6rem);
-  margin: 1rem;
+  margin: 2rem;
   text-align: center;
 
   &__image {
