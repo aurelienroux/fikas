@@ -26,7 +26,7 @@ export default Vue.extend({
     resizeImg(originalUrl) {
       const newUrl = originalUrl.replace(
         'https://a.storyblok.com',
-        'https://img2.storyblok.com/1200x0'
+        'https://img2.storyblok.com/1000x0'
       )
       return newUrl
     }
