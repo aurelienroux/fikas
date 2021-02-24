@@ -60,11 +60,8 @@ export default {
   }
 
   &__img {
-    height: 25rem;
     margin: 0 auto 1.5rem;
     max-width: 60rem;
-    object-fit: cover;
-    object-position: center;
     width: 100%;
   }
 }
