@@ -14,7 +14,7 @@
         {{ $t('archives.videos') }}
       </button>
       <button
-        v-if="data.prog"
+        v-if="data.prog_button"
         :class="{ active: showProg === true }"
         @click="switchMedia('prog')"
       >
@@ -25,7 +25,7 @@
       <img
         v-for="(photo, indexPhoto) in data.photos"
         :key="indexPhoto"
-        :src="photo.image.filename"
+        :src="resizeImg(photo.image.filename)"
         :alt="photo.image.alt"
         @click="openLightBox(photo)"
       />
@@ -106,6 +106,13 @@ export default Vue.extend({
         this.showVideos = false
         this.showProg = true
       }
+    },
+    resizeImg(originalUrl) {
+      const newUrl = originalUrl.replace(
+        'https://a.storyblok.com',
+        'https://img2.storyblok.com/390x0'
+      )
+      return newUrl
     },
     openLightBox(photoData) {
       this.showLightbox = true

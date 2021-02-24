@@ -2,7 +2,7 @@
   <div class="avatar">
     <img
       class="avatar__image"
-      :src="blok.image.filename"
+      :src="resizeImg(blok.image.filename)"
       :alt="blok.image.alt"
     />
     <p class="avatar__name">{{ blok.name }}</p>
@@ -19,6 +19,15 @@ export default Vue.extend({
     blok: {
       type: Object,
       default: () => {}
+    }
+  },
+  methods: {
+    resizeImg(originalUrl) {
+      const newUrl = originalUrl.replace(
+        'https://a.storyblok.com',
+        'https://img2.storyblok.com/250x0'
+      )
+      return newUrl
     }
   }
 })

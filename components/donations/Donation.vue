@@ -7,7 +7,7 @@
     <img
       v-if="blok.image.filename"
       class="donation__img"
-      :src="blok.image.filename"
+      :src="resizeImg(blok.image.filename)"
       :alt="blok.image.filename"
     />
     <div>
@@ -29,6 +29,15 @@ export default {
     blok: {
       type: Object,
       default: () => {}
+    }
+  },
+  methods: {
+    resizeImg(originalUrl) {
+      const newUrl = originalUrl.replace(
+        'https://a.storyblok.com',
+        'https://img2.storyblok.com/600x0'
+      )
+      return newUrl
     }
   }
 }

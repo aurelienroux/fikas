@@ -8,7 +8,7 @@
       <div class="archive__container">
         <img
           class="archive__image"
-          :src="selectedYearImage.filename"
+          :src="resizeImg(selectedYearImage.filename)"
           :alt="selectedYearImage.alt"
         />
         <div class="archive__buttons">
@@ -53,6 +53,13 @@ export default Vue.extend({
     selectYear(year, yearImage) {
       this.selectedYear = year
       this.selectedYearImage = yearImage
+    },
+    resizeImg(originalUrl) {
+      const newUrl = originalUrl.replace(
+        'https://a.storyblok.com',
+        'https://img2.storyblok.com/200x0'
+      )
+      return newUrl
     }
   }
 })
