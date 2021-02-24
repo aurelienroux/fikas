@@ -47,6 +47,8 @@ import ContactForm from '~/components/contact/ContactForm'
 import Countries from '~/components/countries/Countries'
 import Paragraph from '~/components/Paragraph.vue'
 import PhotoDisplay from '~/components/PhotoDisplay.vue'
+import Donations from '~/components/donations/Donations.vue'
+import Donation from '~/components/donations/Donation.vue'
 
 Vue.component('Btn', Btn)
 Vue.component('BtnFacebook', BtnFacebook)
@@ -96,3 +98,5 @@ Vue.component('ContactForm', ContactForm)
 Vue.component('Countries', Countries)
 Vue.component('Paragraph', Paragraph)
 Vue.component('PhotoDisplay', PhotoDisplay)
+Vue.component('Donations', Donations)
+Vue.component('Donation', Donation)
