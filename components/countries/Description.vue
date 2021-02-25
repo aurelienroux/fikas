@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="displayCountry === id"
+    v-if="displayCountry === id && content !== ''"
     class="countries__description"
     :class="`countries__description--${id}`"
   >
