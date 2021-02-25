@@ -1,6 +1,6 @@
 <template>
   <div class="headline">
-    <p class="headline__paragraph">{{ blok.text }}</p>
+    <p class="headline__paragraph" v-html="richtext"></p>
     <nuxt-link
       v-if="blok.show_button"
       class="headline__button"
@@ -19,6 +19,13 @@ export default Vue.extend({
     blok: {
       type: Object,
       default: () => {}
+    }
+  },
+  computed: {
+    richtext() {
+      return this.blok.text
+        ? this.$storyapi.richTextResolver.render(this.blok.text)
+        : ''
     }
   }
 })
