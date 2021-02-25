@@ -117,7 +117,7 @@ export default Vue.extend({
   width: 100%;
   z-index: 100;
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     display: none;
   }
 

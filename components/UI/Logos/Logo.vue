@@ -52,7 +52,7 @@
   height: 2rem;
   width: 10.6rem;
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     height: 4rem;
     width: 21.2rem;
   }
