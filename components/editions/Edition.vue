@@ -53,7 +53,7 @@ export default {
 
   .layout-bar {
     background-color: $light-teal;
-    bottom: 0;
+    bottom: -1rem;
     height: 0.2rem;
     left: 2rem;
     position: absolute;

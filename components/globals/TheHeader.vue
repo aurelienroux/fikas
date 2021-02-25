@@ -128,7 +128,7 @@ export default Vue.extend({
     background-color: $aqua-blue;
   }
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     display: initial;
   }
 
