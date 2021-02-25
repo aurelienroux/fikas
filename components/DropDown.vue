@@ -1,24 +1,10 @@
 <template>
-  <div class="menu-link">
-    <div class="mobile" @click="toggleLinks">
-      {{ title }}
-      <IconMenuDrop />
-      <ul class="menu-dropdown" :class="{ show: showLinks }">
-        <slot />
-      </ul>
-    </div>
-    <div
-      class="desktop"
-      @mouseenter="showHover"
-      @mouseleave="hideHover"
-      @click="toggleLinks"
-    >
-      {{ title }}
-      <IconMenuDrop />
-      <ul class="menu-dropdown" :class="{ show: showLinks }">
-        <slot />
-      </ul>
-    </div>
+  <div class="menu-link" @mouseenter="showHover" @mouseleave="hideHover">
+    {{ title }}
+    <IconMenuDrop />
+    <ul class="menu-dropdown" :class="{ show: showLinks }">
+      <slot />
+    </ul>
   </div>
 </template>
 
@@ -43,9 +29,6 @@ export default Vue.extend({
     },
     hideHover() {
       this.showLinks = false
-    },
-    toggleLinks() {
-      this.showLinks = !this.showLinks
     }
   }
 })
@@ -75,20 +58,6 @@ export default Vue.extend({
       top: 100%;
       width: 100%;
     }
-  }
-}
-
-.mobile {
-  @include for-desktop-up {
-    display: none;
-  }
-}
-
-.desktop {
-  display: none;
-
-  @include for-desktop-up {
-    display: initial;
   }
 }
 </style>
