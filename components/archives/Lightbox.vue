@@ -7,7 +7,9 @@
         :src="resizeImg(image.image.filename)"
         :alt="image.image.alt"
       />
-      <p class="lightbox__credits">{{ image.credits }}</p>
+      <p class="lightbox__credits">
+        {{ $t('archives.credits') }} - {{ image.credits }}
+      </p>
     </div>
   </div>
 </template>
