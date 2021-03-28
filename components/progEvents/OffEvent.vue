@@ -11,6 +11,7 @@
       <p class="event__time">{{ blok.time }}</p>
       <p class="event__location">{{ blok.location }}</p>
       <a
+        v-if="showBuyButton"
         class="event__link"
         :href="blok.facebooklink.url"
         target="_blank"
