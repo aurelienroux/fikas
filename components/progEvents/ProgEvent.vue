@@ -3,13 +3,16 @@
     <div
       class="event__image"
       :style="{ backgroundImage: `url('${blok.thumbnail.filename}')` }"
-    ></div>
+    />
+
     <div class="event__bg"></div>
+
     <div class="event__content">
       <p class="event__title">{{ blok.title }}</p>
       <p v-if="blok.date" class="event__date">{{ formatedDate }}</p>
       <p class="event__time">{{ blok.time }}</p>
       <p class="event__location">{{ blok.location }}</p>
+
       <nuxt-link class="event__link" :to="blok.link.cached_url">
         {{ $t('programmation.more') }}
         <IconMore />
