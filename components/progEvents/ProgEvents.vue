@@ -4,7 +4,7 @@
       :is="event.content.component"
       v-for="(event, index) in events"
       :key="index"
-      :blok="event.content"
+      :blok="event"
     >
     </component>
   </div>
