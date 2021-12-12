@@ -21,7 +21,7 @@ export default {
           version: 'draft'
         }),
         context.app.$storyapi.get(`cdn/stories`, {
-          version: 'draft',
+          version: 'published',
           starts_with: `${locale}evenements`
         })
       ])
