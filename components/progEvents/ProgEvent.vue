@@ -13,7 +13,7 @@
       <p class="event__time">{{ blok.content.time }}</p>
       <p class="event__location">{{ blok.content.location }}</p>
 
-      <nuxt-link class="event__link" :to="blok.full_slug">
+      <nuxt-link class="event__link" :to="`/${blok.full_slug}`">
         {{ $t('programmation.more') }}
         <IconMore />
       </nuxt-link>
