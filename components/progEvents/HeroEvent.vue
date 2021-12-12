@@ -78,6 +78,7 @@ export default Vue.extend({
     z-index: 10;
     padding: 0 2rem;
     text-align: center;
+    max-width: 120rem;
 
     @include for-tablet-landscape-up {
       font-size: 6rem;
