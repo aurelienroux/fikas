@@ -18,7 +18,7 @@
           v-for="(link, indexText) in dropdown.links"
           :key="indexText"
           class="menu-sublink"
-          :to="`/${link.link.cached_url}`"
+          :to="link.link.cached_url"
           @click.native="closeMenu"
         >
           {{ link.text }}
@@ -30,7 +30,7 @@
         v-for="(link, index) in navData.links"
         :key="index + '-link'"
         class="menu-link"
-        :to="`/${link.link.cached_url}`"
+        :to="link.link.cached_url"
         @click.native="closeMenu"
       >
         {{ link.text }}
