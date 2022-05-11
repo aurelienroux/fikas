@@ -19,5 +19,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "vue/comment-directive": "off",
+    "vue/no-template-shadow": "off",
+    "vue/no-v-html": "off",
   }
 }

@@ -93,6 +93,7 @@ export default Vue.extend({
     height: 100%;
     max-height: 58rem;
     width: 100%;
+    z-index: 100;
   }
 
   &__bg {
