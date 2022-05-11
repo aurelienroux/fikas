@@ -2,15 +2,18 @@
   <div v-if="activeFilter" class="event">
     <div
       class="event__image"
-      :style="{ backgroundImage: `url('${blok.thumbnail.filename}')` }"
-    ></div>
+      :style="{ backgroundImage: `url('${blok.content.thumbnail.filename}')` }"
+    />
+
     <div class="event__bg"></div>
+
     <div class="event__content">
-      <p class="event__title">{{ blok.title }}</p>
-      <p v-if="blok.date" class="event__date">{{ formatedDate }}</p>
-      <p class="event__time">{{ blok.time }}</p>
-      <p class="event__location">{{ blok.location }}</p>
-      <nuxt-link class="event__link" :to="blok.link.cached_url">
+      <p class="event__title">{{ blok.content.title }}</p>
+      <p v-if="blok.content.date" class="event__date">{{ formatedDate }}</p>
+      <p class="event__time">{{ blok.content.time }}</p>
+      <p class="event__location">{{ blok.content.location }}</p>
+
+      <nuxt-link class="event__link" :to="`/${blok.full_slug}`">
         {{ $t('programmation.more') }}
         <IconMore />
       </nuxt-link>
@@ -31,7 +34,7 @@ export default Vue.extend({
   },
   computed: {
     formatedDate() {
-      return moment(this.blok.date, 'YYYY//MM/DD')
+      return moment(this.blok.content.date, 'YYYY//MM/DD')
         .locale(this.$i18n.locale)
         .format('DD MMMM YYYY')
     },
@@ -43,7 +46,7 @@ export default Vue.extend({
 
       if (stateFilter === 'all') {
         return true
-      } else if (this.blok.category.includes(stateFilter)) {
+      } else if (this.blok.content.category.includes(stateFilter)) {
         return true
       } else {
         return false

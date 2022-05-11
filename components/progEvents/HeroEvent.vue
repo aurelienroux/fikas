@@ -3,8 +3,11 @@
     <div
       class="hero__image"
       :style="{ backgroundImage: `url('${story.content.image.filename}')` }"
-    ></div>
-    <h1 class="hero__title">{{ story.content.title }}</h1>
+    />
+
+    <h1 class="hero__title">
+      {{ story.content.title }}
+    </h1>
   </div>
 </template>
 
@@ -73,6 +76,9 @@ export default Vue.extend({
     font-weight: 600;
     margin-bottom: 4rem;
     z-index: 10;
+    padding: 0 2rem;
+    text-align: center;
+    max-width: 120rem;
 
     @include for-tablet-landscape-up {
       font-size: 6rem;

@@ -112,13 +112,16 @@ export default {
   },
   generate: {
     exclude: [
-      '/evenements/festival',
-      '/evenements/partenaires',
-      '/evenements/equipe',
-      '/evenements/programmation',
-      '/evenements/offfikas',
       '/evenements/archives',
-      '/evenements/contact'
+      '/evenements/contact',
+      '/evenements/equipe',
+      '/evenements/festival',
+      '/evenements/offfikas',
+      '/evenements/partenaires',
+      '/evenements/prog-test',
+      '/evenements/programmation',
+      '/evenements/support',
+      '/evenements/tavata'
     ]
   }
 }

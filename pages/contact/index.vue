@@ -26,7 +26,7 @@ export default {
         if (!res.response) {
           context.error({
             statusCode: 404,
-            message: 'Failed to receive content form api'
+            message: 'Failed to receive content from api'
           })
         } else {
           context.error({

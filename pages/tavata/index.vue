@@ -11,12 +11,12 @@
 
 <script>
 export default {
-  name: 'Archives',
+  name: 'Tavata',
   asyncData(context) {
     const locale = context.app.i18n.locale === 'en' ? '/en' : ''
 
     return context.app.$storyapi
-      .get(`cdn/stories${locale}/archives`, {
+      .get(`cdn/stories${locale}/tavata`, {
         version: 'draft'
       })
       .then((res) => {
