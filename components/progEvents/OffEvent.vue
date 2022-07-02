@@ -6,10 +6,9 @@
     ></div>
     <div class="event__bg"></div>
     <div class="event__content">
-      <p class="event__title">{{ blok.title }}</p>
       <p v-if="blok.date" class="event__date">{{ formatedDate }}</p>
-      <p class="event__time">{{ blok.time }}</p>
-      <p class="event__location">{{ blok.location }}</p>
+      <p class="event__title">{{ blok.title }}</p>
+      <p class="event__time">{{ blok.time }} - {{ blok.location }}</p>
       <a
         v-if="showBuyButton"
         class="event__link"
@@ -64,9 +63,13 @@ export default Vue.extend({
 .event {
   display: grid;
   flex-basis: 50%;
-  grid-template-columns: 8rem 1fr 2.4rem;
-  grid-template-rows: 32rem 7rem 1fr auto;
+  grid-template-columns: 5rem 1fr 2.4rem;
+  grid-template-rows: 14rem 7rem 1fr auto;
   margin-bottom: 8rem;
+
+  @include for-tablet-landscape-up {
+    flex-basis: 33%;
+  }
 
   &__image {
     background-position: center;
@@ -95,24 +98,23 @@ export default Vue.extend({
     grid-row-start: 3;
   }
 
-  &__title {
+  &__date {
     color: $white;
     font-family: $font-secondary;
-    font-size: 3rem;
+    font-size: 2.4rem;
     font-weight: bold;
     line-height: 1.4;
   }
 
-  &__date,
-  &__time,
-  &__location {
+  &__title,
+  &__time {
     color: $charcoal-grey;
     font-family: $font-primary;
     font-size: 2rem;
     line-height: 1.3;
   }
 
-  &__date {
+  &__title {
     font-weight: 700;
   }
 
