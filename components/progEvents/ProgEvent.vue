@@ -1,5 +1,5 @@
 <template>
-  <div v-if="activeFilter" class="event">
+  <div class="event">
     <div
       class="event__image"
       :style="{ backgroundImage: `url('${blok.content.thumbnail.filename}')` }"
@@ -38,20 +38,6 @@ export default Vue.extend({
       return moment(this.blok.content.date, 'YYYY//MM/DD')
         .locale(this.$i18n.locale)
         .format('DD MMMM YYYY')
-    },
-    storeFilter() {
-      return this.$store.state.filters.activeFilter
-    },
-    activeFilter() {
-      const stateFilter = this.$store.state.filters.activeFilter
-
-      if (stateFilter === 'all') {
-        return true
-      } else if (this.blok.content.category.includes(stateFilter)) {
-        return true
-      } else {
-        return false
-      }
     }
   }
 })
