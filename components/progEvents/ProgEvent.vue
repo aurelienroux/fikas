@@ -9,6 +9,7 @@
 
     <div class="event__content">
       <p v-if="blok.content.date" class="event__date">{{ formatedDate }}</p>
+      <p class="event__category">{{ blok.content.category }}</p>
       <p class="event__title">{{ blok.content.title }}</p>
       <p class="event__time">
         {{ blok.content.time }} - {{ blok.content.location }}
@@ -64,6 +65,17 @@ export default Vue.extend({
     grid-row-end: 3;
     grid-row-start: 1;
     z-index: 10;
+  }
+
+  &__category {
+    background-color: $perrywinkle;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family: $font-secondary;
+    color: $white;
+    font-size: 1.2rem;
   }
 
   &__bg {
