@@ -29,6 +29,7 @@
 <script>
 import Vue from 'vue'
 import Form from '@/components/contact/Form'
+
 export default Vue.extend({
   components: {
     Form

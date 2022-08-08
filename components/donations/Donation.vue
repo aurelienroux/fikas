@@ -16,6 +16,7 @@
         target="_blank"
         rel="noopener noreferrer"
         :href="blok.link.cached_url"
+        @click="onDonate"
       >
         <Btn>{{ blok.button_text }}</Btn>
       </a>
@@ -38,6 +39,9 @@ export default {
         'https://img2.storyblok.com/600x0'
       )
       return newUrl
+    },
+    onDonate() {
+      this.$fb.track('Donate')
     }
   }
 }

@@ -35,14 +35,25 @@
       <option>{{ $t('contact.partner') }}</option>
     </select>
     <textarea name="Message:" rows="12" cols="20" />
-    <input class="input-submit" type="submit" :value="$t('contact.submit')" />
+    <input
+      class="input-submit"
+      type="submit"
+      :value="$t('contact.submit')"
+      @click="onContact"
+    />
   </form>
 </template>
 
 <script>
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  methods: {
+    onContact() {
+      this.$fb.track('Contact')
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

@@ -30,7 +30,12 @@
         :placeholder="$t('contact.email')"
         required
       />
-      <input class="input-submit" type="submit" :value="$t('contact.submit')" />
+      <input
+        class="input-submit"
+        type="submit"
+        :value="$t('contact.submit')"
+        @click="onRegister"
+      />
     </form>
 
     <button @click="closeNewsletter">
@@ -51,6 +56,9 @@ export default Vue.extend({
   methods: {
     closeNewsletter() {
       this.$store.commit('menu/toggleNewsletter')
+    },
+    onRegister() {
+      this.$fb.track('CompleteRegistration')
     }
   }
 })
