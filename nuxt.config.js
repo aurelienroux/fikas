@@ -21,6 +21,12 @@ export default {
         href:
           'https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Karla:wght@400;700&family=Rubik:wght@400;700&display=swap'
       }
+    ],
+    script: [
+      {
+        src: 'pixel.js',
+        type: 'text/javascript'
+      }
     ]
   },
   /*
