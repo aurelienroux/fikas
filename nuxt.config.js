@@ -9,6 +9,10 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        name: 'facebook-domain-verification',
+        content: '0vnpgf8gu1rit17z825bbr0bs7h7b5'
+      },
+      {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
