@@ -82,8 +82,16 @@ export default {
           }
         ]
       }
-    ]
+    ],
+    'nuxt-facebook-pixel-module'
   ],
+  // doc: https://github.com/WilliamDASILVA/nuxt-facebook-pixel-module
+  facebook: {
+    /* module options */
+    track: 'PageView',
+    pixelId: '8465219136825323',
+    autoPageView: true
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
