@@ -42,6 +42,7 @@
           target="_blank"
           :href="band.spotify.url"
         >
+          <font-awesome-icon :icon="['fab', 'spotify']" />
           Spotify
         </a>
         <a
