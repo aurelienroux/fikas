@@ -37,12 +37,12 @@
       </iframe>
       <div class="band__social">
         <a
-          v-if="band.officialsite && band.officialsite.url"
+          v-if="band.spotify && band.spotify.url"
           class="share__button"
           target="_blank"
-          :href="band.officialsite.url"
+          :href="band.spotify.url"
         >
-          {{ $t('programmation.officialsite') }}
+          Spotify
         </a>
         <a
           v-if="band.facebook && band.facebook.url"
