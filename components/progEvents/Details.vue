@@ -17,7 +17,7 @@
         rel="noopener noreferrer"
       >
         <Btn btn-style="button--full">
-          {{ $t('programmation.buytickets') }}
+          {{ $t('programmation.tickets') }}
         </Btn>
       </a>
       <a
