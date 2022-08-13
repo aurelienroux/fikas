@@ -22,7 +22,7 @@
     </div>
     <Btn v-if="showBuyButton" class="event__tickets" btn-style="button--full">
       <a :href="blok.ticketslink.url" target="_blank" rel="noopener noreferrer">
-        {{ $t('programmation.buytickets') }}
+        {{ $t('programmation.tickets') }}
       </a>
     </Btn>
   </div>
