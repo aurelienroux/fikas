@@ -21,7 +21,7 @@
           <li v-for="(link, indexText) in dropdown.links" :key="indexText">
             <nuxt-link
               class="menu-sublink"
-              :to="link.link.cached_url"
+              :to="correctUrl(link.link.cached_url)"
               @click.native="changeCurrentMenu(link.menuDecoration)"
             >
               {{ link.text }}
@@ -35,7 +35,7 @@
           :key="index + '-link'"
           class="menu-link"
           :class="{ 'menu-active': currentMenu === link.menuDecoration }"
-          :to="link.link.cached_url"
+          :to="correctUrl(link.link.cached_url)"
           @click.native="changeCurrentMenu(link.menuDecoration)"
         >
           {{ link.text }}
@@ -88,6 +88,9 @@ export default Vue.extend({
     window.removeEventListener('scroll', this.tranparentMenu)
   },
   methods: {
+    correctUrl(url) {
+      return url[0] === '/' ? url : `/${url}`
+    },
     displayMenu() {
       this.openMenu = !this.openMenu
     },
