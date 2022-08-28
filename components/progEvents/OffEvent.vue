@@ -9,7 +9,7 @@
       <p v-if="blok.date" class="event__date">{{ formatedDate }}</p>
       <p class="event__title">{{ blok.title }}</p>
       <p class="event__time">{{ blok.time }} - {{ blok.location }}</p>
-      <a
+      <!-- <a
         v-if="showBuyButton"
         class="event__link"
         :href="blok.facebooklink.url"
@@ -18,13 +18,13 @@
       >
         {{ $t('programmation.facebookEvent') }}
         <IconMore />
-      </a>
+      </a> -->
     </div>
-    <Btn v-if="showBuyButton" class="event__tickets" btn-style="button--full">
+    <!-- <Btn v-if="showBuyButton" class="event__tickets" btn-style="button--full">
       <a :href="blok.ticketslink.url" target="_blank" rel="noopener noreferrer">
         {{ $t('programmation.tickets') }}
       </a>
-    </Btn>
+    </Btn> -->
   </div>
 </template>
 
@@ -44,17 +44,17 @@ export default Vue.extend({
       return moment(this.blok.date, 'YYYY//MM/DD')
         .locale(this.$i18n.locale)
         .format('DD MMMM YYYY')
-    },
-    showBuyButton() {
-      const actualDate = new Date()
-      const actualYear = actualDate.getFullYear()
-      const actualMonth = actualDate.getMonth()
-      const actualDay = actualDate.getDate()
-      const Today = new Date(actualYear, actualMonth, actualDay)
-      const eventDate = new Date(this.blok.date)
-
-      return !(Today > eventDate)
     }
+    // showBuyButton() {
+    //   const actualDate = new Date()
+    //   const actualYear = actualDate.getFullYear()
+    //   const actualMonth = actualDate.getMonth()
+    //   const actualDay = actualDate.getDate()
+    //   const Today = new Date(actualYear, actualMonth, actualDay)
+    //   const eventDate = new Date(this.blok.date)
+
+    //   return !(Today > eventDate)
+    // }
   }
 })
 </script>
