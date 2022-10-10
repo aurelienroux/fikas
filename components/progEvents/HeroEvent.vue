@@ -2,7 +2,7 @@
   <div class="hero">
     <div
       class="hero__image"
-      :style="{ backgroundImage: `url('${story.content?.image?.filename}')` }"
+      :style="{ backgroundImage: `url('${story.content.image.filename}')` }"
     />
 
     <h1 class="hero__title">
