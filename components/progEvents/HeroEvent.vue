@@ -2,7 +2,7 @@
   <div class="hero">
     <div
       class="hero__image"
-      :style="{ backgroundImage: `url('${story.content.image.filename}')` }"
+      :style="{ backgroundImage: `url('${imageFilenameUrl}')` }"
     />
 
     <h1 class="hero__title">
@@ -19,6 +19,13 @@ export default Vue.extend({
     story: {
       type: Object,
       default: () => {}
+    }
+  },
+  computed: {
+    imageFilenameUrl() {
+      return this.story.content.image.filename
+        ? this.story.content.image.filename
+        : 'https://imgs.search.brave.com/67Kjheym3g0n_ZaZvsSsbKZJ1YxQXkxeKpCbtG98wjY/rs:fit:1200:989:1/g:ce/aHR0cHM6Ly9zdGF0/aWMyLnRyaXBvdG8u/Y29tL21lZGlhL3Ry/YW5zZmVyL2ltZy9P/Z0RhdGEvMTUzNjgz/OTUyNV91c2Vzd2Vk/ZW4uanBn'
     }
   }
 })
