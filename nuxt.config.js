@@ -138,7 +138,8 @@ export default {
       '/evenements/prog-test',
       '/evenements/programmation',
       '/evenements/support',
-      '/evenements/tavata'
+      '/evenements/tavata',
+      '/evenements/prog2022'
     ]
   }
 }
