@@ -77,7 +77,7 @@ export default {
       title: `Fikas - ${this.story.slug}`,
       meta: [
         { property: 'og:title', content: this.story.slug },
-        { property: 'og:image', content: this.story.content.image.filename },
+        { property: 'og:image', content: this.story?.content?.image?.filename },
         {
           property: 'og:url',
           content: process.env.BASE_URL + this.$route.fullPath
