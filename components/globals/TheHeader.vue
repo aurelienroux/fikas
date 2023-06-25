@@ -19,7 +19,16 @@
           :class="{ 'menu-active': currentMenu === dropdown.menuDecoration }"
         >
           <li v-for="(link, indexText) in dropdown.links" :key="indexText">
+            <a
+              v-if="link.link.linktype === 'url'"
+              class="menu-sublink"
+              :href="link.link.cached_url"
+              target="_blank"
+            >
+              {{ link.text }}
+            </a>
             <nuxt-link
+              v-if="link.link.linktype !== 'url'"
               class="menu-sublink"
               :to="correctUrl(link.link.cached_url)"
               @click.native="changeCurrentMenu(link.menuDecoration)"
