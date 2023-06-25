@@ -22,6 +22,7 @@ export default {
         }),
         context.app.$storyapi.get(`cdn/stories`, {
           version: 'published',
+          per_page: 100,
           starts_with: `${locale}evenements`,
           sort_by: 'content.date:asc,content.time:asc'
         })
