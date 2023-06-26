@@ -6,12 +6,16 @@
       :key="story.content._uid"
       :blok="story.content"
     ></component>
+    <CookieBanner />
   </main>
 </template>
 
 <script>
+import CookieBanner from '~/components/CookieBanner.vue'
+
 export default {
   name: 'Homepage',
+  components: { CookieBanner },
   asyncData(context) {
     const locale = context.app.i18n.locale === 'en' ? '/en' : ''
 
