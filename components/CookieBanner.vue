@@ -1,5 +1,5 @@
 <template>
-  <div class="cookies">
+  <div v-if="!displayCookiesBanner" class="cookies">
     Nous utilisons des cookies pour améliorer votre expérience sur notre site et
     pour vous montrer un contenu personnalisé.
     <nuxt-link :to="localePath('/invites')">
@@ -12,6 +12,13 @@
 <script>
 export default {
   name: 'CookieBanner',
+  computed: {
+    displayCookiesBanner() {
+      const cookies = document.cookie
+
+      return cookies.includes('cookieConsent=true')
+    }
+  },
   methods: {
     createCookie() {
       const cookieName = 'cookieConsent'

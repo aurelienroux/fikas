@@ -6,7 +6,9 @@
       :key="story.content._uid"
       :blok="story.content"
     ></component>
-    <CookieBanner />
+    <ClientOnly>
+      <CookieBanner />
+    </ClientOnly>
   </main>
 </template>
 
