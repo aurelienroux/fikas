@@ -8,6 +8,7 @@ import BtnFacebook from '~/components/UI/Buttons/BtnFacebook.vue'
 import BtnInsta from '~/components/UI/Buttons/BtnInsta.vue'
 import BtnScrollTop from '~/components/UI/Buttons/BtnScrollTop.vue'
 import BtnYoutube from '~/components/UI/Buttons/BtnYoutube.vue'
+import Confidentialite from '~/components/Confidentialite.vue'
 import ContactForm from '~/components/contact/ContactForm'
 import Cookies from '~/components/Cookies.vue'
 import Countries from '~/components/countries/Countries'
@@ -58,6 +59,7 @@ Vue.component('BtnFacebook', BtnFacebook)
 Vue.component('BtnInsta', BtnInsta)
 Vue.component('BtnScrollTop', BtnScrollTop)
 Vue.component('BtnYoutube', BtnYoutube)
+Vue.component('Confidentialite', Confidentialite)
 Vue.component('ContactForm', ContactForm)
 Vue.component('Cookies', Cookies)
 Vue.component('Countries', Countries)
