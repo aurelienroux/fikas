@@ -1,6 +1,8 @@
 <template>
-  <div class="cookies">
-    <!-- <div v-if="!hideCookiesBanner" class="cookies"> -->
+  <div
+    v-if="displayCookiesConsentFromCookie && displayCookiesConsentFromStore"
+    class="cookies"
+  >
     <p>
       {{ blok.content }}
       <nuxt-link :to="blok.link.cached_url">
@@ -8,10 +10,10 @@
       </nuxt-link>
     </p>
 
-    <button class="button" @click="createCookie">
+    <button class="button" @click="consentAndCreateCookie">
       {{ $t('cookies.accept') }}
     </button>
-    <button class="button" @click="createCookie">
+    <button class="button" @click="hideCookieConsent">
       {{ $t('cookies.decline') }}
     </button>
   </div>
@@ -29,15 +31,18 @@ export default Vue.extend({
     }
   },
   computed: {
-    hideCookiesBanner() {
+    displayCookiesConsentFromCookie() {
       if (process.client) {
-        return document.cookie.includes('cookieConsent=true')
+        return !document.cookie.includes('cookieConsent=true')
       }
       return false
+    },
+    displayCookiesConsentFromStore() {
+      return this.$store.state.cookiesConsent.displayCookiesConsentFromStore
     }
   },
   methods: {
-    createCookie() {
+    consentAndCreateCookie() {
       const cookieName = 'cookieConsent'
       const cookieValue = 'true'
       const expirationDate = new Date()
@@ -47,6 +52,13 @@ export default Vue.extend({
       cookieString += '; expires=' + expirationDate.toUTCString()
 
       document.cookie = cookieString
+
+      this.$store.commit('cookiesConsent/setDisplayCookiesConsentFromStore')
+    },
+    hideCookieConsent() {
+      return this.$store.commit(
+        'cookiesConsent/setDisplayCookiesConsentFromStore'
+      )
     }
   }
 })
