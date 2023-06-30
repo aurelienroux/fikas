@@ -47,8 +47,12 @@ import Paragraph from '~/components/Paragraph.vue'
 import PhotoDisplay from '~/components/PhotoDisplay.vue'
 import Donations from '~/components/donations/Donations.vue'
 import Donation from '~/components/donations/Donation.vue'
+import GuestsYear from '~/components/guests/GuestsYear.vue'
+import GuestsCountry from '~/components/guests/GuestsCountry.vue'
 
 Vue.component('Btn', Btn)
+Vue.component('GuestsCountry', GuestsCountry)
+Vue.component('GuestsYear', GuestsYear)
 Vue.component('BtnFacebook', BtnFacebook)
 Vue.component('BtnInsta', BtnInsta)
 Vue.component('BtnScrollTop', BtnScrollTop)
