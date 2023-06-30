@@ -75,7 +75,7 @@ export default Vue.extend({
 .button {
   border: 0.2rem solid $topaz;
   border-radius: 100px;
-  margin: 10px 20px 10px 0;
+  margin: 20px 20px 10px 0;
   background: $white;
   padding: 10px 20px;
   font-weight: 700;
