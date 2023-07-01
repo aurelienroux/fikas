@@ -16,6 +16,8 @@ import Donation from '~/components/donations/Donation.vue'
 import Donations from '~/components/donations/Donations.vue'
 import Edition from '~/components/editions/Edition.vue'
 import Greenblock from '~/components/Greenblock.vue'
+import GuestsCountry from '~/components/guests/GuestsCountry.vue'
+import GuestsYear from '~/components/guests/GuestsYear.vue'
 import Hero from '~/components/heros/Hero.vue'
 import HeroVideo from '~/components/heros/HeroVideo.vue'
 import History from '~/components/history/History.vue'
@@ -55,6 +57,8 @@ Vue.component('ArchiveSelector', ArchiveSelector)
 Vue.component('ArchiveYear', ArchiveYear)
 Vue.component('Avatar', Avatar)
 Vue.component('Btn', Btn)
+Vue.component('GuestsCountry', GuestsCountry)
+Vue.component('GuestsYear', GuestsYear)
 Vue.component('BtnFacebook', BtnFacebook)
 Vue.component('BtnInsta', BtnInsta)
 Vue.component('BtnScrollTop', BtnScrollTop)
