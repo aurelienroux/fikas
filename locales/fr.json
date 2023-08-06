@@ -14,6 +14,10 @@
     "selectSubject": "Choisissez un sujet",
     "submit": "Envoyer"
   },
+  "cookies": {
+    "accept": "J'accepte",
+    "decline": "Je refuse"
+  },
   "edition": {
     "archives": "Voir les archives"
   },
