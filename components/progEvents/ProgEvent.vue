@@ -7,7 +7,7 @@
 
     <div class="event__bg"></div>
 
-    <div class="event__content">
+    <nuxt-link class="event__link" :to="`/${blok.full_slug}`">
       <p v-if="blok.content.date" class="event__date">{{ formatedDate }}</p>
       <p class="event__category">{{ blok.content.category }}</p>
       <p class="event__title">{{ blok.content.title }}</p>
@@ -15,11 +15,11 @@
         {{ blok.content.time }} - {{ blok.content.location }}
       </p>
 
-      <nuxt-link class="event__link" :to="`/${blok.full_slug}`">
+      <p class="event__more">
         {{ $t('programmation.more') }}
         <IconMore />
-      </nuxt-link>
-    </div>
+      </p>
+    </nuxt-link>
   </div>
 </template>
 
@@ -67,6 +67,24 @@ export default Vue.extend({
     z-index: 10;
   }
 
+  &__link {
+    padding: 2rem;
+    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-row-end: 4;
+    grid-row-start: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    text-decoration: none;
+
+    &:hover .event__more {
+      transform: translateX(-1rem);
+      transition: 0.3s;
+    }
+  }
+
   &__category {
     background-color: $perrywinkle;
     display: inline-block;
@@ -86,14 +104,6 @@ export default Vue.extend({
     grid-row-start: 2;
   }
 
-  &__content {
-    padding: 2rem;
-    grid-column-end: 4;
-    grid-column-start: 2;
-    grid-row-end: 4;
-    grid-row-start: 3;
-  }
-
   &__date {
     color: $white;
     font-family: $font-secondary;
@@ -110,19 +120,23 @@ export default Vue.extend({
     line-height: 1.3;
   }
 
+  &__time {
+    flex: 1;
+  }
+
   &__title {
     font-weight: 700;
   }
 
-  &__link {
+  &__more {
+    width: 100%;
     display: block;
     margin-top: 2rem;
     font-family: $font-secondary;
     font-size: 1.4rem;
-    text-align: left;
+    text-align: right;
     color: $white;
     text-transform: uppercase;
-    text-decoration: none;
     text-align: right;
   }
 }
