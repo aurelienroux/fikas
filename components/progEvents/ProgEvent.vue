@@ -78,6 +78,11 @@ export default Vue.extend({
     align-items: flex-start;
     height: 100%;
     text-decoration: none;
+
+    &:hover .event__more {
+      transform: translateX(-1rem);
+      transition: 0.3s;
+    }
   }
 
   &__category {
