@@ -52,6 +52,7 @@ export default Vue.extend({
   img {
     position: relative;
     top: 0.2rem;
+    width: 100%;
   }
 
   .container {
